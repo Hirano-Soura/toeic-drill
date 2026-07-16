@@ -22,7 +22,6 @@
   .ex{color:var(--sub);font-size:13px}
   .star{cursor:pointer;color:#d1d5db;font-size:17px;user-select:none}
   .star.on{color:var(--star)}
-  /* card */
   #card{background:var(--card);border:1px solid var(--line);border-radius:16px;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:24px;text-align:center;margin:14px 0}
   #card .big{font-size:34px;font-weight:700}
   #card .pos{color:var(--sub);font-size:14px}
@@ -30,7 +29,6 @@
   #card .ex{margin-top:12px;font-size:14px}
   .rowbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .rowbtns button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 18px;cursor:pointer}
-  /* quiz */
   .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
   .q .stem{font-size:24px;font-weight:700;margin-bottom:4px}
   .q .pos{color:var(--sub);font-size:13px;margin-bottom:12px}
@@ -154,7 +152,6 @@ function render(){
 }
 var shuffled=null;
 function shuffleCards(){
-  // 選択範囲をその場でシャッフル（daysData自体を並べ替えない簡易実装）
   selDates().forEach(function(d){d.words.sort(function(){return Math.random()-0.5;});});
   cardIdx=0;cardBack=false;render();
 }
@@ -193,4 +190,19 @@ function renderQuiz(){
       fb.style.display='block';
       fb.innerHTML=(ok?'<b style="color:var(--ok)">正解</b>':'<b style="color:var(--ng)">不正解</b>（自動で苦手登録）')
         +'<br>'+esc(w.ex||'')+'<br><span class="meta">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</span>'
-        +'<div class="rowbtns" sty
+        +'<div class="rowbtns" style="justify-content:flex-start;margin-top:8px"><button onclick="quizIdx++;render()">次の問題 →</button></div>';
+    };
+  });
+}
+
+probe().then(function(){
+  daysData=window.__VOCAB.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+  var sel=document.getElementById('daySel');
+  var h='<option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">苦手のみ</option>';
+  daysData.slice().reverse().forEach(function(d){h+='<option value="'+d.date+'">'+d.date+'</option>';});
+  sel.innerHTML=h;
+  render();
+});
+</script>
+</body>
+</html>

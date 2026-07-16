@@ -184,4 +184,23 @@ function renderDay(idx){
       var qid=btn.dataset.show, box=document.getElementById(qid), ans=ANS[qid];
       if(!box.dataset.done){
         box.dataset.done='1';
-        box.querySelectorAll('.choice').forEach(function(b){b.disabled=true;if(+b.dataset.c===ans)
+        box.querySelectorAll('.choice').forEach(function(b){b.disabled=true;if(+b.dataset.c===ans)b.classList.add('correct');});
+      }
+      document.getElementById(qid+'_e').style.display='block';
+    };
+  });
+  window.scrollTo(0,0);
+}
+
+function updateScore(){
+  document.getElementById('score').textContent='正答 '+correct+' / 解答済 '+answered;
+}
+
+probe().then(function(){
+  days=window.__DRILLS.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+  currentIdx=days.length?days.length-1:0;
+  buildTabs(); renderDay(currentIdx);
+});
+</script>
+</body>
+</html>
