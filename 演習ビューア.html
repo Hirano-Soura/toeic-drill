@@ -60,23 +60,34 @@
 </div>
 <script>
 window.__DRILLS = [];
-window.__addDrill = function(d){ window.__DRILLS.push(d); };
+window.__addDrill = function(d){
+  for(var i=0;i<window.__DRILLS.length;i++){ if(window.__DRILLS[i].date===d.date) return; }
+  window.__DRILLS.push(d);
+};
 
-// 2026-07-17以降の日付を総当たりで読み込む（存在しない日は無視される）
+function loadScript(src){
+  return new Promise(function(res){
+    var s=document.createElement('script');
+    s.src=src; s.onload=res; s.onerror=res;
+    document.head.appendChild(s);
+  });
+}
+
+// まず結合ファイル(_all.js)を1回で読み、その最終日より後の分だけ個別に補完する
 function probe(){
-  var start = new Date(2026, 6, 17); // 2026-07-17
-  var end = new Date(); end.setDate(end.getDate()+1);
-  var promises = [];
-  for(var d=new Date(start); d<=end; d.setDate(d.getDate()+1)){
-    var y=d.getFullYear(), m=('0'+(d.getMonth()+1)).slice(-2), dd=('0'+d.getDate()).slice(-2);
-    var src='演習データ/TOEIC_'+y+'-'+m+'-'+dd+'.js';
-    promises.push(new Promise(function(res){
-      var s=document.createElement('script');
-      s.src=src; s.onload=res; s.onerror=res;
-      document.head.appendChild(s);
-    }));
-  }
-  return Promise.all(promises);
+  return loadScript('演習データ/_all.js').then(function(){
+    var last=null;
+    window.__DRILLS.forEach(function(d){ if(!last||d.date>last) last=d.date; });
+    var start=new Date(2026,6,17); // 2026-07-17
+    if(last){ var p=last.split('-'); start=new Date(+p[0],+p[1]-1,+p[2]); start.setDate(start.getDate()+1); }
+    var end=new Date(); end.setDate(end.getDate()+1);
+    var ps=[];
+    for(var d=new Date(start); d<=end; d.setDate(d.getDate()+1)){
+      var y=d.getFullYear(), m=('0'+(d.getMonth()+1)).slice(-2), dd=('0'+d.getDate()).slice(-2);
+      ps.push(loadScript('演習データ/TOEIC_'+y+'-'+m+'-'+dd+'.js'));
+    }
+    return Promise.all(ps);
+  });
 }
 
 var days=[], currentIdx=0, answered=0, correct=0;
@@ -173,18 +184,4 @@ function renderDay(idx){
       var qid=btn.dataset.show, box=document.getElementById(qid), ans=ANS[qid];
       if(!box.dataset.done){
         box.dataset.done='1';
-        box.querySelectorAll('.choice').forEach(function(b){b.disabled=true;if(+b.dataset.c===ans)b.classList.add('correct');});
-      }
-      document.getElementById(qid+'_e').style.display='block';
-    };
-  });
-  window.scrollTo(0,0);
-}
-
-function updateScore(){
-  document.getElementById('score').textContent='正答 '+correct+' / 解答済 '+answered;
-}
-
-probe().then(function(){
-  days=window.__DRILLS.slice().sort(function(a,b){return a.date<b.date?-1:1;});
-  currentIdx=days.length?days.length-1:0;
+        box.querySelectorAll('.choice').forEach(function(b){b.disabled=true;if(+b.dataset.c===ans)
