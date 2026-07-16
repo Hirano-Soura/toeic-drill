@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOEIC 単語ドリル</title>
+<style>
+  :root{--bg:#f5f6f8;--card:#fff;--ink:#1f2430;--sub:#6b7280;--accent:#2563eb;--ok:#16a34a;--ng:#dc2626;--line:#e5e7eb;--star:#f59e0b}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI","Hiragino Sans","Yu Gothic UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+  header{background:var(--card);border-bottom:1px solid var(--line);padding:14px 20px;position:sticky;top:0;z-index:5}
+  header h1{margin:0;font-size:18px}
+  nav{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  nav button{border:1px solid var(--line);background:#fff;border-radius:16px;padding:5px 14px;cursor:pointer;font-size:13px}
+  nav button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  select{border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:13px}
+  main{max-width:760px;margin:0 auto;padding:20px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;font-size:14px}
+  th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#eef2ff;font-size:13px}
+  .en{font-weight:600}
+  .ex{color:var(--sub);font-size:13px}
+  .star{cursor:pointer;color:#d1d5db;font-size:17px;user-select:none}
+  .star.on{color:var(--star)}
+  /* card */
+  #card{background:var(--card);border:1px solid var(--line);border-radius:16px;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:24px;text-align:center;margin:14px 0}
+  #card .big{font-size:34px;font-weight:700}
+  #card .pos{color:var(--sub);font-size:14px}
+  #card .back{font-size:22px;font-weight:600;color:#1e40af}
+  #card .ex{margin-top:12px;font-size:14px}
+  .rowbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .rowbtns button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 18px;cursor:pointer}
+  /* quiz */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
+  .q .stem{font-size:24px;font-weight:700;margin-bottom:4px}
+  .q .pos{color:var(--sub);font-size:13px;margin-bottom:12px}
+  .choices{display:grid;gap:8px}
+  .choice{text-align:left;border:1px solid var(--line);background:#fafafa;border-radius:8px;padding:10px 14px;cursor:pointer;font-size:15px;font-family:inherit}
+  .choice.correct{background:#dcfce7;border-color:var(--ok);font-weight:600}
+  .choice.wrong{background:#fee2e2;border-color:var(--ng)}
+  .fb{margin-top:10px;font-size:14px;display:none}
+  .meta{color:var(--sub);font-size:13px}
+  .empty{color:var(--sub);text-align:center;margin-top:60px}
+</style>
+</head>
+<body>
+<header>
+  <h1>TOEIC 単語ドリル</h1>
+  <nav>
+    <button id="m_list" class="active" onclick="setMode('list')">一覧</button>
+    <button id="m_card" onclick="setMode('card')">カード</button>
+    <button id="m_quiz" onclick="setMode('quiz')">クイズ</button>
+    <select id="daySel" onchange="render()"></select>
+  </nav>
+</header>
+<main id="content"><p class="empty">読み込み中…</p></main>
+<script>
+window.__VOCAB = [];
+window.__addVocab = function(v){ window.__VOCAB.push(v); };
+
+function probe(){
+  var start=new Date(2026,6,16); // 2026-07-16
+  var end=new Date(); end.setDate(end.getDate()+1);
+  var ps=[];
+  for(var d=new Date(start); d<=end; d.setDate(d.getDate()+1)){
+    var y=d.getFullYear(),m=('0'+(d.getMonth()+1)).slice(-2),dd=('0'+d.getDate()).slice(-2);
+    ps.push(new Promise(function(res){
+      var s=document.createElement('script');
+      s.src='単語データ/VOCAB_'+y+'-'+m+'-'+dd+'.js';
+      s.onload=res;s.onerror=res;document.head.appendChild(s);
+    }));
+  }
+  return Promise.all(ps);
+}
+
+var daysData=[], mode='list', cardIdx=0, cardBack=false, quizSet=[], quizIdx=0, quizOk=0;
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+var WEAK={};
+try{WEAK=JSON.parse(localStorage.getItem('toeic_vocab_weak')||'{}');}catch(e){WEAK={};}
+function saveWeak(){try{localStorage.setItem('toeic_vocab_weak',JSON.stringify(WEAK));}catch(e){}}
+function toggleWeak(w,el){ if(WEAK[w]){delete WEAK[w];el.classList.remove('on');}else{WEAK[w]=1;el.classList.add('on');} saveWeak(); }
+
+function setMode(m){
+  mode=m;
+  ['list','card','quiz'].forEach(function(x){document.getElementById('m_'+x).classList.toggle('active',x===m);});
+  cardIdx=0;cardBack=false;
+  if(m==='quiz')buildQuiz();
+  render();
+}
+
+function selDates(){
+  var v=document.getElementById('daySel').value;
+  if(v==='all')return daysData;
+  if(v==='weak')return [{date:'苦手',words:allWords().filter(function(w){return WEAK[w.en];})}];
+  if(v==='review')return reviewDays();
+  return daysData.filter(function(d){return d.date===v;});
+}
+function allWords(){var a=[];daysData.forEach(function(d){a=a.concat(d.words);});return a;}
+function reviewDays(){
+  // 今日 + 1/3/7/14/30日前 の回を復習対象にする
+  var t=new Date(), targets={};
+  [0,1,3,7,14,30].forEach(function(n){
+    var d=new Date(t);d.setDate(d.getDate()-n);
+    targets[d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)]=1;
+  });
+  var r=daysData.filter(function(d){return targets[d.date];});
+  return r.length?r:daysData.slice(-1);
+}
+function pool(){var a=[];selDates().forEach(function(d){a=a.concat(d.words);});return a;}
+
+function render(){
+  var c=document.getElementById('content');
+  if(!daysData.length){c.innerHTML='<p class="empty">まだ単語データがありません。</p>';return;}
+  var ws=pool();
+  if(mode==='list'){
+    var h='<p class="meta">'+ws.length+'語 ／ ★をクリックすると苦手登録（クイズの「苦手」で出題）</p>';
+    h+='<table><tr><th></th><th>単語</th><th>品詞</th><th>意味</th><th>例文・補足</th></tr>';
+    ws.forEach(function(w){
+      h+='<tr><td><span class="star'+(WEAK[w.en]?' on':'')+'" onclick="toggleWeak(\''+esc(w.en).replace(/'/g,"\\'")+'\',this)">★</span></td>'
+        +'<td class="en">'+esc(w.en)+'</td><td>'+esc(w.pos||'')+'</td><td>'+esc(w.ja)+'</td>'
+        +'<td>'+esc(w.ex||'')+'<div class="ex">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</div></td></tr>';
+    });
+    c.innerHTML=h+'</table>';
+  } else if(mode==='card'){
+    if(!ws.length){c.innerHTML='<p class="empty">対象の単語がありません。</p>';return;}
+    if(cardIdx>=ws.length)cardIdx=0;
+    var w=ws[cardIdx];
+    var h='<p class="meta">'+(cardIdx+1)+' / '+ws.length+'（カードをクリックで表裏切替）</p>';
+    h+='<div id="card" onclick="cardBack=!cardBack;render()">';
+    if(!cardBack){ h+='<div class="big">'+esc(w.en)+'</div><div class="pos">'+esc(w.pos||'')+'</div>'; }
+    else{ h+='<div class="back">'+esc(w.ja)+'</div><div class="ex">'+esc(w.ex||'')+'<br>'+esc(w.exJa||'')+(w.note?'<br>'+esc(w.note):'')+'</div>'; }
+    h+='</div><div class="rowbtns">'
+      +'<button onclick="cardIdx=Math.max(0,cardIdx-1);cardBack=false;render()">← 前へ</button>'
+      +'<button onclick="cardIdx=(cardIdx+1)%'+ws.length+';cardBack=false;render()">次へ →</button>'
+      +'<button onclick="shuffleCards()">シャッフル</button></div>';
+    c.innerHTML=h;
+  } else {
+    renderQuiz();
+  }
+}
+var shuffled=null;
+function shuffleCards(){
+  // 選択範囲をその場でシャッフル（daysData自体を並べ替えない簡易実装）
+  selDates().forEach(function(d){d.words.sort(function(){return Math.random()-0.5;});});
+  cardIdx=0;cardBack=false;render();
+}
+
+function buildQuiz(){
+  var ws=pool().slice();
+  ws.sort(function(){return Math.random()-0.5;});
+  quizSet=ws.slice(0,Math.min(20,ws.length));
+  quizIdx=0;quizOk=0;
+}
+function renderQuiz(){
+  var c=document.getElementById('content');
+  if(!quizSet.length){c.innerHTML='<p class="empty">対象の単語がありません。範囲を変えてください。</p>';return;}
+  if(quizIdx>=quizSet.length){
+    c.innerHTML='<div class="q"><div class="stem">結果: '+quizOk+' / '+quizSet.length+'</div>'
+      +'<div class="rowbtns"><button onclick="buildQuiz();render()">もう一度</button></div></div>';
+    return;
+  }
+  var w=quizSet[quizIdx];
+  var others=allWords().filter(function(x){return x.en!==w.en&&x.ja!==w.ja;});
+  others.sort(function(){return Math.random()-0.5;});
+  var opts=[w].concat(others.slice(0,3));
+  opts.sort(function(){return Math.random()-0.5;});
+  var h='<p class="meta">'+(quizIdx+1)+' / '+quizSet.length+' ｜ 正答 '+quizOk+'</p>';
+  h+='<div class="q"><div class="stem">'+esc(w.en)+'</div><div class="pos">'+esc(w.pos||'')+' ｜ 意味を選んでください</div><div class="choices">';
+  opts.forEach(function(o,i){h+='<button class="choice" data-ok="'+(o.en===w.en?1:0)+'">'+esc(o.ja)+'</button>';});
+  h+='</div><div class="fb" id="fb"></div></div>';
+  c.innerHTML=h;
+  c.querySelectorAll('.choice').forEach(function(b){
+    b.onclick=function(){
+      if(document.getElementById('fb').style.display==='block')return;
+      var ok=b.dataset.ok==='1';
+      c.querySelectorAll('.choice').forEach(function(x){x.disabled=true;if(x.dataset.ok==='1')x.classList.add('correct');});
+      if(ok){quizOk++;}else{b.classList.add('wrong');WEAK[w.en]=1;saveWeak();}
+      var fb=document.getElementById('fb');
+      fb.style.display='block';
+      fb.innerHTML=(ok?'<b style="color:var(--ok)">正解</b>':'<b style="color:var(--ng)">不正解</b>（自動で苦手登録）')
+        +'<br>'+esc(w.ex||'')+'<br><span class="meta">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</span>'
+        +'<div class="rowbtns" style="justify-content:flex-start;margin-top:8px"><button onclick="quizIdx++;render()">次の問題 →</button></div>';
+    };
+  });
+}
+
+probe().then(function(){
+  daysData=window.__VOCAB.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+  var sel=document.getElementById('daySel');
+  var h='<option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">苦手のみ</option>';
+  daysData.slice().reverse().forEach(function(d){h+='<option value="'+d.date+'">'+d.date+'</optio
