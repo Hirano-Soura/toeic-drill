@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TOEIC 単語ドリル</title>
 <style>
-  :root{--bg:#f5f6f8;--card:#fff;--ink:#1f2430;--sub:#6b7280;--accent:#2563eb;--ok:#16a34a;--ng:#dc2626;--line:#e5e7eb;--star:#f59e0b}
+  :root{--bg:#f5f6f8;--card:#fff;--ink:#1f2430;--sub:#6b7280;--accent:#2563eb;--ok:#16a34a;--ng:#dc2626;--line:#e5e7eb;--star:#f59e0b;--mark:#fef3c7}
   *{box-sizing:border-box}
   body{margin:0;font-family:"Segoe UI","Hiragino Sans","Yu Gothic UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
   header{background:var(--card);border-bottom:1px solid var(--line);padding:14px 20px;position:sticky;top:0;z-index:5}
@@ -39,6 +39,23 @@
   .fb{margin-top:10px;font-size:14px;display:none}
   .meta{color:var(--sub);font-size:13px}
   .empty{color:var(--sub);text-align:center;margin-top:60px}
+  /* 長文タブ */
+  .pwrap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:6px}
+  .ptitle{font-size:19px;font-weight:700;margin:0 0 2px}
+  .ptheme{color:var(--sub);font-size:13px;margin-bottom:12px}
+  .ptext{font-size:15.5px;line-height:1.85}
+  .ptext p{margin:0 0 13px}
+  mark.tw{background:var(--mark);border-radius:3px;padding:0 2px;font-weight:600;color:#92400e}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+  .chip{font-size:12px;border:1px solid var(--line);border-radius:12px;padding:2px 10px;background:#f8fafc;color:var(--sub)}
+  .chip.hit{background:#dcfce7;border-color:var(--ok);color:#166534}
+  .chip.hit::before{content:"\2713 ";font-weight:700}
+  .pja{color:#374151;font-size:14px;white-space:pre-wrap;display:none;border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+  .pjbtn{font-size:12px;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;margin-top:12px}
+  .pq{border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+  .pq .stem{font-weight:600;margin-bottom:8px}
+  .pq .expl{display:none;margin-top:8px;font-size:14px;color:#374151;border-top:1px dashed var(--line);padding-top:8px}
+  .pq .reveal{font-size:12px;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;margin-top:6px}
 </style>
 </head>
 <body>
@@ -48,6 +65,7 @@
     <button id="m_list" class="active" onclick="setMode('list')">一覧</button>
     <button id="m_card" onclick="setMode('card')">カード</button>
     <button id="m_quiz" onclick="setMode('quiz')">クイズ</button>
+    <button id="m_passage" onclick="setMode('passage')">長文</button>
     <select id="daySel" onchange="render()"></select>
   </nav>
 </header>
@@ -58,6 +76,11 @@ window.__addVocab = function(v){
   for(var i=0;i<window.__VOCAB.length;i++){ if(window.__VOCAB[i].date===v.date) return; }
   window.__VOCAB.push(v);
 };
+window.__PASSAGES = [];
+window.__addPassage = function(p){
+  for(var i=0;i<window.__PASSAGES.length;i++){ if(window.__PASSAGES[i].date===p.date) return; }
+  window.__PASSAGES.push(p);
+};
 
 function loadScript(src){
   return new Promise(function(res){
@@ -67,24 +90,30 @@ function loadScript(src){
   });
 }
 
-// まず結合ファイル(_all.js)を1回で読み、その最終日より後の分だけ個別に補完する
-function probe(){
-  return loadScript('単語データ/_all.js').then(function(){
+// 単語(_all.js)と長文(_all.js)をまず1回で読み、最終日より後の分だけ個別に補完する
+function probeSet(indexSrc, dayPrefix, arr, startY, startM, startD){
+  return loadScript(indexSrc).then(function(){
     var last=null;
-    window.__VOCAB.forEach(function(d){ if(!last||d.date>last) last=d.date; });
-    var start=new Date(2026,6,16); // 2026-07-16
+    arr.forEach(function(d){ if(!last||d.date>last) last=d.date; });
+    var start=new Date(startY,startM,startD);
     if(last){ var p=last.split('-'); start=new Date(+p[0],+p[1]-1,+p[2]); start.setDate(start.getDate()+1); }
     var end=new Date(); end.setDate(end.getDate()+1);
     var ps=[];
     for(var d=new Date(start); d<=end; d.setDate(d.getDate()+1)){
       var y=d.getFullYear(),m=('0'+(d.getMonth()+1)).slice(-2),dd=('0'+d.getDate()).slice(-2);
-      ps.push(loadScript('単語データ/VOCAB_'+y+'-'+m+'-'+dd+'.js'));
+      ps.push(loadScript(dayPrefix+y+'-'+m+'-'+dd+'.js'));
     }
     return Promise.all(ps);
   });
 }
+function probe(){
+  return Promise.all([
+    probeSet('単語データ/_all.js','単語データ/VOCAB_',window.__VOCAB,2026,6,16),   // 2026-07-16
+    probeSet('長文データ/_all.js','長文データ/PASSAGE_',window.__PASSAGES,2026,6,16) // 2026-07-16
+  ]);
+}
 
-var daysData=[], mode='list', cardIdx=0, cardBack=false, quizSet=[], quizIdx=0, quizOk=0;
+var daysData=[], passageDays=[], mode='list', cardIdx=0, cardBack=false, quizSet=[], quizIdx=0, quizOk=0;
 function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 var WEAK={};
@@ -94,7 +123,7 @@ function toggleWeak(w,el){ if(WEAK[w]){delete WEAK[w];el.classList.remove('on');
 
 function setMode(m){
   mode=m;
-  ['list','card','quiz'].forEach(function(x){document.getElementById('m_'+x).classList.toggle('active',x===m);});
+  ['list','card','quiz','passage'].forEach(function(x){document.getElementById('m_'+x).classList.toggle('active',x===m);});
   cardIdx=0;cardBack=false;
   if(m==='quiz')buildQuiz();
   render();
@@ -122,6 +151,7 @@ function pool(){var a=[];selDates().forEach(function(d){a=a.concat(d.words);});r
 
 function render(){
   var c=document.getElementById('content');
+  if(mode==='passage'){ renderPassage(); return; }
   if(!daysData.length){c.innerHTML='<p class="empty">まだ単語データがありません。</p>';return;}
   var ws=pool();
   if(mode==='list'){
@@ -195,8 +225,75 @@ function renderQuiz(){
   });
 }
 
+// ---- 長文タブ ----
+function currentPassageDate(){
+  var v=document.getElementById('daySel').value;
+  if(/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
+  return passageDays.length? passageDays[passageDays.length-1].date : null; // 全期間/苦手/復習は最新回を表示
+}
+function markPassage(text){
+  // [[surface]] を目標語ハイライトに変換。段落は空行区切り。
+  var html=esc(text).replace(/\[\[([^\]]+)\]\]/g,'<mark class="tw">$1</mark>');
+  return html.split(/\n\s*\n/).map(function(p){return '<p>'+p.replace(/\n/g,'<br>')+'</p>';}).join('');
+}
+function renderPassage(){
+  var c=document.getElementById('content');
+  if(!passageDays.length){c.innerHTML='<p class="empty">長文データがまだありません。日次タスク(daily-toeic-vocab)で生成されます。</p>';return;}
+  var date=currentPassageDate();
+  var p=passageDays.filter(function(x){return x.date===date;})[0];
+  var note='';
+  if(!p){ p=passageDays[passageDays.length-1]; note='<p class="meta">選択した日付の長文はありません。最新回('+esc(p.date)+')を表示しています。</p>'; }
+  var plain=String(p.passage).replace(/\[\[|\]\]/g,'');
+  var h=note+'<div class="pwrap">';
+  h+='<h2 class="ptitle">'+esc(p.title||'今日の長文')+'</h2>';
+  h+='<div class="ptheme">'+esc(p.date)+(p.theme?' ／ '+esc(p.theme):'')+(p.level?' ／ '+esc(p.level)+'点レベル':'')+'</div>';
+  // 使用語チェックリスト(全語カバーの確認)
+  if(p.words&&p.words.length){
+    h+='<div class="chips">';
+    p.words.forEach(function(w){
+      var key=String(w).toLowerCase().slice(0,5);
+      var hit=plain.toLowerCase().indexOf(key)>=0;
+      h+='<span class="chip'+(hit?' hit':'')+'">'+esc(w)+'</span>';
+    });
+    h+='</div>';
+  }
+  h+='<div class="ptext">'+markPassage(p.passage)+'</div>';
+  if(p.passageJa){
+    h+='<button class="pjbtn" onclick="var e=document.getElementById(\'pja\');e.style.display=e.style.display===\'block\'?\'none\':\'block\'">全文の和訳を表示 / 隠す</button>';
+    h+='<div class="pja" id="pja">'+esc(p.passageJa)+'</div>';
+  }
+  (p.questions||[]).forEach(function(it,qi){
+    var qid='pq'+qi;
+    h+='<div class="pq" id="'+qid+'"><div class="stem">Q'+(qi+1)+'. '+esc(it.q)+'</div><div class="choices">';
+    it.choices.forEach(function(ch,ci){
+      h+='<button class="choice" data-q="'+qid+'" data-c="'+ci+'" data-a="'+it.answer+'">'+String.fromCharCode(65+ci)+'. '+esc(ch)+'</button>';
+    });
+    h+='</div><button class="reveal" data-show="'+qid+'">解答・解説を見る</button>';
+    h+='<div class="expl" id="'+qid+'_e">'+esc(it.expl||'')+'</div></div>';
+  });
+  h+='</div>';
+  c.innerHTML=h;
+  c.querySelectorAll('.pq .choice').forEach(function(btn){
+    btn.onclick=function(){
+      var box=document.getElementById(btn.dataset.q); if(box.dataset.done)return;
+      box.dataset.done='1'; var ans=+btn.dataset.a;
+      box.querySelectorAll('.choice').forEach(function(b){b.disabled=true;if(+b.dataset.c===ans)b.classList.add('correct');});
+      if(+btn.dataset.c!==ans)btn.classList.add('wrong');
+      document.getElementById(btn.dataset.q+'_e').style.display='block';
+    };
+  });
+  c.querySelectorAll('.pq .reveal[data-show]').forEach(function(btn){
+    btn.onclick=function(){
+      var box=document.getElementById(btn.dataset.show);
+      if(!box.dataset.done){box.dataset.done='1';box.querySelectorAll('.choice').forEach(function(b){var ans=+b.dataset.a;b.disabled=true;if(+b.dataset.c===ans)b.classList.add('correct');});}
+      document.getElementById(btn.dataset.show+'_e').style.display='block';
+    };
+  });
+}
+
 probe().then(function(){
   daysData=window.__VOCAB.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+  passageDays=window.__PASSAGES.slice().sort(function(a,b){return a.date<b.date?-1:1;});
   var sel=document.getElementById('daySel');
   var h='<option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">苦手のみ</option>';
   daysData.slice().reverse().forEach(function(d){h+='<option value="'+d.date+'">'+d.date+'</option>';});
