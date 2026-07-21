@@ -108,3 +108,47 @@ window.__addVocab({
     {"en": "audience", "pos": "名", "ja": "聴衆、観客、(メディアの)視聴者・読者層", "ex": "The commercial was designed to appeal to a wide audience.", "exJa": "そのコマーシャルは幅広い視聴者層に訴求するよう作られました。", "note": "target audience(ターゲット層)。媒体により類義語はviewers, readersなど変わる。"}
   ]
 });
+window.__addVocab({
+  "date": "2026-07-21",
+  "level": "600",
+  "theme": "施設・オフィス管理",
+  "words": [
+    {"en": "maintenance", "pos": "名", "ja": "保守、整備、メンテナンス", "ex": "The elevator will be closed for routine maintenance this weekend.", "exJa": "エレベーターは今週末、定期的な保守作業のため使用できなくなります。", "note": "類義語: upkeep, servicing。動詞形はmaintain。routine/scheduled maintenanceの形で頻出。"},
+    {"en": "renovation", "pos": "名", "ja": "改装、改修", "ex": "The lobby is undergoing renovation to create a more modern space.", "exJa": "ロビーはより現代的な空間にするため改装中です。", "note": "類義語: remodeling, refurbishment。動詞形renovate。under renovation(改装中)。"},
+    {"en": "premises", "pos": "名", "ja": "建物、敷地、店舗", "ex": "Visitors must sign in at the front desk before entering the premises.", "exJa": "来訪者は敷地に入る前に受付で記帳しなければなりません。", "note": "Part7同義語問題でbuilding/propertyに言い換えられやすい。常に複数形premisesで使う多義語。"},
+    {"en": "facility", "pos": "名", "ja": "施設、設備", "ex": "The new office building has excellent parking facilities.", "exJa": "新しいオフィスビルには優れた駐車設備があります。", "note": "類義語: amenity, installation。複数形facilitiesは設備・便益の意味で頻出。"},
+    {"en": "tenant", "pos": "名", "ja": "賃借人、テナント、入居者", "ex": "All tenants are required to report any damage to the building manager.", "exJa": "すべての入居者は建物の損傷を管理人に報告する必要があります。", "note": "landlord(家主)と対の語。混同注意: tenant(借主) ⇔ landlord(貸主)。"},
+    {"en": "occupancy", "pos": "名", "ja": "入居、占有、稼働率", "ex": "The hotel reported a high occupancy rate during the summer season.", "exJa": "そのホテルは夏の期間中、高い稼働率を報告しました。", "note": "occupancy rate(稼働率・入居率)。動詞occupy、形容詞occupied(使用中の)。"},
+    {"en": "inspection", "pos": "名", "ja": "点検、検査", "ex": "A safety inspection of the building is conducted every six months.", "exJa": "建物の安全点検は6か月ごとに実施されます。", "note": "類義語: examination, check, review。動詞inspect。conduct an inspectionの形で頻出。"},
+    {"en": "lease", "pos": "名/動", "ja": "賃貸借(契約);賃貸しする、賃借りする", "ex": "The company signed a five-year lease for the downtown office.", "exJa": "その会社は中心部のオフィスについて5年間の賃貸借契約を結びました。", "note": "類義語: rent, rental agreement。renew a lease(契約を更新する)。"},
+    {"en": "vendor", "pos": "名", "ja": "業者、供給業者、販売業者", "ex": "We hired an outside vendor to handle the office cleaning.", "exJa": "私たちはオフィス清掃を担当してもらうため外部業者を雇いました。", "note": "類義語: supplier, contractor, seller。Part7で外注先を指す語として頻出。"},
+    {"en": "relocate", "pos": "動", "ja": "移転する、移転させる", "ex": "The headquarters will relocate to a larger building next year.", "exJa": "本社は来年、より大きな建物へ移転する予定です。", "note": "類義語: move, transfer。名詞形relocation。move to より少し硬い語。"},
+    {"en": "spacious", "pos": "形", "ja": "広々とした", "ex": "The conference room is spacious enough to seat fifty people.", "exJa": "その会議室は50人が座れるほど広々としています。", "note": "類義語: roomy, large。反意語cramped(窮屈な)。名詞space。"},
+    {"en": "adjacent", "pos": "形", "ja": "隣接した、隣の", "ex": "The parking lot is adjacent to the main entrance.", "exJa": "駐車場は正面玄関に隣接しています。", "note": "類義語: neighboring, next to, adjoining。adjacent toの形で頻出。"},
+    {"en": "utility", "pos": "名", "ja": "公共料金、(電気・ガス・水道などの)設備", "ex": "The monthly rent includes all utilities such as water and electricity.", "exJa": "毎月の家賃には水道や電気などすべての公共料金が含まれています。", "note": "通例複数形utilitiesで電気・ガス・水道を指す。utility bill(公共料金の請求書)。"},
+    {"en": "custodian", "pos": "名", "ja": "管理人、用務員、守衛", "ex": "The custodian locks all the doors at the end of the day.", "exJa": "用務員は一日の終わりにすべてのドアに施錠します。", "note": "類義語: janitor, caretaker。建物の清掃・管理を担う人。"},
+    {"en": "corridor", "pos": "名", "ja": "廊下、通路", "ex": "Please do not leave boxes in the corridor, as they block the exit.", "exJa": "出口をふさぐため、廊下に箱を置かないでください。", "note": "類義語: hallway, passage。図面・避難経路の説明で頻出。"}
+  ]
+});
+window.__addVocab({
+  "date": "2026-07-23",
+  "level": "600",
+  "theme": "出張・旅行（交通と宿泊）",
+  "words": [
+    {"en": "reservation", "pos": "名", "ja": "予約", "ex": "I would like to confirm my hotel reservation for three nights.", "exJa": "3泊のホテルの予約を確認したいのですが。", "note": "類義語=booking。動詞reserve/名詞reservation。make a reservation で「予約する」"},
+    {"en": "confirm", "pos": "動", "ja": "確認する、確定する", "ex": "Please confirm your attendance by Friday.", "exJa": "金曜までに出席を確認してください。", "note": "類義語=verify。名詞confirmation（確認書）。Part 7で confirm ↔ verify の言い換えに注意"},
+    {"en": "departure", "pos": "名", "ja": "出発", "ex": "The departure time has been moved to 9:00 a.m.", "exJa": "出発時刻は午前9時に変更されました。", "note": "反意語=arrival。動詞depart。掲示板の departure ↔ leaving の言い換え"},
+    {"en": "board", "pos": "動", "ja": "搭乗する、乗り込む", "ex": "Passengers should board the plane 30 minutes before departure.", "exJa": "乗客は出発の30分前に搭乗してください。", "note": "類義語=get on / embark。名詞では「板・委員会」の意味もある多義語"},
+    {"en": "luggage", "pos": "名", "ja": "手荷物", "ex": "Please keep your luggage with you at all times.", "exJa": "手荷物は常に身につけておいてください。", "note": "類義語=baggage。不可算名詞。a piece of luggage と数える"},
+    {"en": "terminal", "pos": "名", "ja": "（空港などの）ターミナル", "ex": "The flight leaves from Terminal 2.", "exJa": "その便はターミナル2から出発します。", "note": "空港・港・バスの発着施設。形容詞では「末期の」の意味もある"},
+    {"en": "layover", "pos": "名", "ja": "（乗り継ぎの）待ち時間", "ex": "There is a two-hour layover in Denver.", "exJa": "デンバーで2時間の乗り継ぎ待ちがあります。", "note": "類義語=stopover。旅程で乗り継ぎ地の待機を指す"},
+    {"en": "fare", "pos": "名", "ja": "運賃", "ex": "The company will cover the airfare for the trip.", "exJa": "会社が出張の航空運賃を負担します。", "note": "類義語=the cost of the ticket。fee（手数料）や fair（公正な）と混同注意"},
+    {"en": "lodging", "pos": "名", "ja": "宿泊（施設）", "ex": "Your lodging covers three nights at the Lakeside Inn.", "exJa": "宿泊はレイクサイド・インで3泊分が含まれます。", "note": "類義語=accommodation。出張規程で「宿泊費」の意味で頻出"},
+    {"en": "amenity", "pos": "名", "ja": "設備、アメニティ", "ex": "The hotel offers amenities such as a gym and free Wi-Fi.", "exJa": "そのホテルはジムや無料Wi-Fiなどの設備を備えています。", "note": "類義語=facility / convenience。しばしば複数形 amenities で使う"},
+    {"en": "concierge", "pos": "名", "ja": "コンシェルジュ、案内係", "ex": "The concierge can recommend a good restaurant nearby.", "exJa": "コンシェルジュが近くのよいレストランを勧めてくれます。", "note": "ホテルで客の要望に応じる案内係。front-desk assistant と言い換え可"},
+    {"en": "shuttle", "pos": "名", "ja": "送迎バス、シャトル便", "ex": "A free shuttle runs between the airport and the hotel.", "exJa": "空港とホテルの間を無料の送迎バスが運行しています。", "note": "類義語=transfer bus。動詞で「往復輸送する」の意味もある"},
+    {"en": "voucher", "pos": "名", "ja": "引換券、クーポン", "ex": "A voucher for breakfast is included with your booking.", "exJa": "予約には朝食の引換券が含まれています。", "note": "類義語=coupon。goods や services と引き換えられる証票"},
+    {"en": "reception", "pos": "名", "ja": "受付、フロント", "ex": "Show your reservation number at the reception desk.", "exJa": "受付で予約番号を提示してください。", "note": "類義語=front desk。「歓迎会・受信」の意味もある多義語"},
+    {"en": "delay", "pos": "名", "ja": "遅延、遅れ", "ex": "The airline will notify you in case of a delay.", "exJa": "遅延の場合、航空会社が知らせてくれます。", "note": "類義語=postponement / hold-up。動詞でも「遅らせる」。delay ↔ postpone の言い換えに注意"}
+  ]
+});
