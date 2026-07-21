@@ -229,7 +229,10 @@ function renderQuiz(){
 function currentPassageDate(){
   var v=document.getElementById('daySel').value;
   if(/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
-  return passageDays.length? passageDays[passageDays.length-1].date : null; // 全期間/苦手/復習は最新回を表示
+  if(!passageDays.length) return null;
+  var _t=new Date(), _ts=_t.getFullYear()+'-'+('0'+(_t.getMonth()+1)).slice(-2)+'-'+('0'+_t.getDate()).slice(-2);
+  var _av=passageDays.filter(function(x){return x.date<=_ts;}); // 未来日付は当日まで隠す
+  return (_av.length? _av[_av.length-1] : passageDays[0]).date; // 全期間/苦手/復習は「今日以前の最新回」を表示
 }
 function markPassage(text){
   // [[surface]] を目標語ハイライトに変換。段落は空行区切り。

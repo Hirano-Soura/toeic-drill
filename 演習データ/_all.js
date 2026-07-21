@@ -1,5 +1,5 @@
 window.__addDrill({
-  "date": "2026-07-17",
+  "date": "2026-07-19",
   "track": "R",
   "topicNo": "R1",
   "field": "Part 7",
@@ -150,7 +150,7 @@ window.__addDrill({
   ]
 });
 window.__addDrill({
-  "date": "2026-07-19",
+  "date": "2026-07-21",
   "track": "L",
   "topicNo": "L1",
   "field": "Part 2",

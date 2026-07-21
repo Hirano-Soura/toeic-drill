@@ -1,5 +1,5 @@
 window.__addPassage({
-  "date": "2026-07-16",
+  "date": "2026-07-18",
   "level": "600",
   "theme": "ビジネス基礎（オフィス・取引）",
   "title": "A Reply to a Customer Inquiry",
@@ -13,7 +13,7 @@ window.__addPassage({
   ]
 });
 window.__addPassage({
-  "date": "2026-07-17",
+  "date": "2026-07-19",
   "level": "600",
   "theme": "採用・人事",
   "title": "Filling a Vacancy in the Sales Team",
@@ -27,7 +27,7 @@ window.__addPassage({
   ]
 });
 window.__addPassage({
-  "date": "2026-07-18",
+  "date": "2026-07-20",
   "level": "600",
   "theme": "経理・財務",
   "title": "Closing the Fiscal Year",
@@ -41,7 +41,7 @@ window.__addPassage({
   ]
 });
 window.__addPassage({
-  "date": "2026-07-19",
+  "date": "2026-07-21",
   "level": "600",
   "theme": "物流・在庫",
   "title": "A Day at the Regional Warehouse",
@@ -55,7 +55,7 @@ window.__addPassage({
   ]
 });
 window.__addPassage({
-  "date": "2026-07-20",
+  "date": "2026-07-22",
   "level": "600",
   "theme": "マーケティング・広告",
   "title": "Planning the Summer Product Launch",
@@ -69,7 +69,7 @@ window.__addPassage({
   ]
 });
 window.__addPassage({
-  "date": "2026-07-21",
+  "date": "2026-07-23",
   "level": "600",
   "theme": "施設・オフィス管理",
   "title": "Notice: Upcoming Building Renovation",
@@ -83,7 +83,7 @@ window.__addPassage({
   ]
 });
 window.__addPassage({
-  "date": "2026-07-23",
+  "date": "2026-07-24",
   "level": "600",
   "theme": "出張・旅行（交通と宿泊）",
   "title": "Business Trip Arrangements for the Chicago Branch",

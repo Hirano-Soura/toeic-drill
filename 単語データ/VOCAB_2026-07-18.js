@@ -1,22 +1,22 @@
 window.__addVocab({
   "date": "2026-07-18",
   "level": "600",
-  "theme": "経理・財務（請求・予算・監査）",
+  "theme": "ビジネス基礎（オフィス・取引）",
   "words": [
-    {"en": "budget", "pos": "名/動", "ja": "予算／予算を組む", "ex": "The finance department will finalize next year's budget by the end of this month.", "exJa": "経理部は今月末までに来年度の予算を確定します。", "note": "形容詞形budgetary（予算の）。budget for〜で「〜のために予算を組む」。"},
-    {"en": "expense", "pos": "名", "ja": "経費", "ex": "Employees must submit all travel expenses within two weeks of their trip.", "exJa": "従業員は出張から2週間以内にすべての旅費経費を提出しなければなりません。", "note": "類義語expenditure, cost。expense report（経費報告書）は頻出コロケーション。"},
-    {"en": "receipt", "pos": "名", "ja": "領収書", "ex": "Please keep your receipt as proof of purchase for any future refund.", "exJa": "今後の返金のため、購入証明として領収書を保管してください。", "note": "pは発音しない。類義語proof of purchase。upon receipt of〜（〜を受領次第）も頻出表現。"},
-    {"en": "deposit", "pos": "名/動", "ja": "頭金、預金／預ける", "ex": "A 20% deposit is required to confirm your hotel reservation.", "exJa": "ホテルの予約確定には20％の頭金が必要です。", "note": "動詞・名詞同形。類義語（動詞）put down, pay in advance。"},
-    {"en": "balance", "pos": "名", "ja": "残高", "ex": "You can check your account balance online at any time.", "exJa": "口座残高はいつでもオンラインで確認できます。", "note": "balance due（未払い残高）、outstanding balance（未決済残高）はPart 7の言い換えで狙われる表現。"},
-    {"en": "transaction", "pos": "名", "ja": "取引", "ex": "All transactions over $500 require manager approval.", "exJa": "500ドルを超えるすべての取引にはマネージャーの承認が必要です。", "note": "類義語deal, purchase。動詞形transact。"},
-    {"en": "fund", "pos": "名/動", "ja": "資金／資金を提供する", "ex": "The company set aside a fund for employee training programs.", "exJa": "会社は従業員研修プログラムのために資金を確保しました。", "note": "類義語capital, resources。set aside a fund（資金を確保する）のコロケーションに注意。"},
-    {"en": "revenue", "pos": "名", "ja": "収益", "ex": "Quarterly revenue increased by 15 percent compared to last year.", "exJa": "四半期の収益は前年比15パーセント増加しました。", "note": "類義語income, earnings。profit（利益）とは区別されるが言い換え問題で近い意味として扱われることがある。"},
-    {"en": "deduct", "pos": "動", "ja": "差し引く", "ex": "The shipping fee will be deducted from your final refund.", "exJa": "送料は最終的な返金額から差し引かれます。", "note": "名詞形deduction（控除）も頻出。類義語subtract, withhold。"},
-    {"en": "installment", "pos": "名", "ja": "分割払い", "ex": "Customers may pay for the equipment in monthly installments.", "exJa": "顧客はその機器を月々の分割払いで支払うことができます。", "note": "pay in installments（分割払いで支払う）のコロケーションで頻出。"},
-    {"en": "overdue", "pos": "形", "ja": "支払期限を過ぎた", "ex": "Please settle your overdue invoice as soon as possible.", "exJa": "期限超過の請求書をできるだけ早くお支払いください。", "note": "類義語past due。反意語on time。settle an invoice（請求書を清算する）もあわせて覚える。"},
-    {"en": "audit", "pos": "名/動", "ja": "監査（する）", "ex": "An external accountant will audit the company's financial records next month.", "exJa": "外部の会計士が来月、会社の財務記録を監査します。", "note": "名詞・動詞同形。関連語auditor（監査人）。"},
-    {"en": "fiscal", "pos": "形", "ja": "会計の", "ex": "The fiscal year begins in April for most Japanese companies.", "exJa": "日本の多くの企業では会計年度は4月に始まります。", "note": "fiscal year（会計年度）は必須コロケーション。類義語financial（financial year）。"},
-    {"en": "asset", "pos": "名", "ja": "資産", "ex": "Skilled employees are considered the company's most valuable asset.", "exJa": "熟練した従業員は会社の最も貴重な資産とみなされます。", "note": "人材を比喩的にassetと呼ぶ用法にも注意。対義語liability（負債）。"},
-    {"en": "statement", "pos": "名", "ja": "明細書", "ex": "Your monthly bank statement is now available on our website.", "exJa": "月次銀行明細書は現在弊社のウェブサイトでご覧いただけます。", "note": "account statement（口座明細書）。類義語report, summary。"}
+    {"en": "invoice", "pos": "名", "ja": "請求書", "ex": "Please find the invoice attached to this email.", "exJa": "このメールに添付の請求書をご確認ください。", "note": "類義: bill"},
+    {"en": "itinerary", "pos": "名", "ja": "旅程表", "ex": "I will send you the itinerary for the business trip.", "exJa": "出張の旅程表をお送りします。", "note": "Part 7 の旅行関連文書で頻出"},
+    {"en": "reimburse", "pos": "動", "ja": "（費用を）払い戻す", "ex": "Employees will be reimbursed for travel expenses.", "exJa": "従業員には交通費が払い戻されます。", "note": "名詞形: reimbursement"},
+    {"en": "warranty", "pos": "名", "ja": "（製品の）保証", "ex": "This laptop comes with a two-year warranty.", "exJa": "このノートPCには2年間の保証が付いています。", "note": "under warranty = 保証期間中"},
+    {"en": "inquiry", "pos": "名", "ja": "問い合わせ", "ex": "Thank you for your inquiry about our services.", "exJa": "当社のサービスに関するお問い合わせありがとうございます。", "note": "動詞形: inquire"},
+    {"en": "estimate", "pos": "名/動", "ja": "見積もり／見積もる", "ex": "Could you give us an estimate for the repair work?", "exJa": "修理作業の見積もりをいただけますか。", "note": "名詞と動詞で発音が変わる（名: -mət / 動: -meɪt）"},
+    {"en": "shipment", "pos": "名", "ja": "発送、積み荷", "ex": "The shipment is scheduled to arrive on Monday.", "exJa": "積み荷は月曜日に到着する予定です。", "note": "ship（動: 発送する）も頻出"},
+    {"en": "postpone", "pos": "動", "ja": "延期する", "ex": "The meeting has been postponed until next week.", "exJa": "会議は来週まで延期されました。", "note": "言い換え: put off / reschedule"},
+    {"en": "accommodate", "pos": "動", "ja": "収容する、（要望に）応える", "ex": "The conference room can accommodate up to 50 people.", "exJa": "その会議室は最大50人を収容できます。", "note": "accommodations = 宿泊施設"},
+    {"en": "merchandise", "pos": "名", "ja": "商品（集合的・不可算）", "ex": "All merchandise in the store is 20% off this weekend.", "exJa": "今週末は店内全商品が20%引きです。", "note": "言い換え: goods / items / products"},
+    {"en": "appliance", "pos": "名", "ja": "家電製品、器具", "ex": "We sell a wide range of kitchen appliances.", "exJa": "当店では幅広い台所家電を販売しています。", "note": "home appliances = 家庭用電化製品"},
+    {"en": "expire", "pos": "動", "ja": "期限が切れる", "ex": "Your membership will expire at the end of this month.", "exJa": "あなたの会員資格は今月末で期限が切れます。", "note": "名詞形: expiration (date)"},
+    {"en": "refund", "pos": "名/動", "ja": "返金（する）", "ex": "You may request a full refund within 30 days.", "exJa": "30日以内であれば全額返金を請求できます。", "note": "セット表現: refund policy"},
+    {"en": "supervisor", "pos": "名", "ja": "上司、監督者", "ex": "Please submit the form to your supervisor by Friday.", "exJa": "金曜日までに用紙を上司に提出してください。", "note": "言い換え: manager"},
+    {"en": "complimentary", "pos": "形", "ja": "無料の", "ex": "All guests receive a complimentary breakfast.", "exJa": "全ての宿泊客に無料の朝食が提供されます。", "note": "言い換え: free / at no charge。complementary（補完的な）と混同注意"}
   ]
 });

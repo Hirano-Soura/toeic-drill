@@ -1,22 +1,22 @@
 window.__addVocab({
   "date": "2026-07-20",
   "level": "600",
-  "theme": "マーケティング・広告",
+  "theme": "経理・財務（請求・予算・監査）",
   "words": [
-    {"en": "advertisement", "pos": "名", "ja": "広告", "ex": "The company placed an advertisement in the local newspaper to promote its new product.", "exJa": "その会社は新商品を宣伝するため地元紙に広告を掲載しました。", "note": "類義語: ad, commercial(CM)。動詞形はadvertise。"},
-    {"en": "campaign", "pos": "名", "ja": "キャンペーン、(組織的な)運動", "ex": "The marketing team launched a campaign to increase brand awareness.", "exJa": "マーケティングチームはブランド認知度を高めるためキャンペーンを開始しました。", "note": "launch a campaign、advertising campaignの形で頻出。"},
-    {"en": "consumer", "pos": "名", "ja": "消費者", "ex": "Consumer demand for eco-friendly products has increased significantly.", "exJa": "環境に優しい製品への消費者の需要が大幅に増加しました。", "note": "類義語: customer, client。consumer goods(消費財)も頻出。"},
-    {"en": "demographic", "pos": "形/名", "ja": "人口統計(学)の、(複数形で)人口統計的属性", "ex": "The survey targets a specific demographic: young professionals in urban areas.", "exJa": "その調査は都市部の若手社会人という特定の層を対象としています。", "note": "target demographic(ターゲット層)というコロケーションで頻出。"},
-    {"en": "endorse", "pos": "動", "ja": "(公に)支持する、推奨する", "ex": "A famous athlete was hired to endorse the new sports drink.", "exJa": "有名な運動選手が新しいスポーツドリンクを宣伝するために起用されました。", "note": "Part7同義語問題でrecommend/supportに言い換えられやすい。名詞形endorsement。"},
-    {"en": "feedback", "pos": "名", "ja": "意見、感想、フィードバック", "ex": "The company asked customers to provide feedback on the new website design.", "exJa": "会社は顧客に新しいウェブサイトのデザインについて意見を求めました。", "note": "類義語: comments, input, response。不可算名詞である点に注意。"},
-    {"en": "impression", "pos": "名", "ja": "印象;(広告の)表示回数", "ex": "First impressions of the product were mostly positive.", "exJa": "その製品への第一印象はおおむね好意的でした。", "note": "make a good impression(良い印象を与える)というコロケーション頻出。"},
-    {"en": "launch", "pos": "動/名", "ja": "開始する、発売する;発売、開始", "ex": "The company will launch its new smartphone next month.", "exJa": "その会社は来月新しいスマートフォンを発売する予定です。", "note": "類義語: introduce, release, unveil。"},
-    {"en": "loyalty", "pos": "名", "ja": "忠誠(心)、愛顧", "ex": "The store introduced a loyalty program to reward repeat customers.", "exJa": "その店はリピーター客に報いるためロイヤルティプログラムを導入しました。", "note": "customer loyalty、loyalty programの形で頻出。"},
-    {"en": "publicity", "pos": "名", "ja": "宣伝、広報、世間の注目", "ex": "The product launch received a lot of publicity in the media.", "exJa": "その製品の発売はメディアで大きな注目を集めました。", "note": "類義語: attention, coverage。不可算名詞。"},
-    {"en": "slogan", "pos": "名", "ja": "スローガン、標語", "ex": "The advertising team came up with a catchy slogan for the campaign.", "exJa": "広告チームはそのキャンペーン向けに覚えやすいスローガンを考案しました。", "note": "come up with a slogan(スローガンを考案する)というコロケーション。"},
-    {"en": "sponsor", "pos": "動/名", "ja": "後援する、資金提供する;スポンサー", "ex": "The event was sponsored by several local businesses.", "exJa": "そのイベントはいくつかの地元企業によって後援されました。", "note": "名詞形sponsorship(後援、協賛)も頻出。"},
-    {"en": "survey", "pos": "名/動", "ja": "調査(する)", "ex": "The company conducted a survey to find out what customers think of the service.", "exJa": "会社は顧客がサービスについてどう思っているかを調べるため調査を実施しました。", "note": "類義語: questionnaire, poll。conduct a surveyの形で頻出。"},
-    {"en": "target", "pos": "動/名", "ja": "対象とする、狙う;目標、対象", "ex": "The advertisement is designed to target young consumers.", "exJa": "その広告は若い消費者を対象にするよう作られています。", "note": "target audience/market(ターゲット層/市場)というコロケーション。"},
-    {"en": "audience", "pos": "名", "ja": "聴衆、観客、(メディアの)視聴者・読者層", "ex": "The commercial was designed to appeal to a wide audience.", "exJa": "そのコマーシャルは幅広い視聴者層に訴求するよう作られました。", "note": "target audience(ターゲット層)。媒体により類義語はviewers, readersなど変わる。"}
+    {"en": "budget", "pos": "名/動", "ja": "予算／予算を組む", "ex": "The finance department will finalize next year's budget by the end of this month.", "exJa": "経理部は今月末までに来年度の予算を確定します。", "note": "形容詞形budgetary（予算の）。budget for〜で「〜のために予算を組む」。"},
+    {"en": "expense", "pos": "名", "ja": "経費", "ex": "Employees must submit all travel expenses within two weeks of their trip.", "exJa": "従業員は出張から2週間以内にすべての旅費経費を提出しなければなりません。", "note": "類義語expenditure, cost。expense report（経費報告書）は頻出コロケーション。"},
+    {"en": "receipt", "pos": "名", "ja": "領収書", "ex": "Please keep your receipt as proof of purchase for any future refund.", "exJa": "今後の返金のため、購入証明として領収書を保管してください。", "note": "pは発音しない。類義語proof of purchase。upon receipt of〜（〜を受領次第）も頻出表現。"},
+    {"en": "deposit", "pos": "名/動", "ja": "頭金、預金／預ける", "ex": "A 20% deposit is required to confirm your hotel reservation.", "exJa": "ホテルの予約確定には20％の頭金が必要です。", "note": "動詞・名詞同形。類義語（動詞）put down, pay in advance。"},
+    {"en": "balance", "pos": "名", "ja": "残高", "ex": "You can check your account balance online at any time.", "exJa": "口座残高はいつでもオンラインで確認できます。", "note": "balance due（未払い残高）、outstanding balance（未決済残高）はPart 7の言い換えで狙われる表現。"},
+    {"en": "transaction", "pos": "名", "ja": "取引", "ex": "All transactions over $500 require manager approval.", "exJa": "500ドルを超えるすべての取引にはマネージャーの承認が必要です。", "note": "類義語deal, purchase。動詞形transact。"},
+    {"en": "fund", "pos": "名/動", "ja": "資金／資金を提供する", "ex": "The company set aside a fund for employee training programs.", "exJa": "会社は従業員研修プログラムのために資金を確保しました。", "note": "類義語capital, resources。set aside a fund（資金を確保する）のコロケーションに注意。"},
+    {"en": "revenue", "pos": "名", "ja": "収益", "ex": "Quarterly revenue increased by 15 percent compared to last year.", "exJa": "四半期の収益は前年比15パーセント増加しました。", "note": "類義語income, earnings。profit（利益）とは区別されるが言い換え問題で近い意味として扱われることがある。"},
+    {"en": "deduct", "pos": "動", "ja": "差し引く", "ex": "The shipping fee will be deducted from your final refund.", "exJa": "送料は最終的な返金額から差し引かれます。", "note": "名詞形deduction（控除）も頻出。類義語subtract, withhold。"},
+    {"en": "installment", "pos": "名", "ja": "分割払い", "ex": "Customers may pay for the equipment in monthly installments.", "exJa": "顧客はその機器を月々の分割払いで支払うことができます。", "note": "pay in installments（分割払いで支払う）のコロケーションで頻出。"},
+    {"en": "overdue", "pos": "形", "ja": "支払期限を過ぎた", "ex": "Please settle your overdue invoice as soon as possible.", "exJa": "期限超過の請求書をできるだけ早くお支払いください。", "note": "類義語past due。反意語on time。settle an invoice（請求書を清算する）もあわせて覚える。"},
+    {"en": "audit", "pos": "名/動", "ja": "監査（する）", "ex": "An external accountant will audit the company's financial records next month.", "exJa": "外部の会計士が来月、会社の財務記録を監査します。", "note": "名詞・動詞同形。関連語auditor（監査人）。"},
+    {"en": "fiscal", "pos": "形", "ja": "会計の", "ex": "The fiscal year begins in April for most Japanese companies.", "exJa": "日本の多くの企業では会計年度は4月に始まります。", "note": "fiscal year（会計年度）は必須コロケーション。類義語financial（financial year）。"},
+    {"en": "asset", "pos": "名", "ja": "資産", "ex": "Skilled employees are considered the company's most valuable asset.", "exJa": "熟練した従業員は会社の最も貴重な資産とみなされます。", "note": "人材を比喩的にassetと呼ぶ用法にも注意。対義語liability（負債）。"},
+    {"en": "statement", "pos": "名", "ja": "明細書", "ex": "Your monthly bank statement is now available on our website.", "exJa": "月次銀行明細書は現在弊社のウェブサイトでご覧いただけます。", "note": "account statement（口座明細書）。類義語report, summary。"}
   ]
 });
