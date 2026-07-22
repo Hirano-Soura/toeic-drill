@@ -46,10 +46,13 @@
   #scorebar button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 12px;cursor:pointer}
   .empty{color:var(--sub);text-align:center;margin-top:60px}
   small.src{color:var(--sub)}
+  .hublink{display:inline-block;font-size:12px;color:#6b7280;text-decoration:none;margin-bottom:6px}
+  .hublink:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 <header>
+  <a class="hublink" id="hublink" href="/">&larr; ポータル一覧</a>
   <h1>TOEIC デイリー演習ビューア</h1>
   <div id="tabs"></div>
 </header>
@@ -201,6 +204,9 @@ probe().then(function(){
   currentIdx=days.length?days.length-1:0;
   buildTabs(); renderDay(currentIdx);
 });
+
+// ハブへの戻りリンク（ローカルで開いたときはファイルパスに切り替える）
+(function(){var a=document.getElementById('hublink');if(a&&location.protocol==='file:')a.href='../../ハブ/index.html';})();
 </script>
 </body>
 </html>

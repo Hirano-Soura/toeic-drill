@@ -62,10 +62,13 @@
   .pq .stem{font-weight:600;margin-bottom:8px}
   .pq .expl{display:none;margin-top:8px;font-size:14px;color:#374151;border-top:1px dashed var(--line);padding-top:8px}
   .pq .reveal{font-size:12px;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;margin-top:6px}
+  .hublink{display:inline-block;font-size:12px;color:#6b7280;text-decoration:none;margin-bottom:6px}
+  .hublink:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 <header>
+  <a class="hublink" id="hublink" href="/">&larr; ポータル一覧</a>
   <h1>TOEIC 単語ドリル</h1>
   <nav>
     <button id="m_list" class="active" onclick="setMode('list')">一覧</button>
@@ -344,6 +347,9 @@ probe().then(function(){
   sel.innerHTML=h;
   render();
 });
+
+// ハブへの戻りリンク（ローカルで開いたときはファイルパスに切り替える）
+(function(){var a=document.getElementById('hublink');if(a&&location.protocol==='file:')a.href='../../ハブ/index.html';})();
 </script>
 </body>
 </html>
