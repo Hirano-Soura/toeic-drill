@@ -128,6 +128,13 @@ window.__addVocab({
     {"en": "utility", "pos": "名", "ja": "公共料金、(電気・ガス・水道などの)設備", "ex": "The monthly rent includes all utilities such as water and electricity.", "exJa": "毎月の家賃には水道や電気などすべての公共料金が含まれています。", "note": "通例複数形utilitiesで電気・ガス・水道を指す。utility bill(公共料金の請求書)。"},
     {"en": "custodian", "pos": "名", "ja": "管理人、用務員、守衛", "ex": "The custodian locks all the doors at the end of the day.", "exJa": "用務員は一日の終わりにすべてのドアに施錠します。", "note": "類義語: janitor, caretaker。建物の清掃・管理を担う人。"},
     {"en": "corridor", "pos": "名", "ja": "廊下、通路", "ex": "Please do not leave boxes in the corridor, as they block the exit.", "exJa": "出口をふさぐため、廊下に箱を置かないでください。", "note": "類義語: hallway, passage。図面・避難経路の説明で頻出。"}
+  ],
+  "phrases": [
+    {"en": "be in charge of", "pos": "句", "ja": "～を担当している、～の責任者である", "ex": "Ms. Alvarez is in charge of building maintenance on the third floor.", "exJa": "アルバレスさんは3階の建物保守を担当しています。", "note": "of の後は名詞か動名詞。類義=be responsible for / oversee。Part 5では in charge of ↔ in the charge of(～に管理されて)の違い、および of を other 前置詞に置き換える誤答に注意。"},
+    {"en": "carry out", "pos": "句", "ja": "（計画・作業・検査を）実施する、遂行する", "ex": "The vendor will carry out a safety inspection of all the elevators.", "exJa": "業者が全エレベーターの安全点検を実施します。", "note": "類義=conduct / perform / implement。目的語が代名詞のときは carry it out の語順になる分離型句動詞。受動態 be carried out も頻出。"},
+    {"en": "prevent A from -ing", "pos": "句", "ja": "Aが～するのを妨げる、Aに～させない", "ex": "The new lock prevents visitors from entering the storage area without a pass.", "exJa": "新しい錠により、来訪者は許可証なしでは倉庫区域に入れません。", "note": "from の後は必ず動名詞(to do は誤り)。類義=keep A from -ing / stop A from -ing。Part 5では from の有無と -ing 形が空所になります。"},
+    {"en": "be scheduled to do", "pos": "句", "ja": "～する予定である", "ex": "The renovation is scheduled to begin on the first Monday of next month.", "exJa": "改修は来月の第1月曜に始まる予定です。", "note": "名詞が続く場合は be scheduled for（例: be scheduled for Monday）。類義=be slated to do / be due to do。Part 5では to do か for か、動詞の形かが問われます。"},
+    {"en": "on a regular basis", "pos": "句", "ja": "定期的に", "ex": "The custodian checks the corridor lighting on a regular basis.", "exJa": "管理人は廊下の照明を定期的に点検しています。", "note": "類義=regularly / periodically / at regular intervals。basis の前の a を落とす誤答に注意。on a daily/weekly/monthly basis と応用できます。"}
   ]
 });
 window.__addVocab({
@@ -150,5 +157,12 @@ window.__addVocab({
     {"en": "voucher", "pos": "名", "ja": "引換券、クーポン", "ex": "A voucher for breakfast is included with your booking.", "exJa": "予約には朝食の引換券が含まれています。", "note": "類義語=coupon。goods や services と引き換えられる証票"},
     {"en": "reception", "pos": "名", "ja": "受付、フロント", "ex": "Show your reservation number at the reception desk.", "exJa": "受付で予約番号を提示してください。", "note": "類義語=front desk。「歓迎会・受信」の意味もある多義語"},
     {"en": "delay", "pos": "名", "ja": "遅延、遅れ", "ex": "The airline will notify you in case of a delay.", "exJa": "遅延の場合、航空会社が知らせてくれます。", "note": "類義語=postponement / hold-up。動詞でも「遅らせる」。delay ↔ postpone の言い換えに注意"}
+  ],
+  "phrases": [
+    {"en": "look forward to -ing", "pos": "句", "ja": "～を楽しみに待つ", "ex": "We look forward to welcoming you at the Chicago branch next week.", "exJa": "来週シカゴ支店でお迎えできるのを楽しみにしています。", "note": "この to は前置詞なので後ろは名詞か動名詞。to welcome は誤り。Part 5の定番トラップです。メールの結びで頻出。"},
+    {"en": "check in", "pos": "句", "ja": "（ホテル・空港で）チェックインする、搭乗手続きをする", "ex": "Please check in at the reception desk before six o'clock.", "exJa": "6時までに受付でチェックインしてください。", "note": "反意=check out。ホテルは check in at ～、荷物は check in your luggage（他動詞用法）。名詞形は check-in（ハイフン付き。check-in counter）。"},
+    {"en": "be supposed to do", "pos": "句", "ja": "～することになっている、～するはずだ", "ex": "Passengers are supposed to board the plane 30 minutes before departure.", "exJa": "乗客は出発の30分前に搭乗することになっています。", "note": "規則・取り決めによる予定を表します。類義=be expected to do / be required to do。過去形 was supposed to は「～するはずだったのに（しなかった）」の含みが出ます。"},
+    {"en": "in case of", "pos": "句", "ja": "～の場合には、～に備えて", "ex": "In case of a delay, the airline will send a message to your phone.", "exJa": "遅延の場合、航空会社がお電話にメッセージを送ります。", "note": "後ろは名詞。節が続くときは in case（+ S V）で「～するといけないから」。類義=in the event of。Part 6の接続表現問題で狙われます。"},
+    {"en": "pick up", "pos": "句", "ja": "（車で）迎えに行く、（物を）受け取る", "ex": "A hotel shuttle will pick you up at the airport terminal.", "exJa": "ホテルの送迎バスが空港ターミナルまでお迎えに上がります。", "note": "分離型句動詞で、代名詞は必ず間に入れます（pick you up。pick up you は誤り）。反意=drop off。「受け取る」の意味では pick up your voucher のようにも使います。"}
   ]
 });

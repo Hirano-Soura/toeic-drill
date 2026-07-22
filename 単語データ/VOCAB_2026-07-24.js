@@ -18,5 +18,12 @@ window.__addVocab({
     {"en": "voucher", "pos": "名", "ja": "引換券、クーポン", "ex": "A voucher for breakfast is included with your booking.", "exJa": "予約には朝食の引換券が含まれています。", "note": "類義語=coupon。goods や services と引き換えられる証票"},
     {"en": "reception", "pos": "名", "ja": "受付、フロント", "ex": "Show your reservation number at the reception desk.", "exJa": "受付で予約番号を提示してください。", "note": "類義語=front desk。「歓迎会・受信」の意味もある多義語"},
     {"en": "delay", "pos": "名", "ja": "遅延、遅れ", "ex": "The airline will notify you in case of a delay.", "exJa": "遅延の場合、航空会社が知らせてくれます。", "note": "類義語=postponement / hold-up。動詞でも「遅らせる」。delay ↔ postpone の言い換えに注意"}
+  ],
+  "phrases": [
+    {"en": "look forward to -ing", "pos": "句", "ja": "～を楽しみに待つ", "ex": "We look forward to welcoming you at the Chicago branch next week.", "exJa": "来週シカゴ支店でお迎えできるのを楽しみにしています。", "note": "この to は前置詞なので後ろは名詞か動名詞。to welcome は誤り。Part 5の定番トラップです。メールの結びで頻出。"},
+    {"en": "check in", "pos": "句", "ja": "（ホテル・空港で）チェックインする、搭乗手続きをする", "ex": "Please check in at the reception desk before six o'clock.", "exJa": "6時までに受付でチェックインしてください。", "note": "反意=check out。ホテルは check in at ～、荷物は check in your luggage（他動詞用法）。名詞形は check-in（ハイフン付き。check-in counter）。"},
+    {"en": "be supposed to do", "pos": "句", "ja": "～することになっている、～するはずだ", "ex": "Passengers are supposed to board the plane 30 minutes before departure.", "exJa": "乗客は出発の30分前に搭乗することになっています。", "note": "規則・取り決めによる予定を表します。類義=be expected to do / be required to do。過去形 was supposed to は「～するはずだったのに（しなかった）」の含みが出ます。"},
+    {"en": "in case of", "pos": "句", "ja": "～の場合には、～に備えて", "ex": "In case of a delay, the airline will send a message to your phone.", "exJa": "遅延の場合、航空会社がお電話にメッセージを送ります。", "note": "後ろは名詞。節が続くときは in case（+ S V）で「～するといけないから」。類義=in the event of。Part 6の接続表現問題で狙われます。"},
+    {"en": "pick up", "pos": "句", "ja": "（車で）迎えに行く、（物を）受け取る", "ex": "A hotel shuttle will pick you up at the airport terminal.", "exJa": "ホテルの送迎バスが空港ターミナルまでお迎えに上がります。", "note": "分離型句動詞で、代名詞は必ず間に入れます（pick you up。pick up you は誤り）。反意=drop off。「受け取る」の意味では pick up your voucher のようにも使います。"}
   ]
 });

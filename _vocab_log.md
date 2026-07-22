@@ -1,6 +1,7 @@
 # TOEIC 単語ドリル 出題済み単語ログ
 
-各行の形式: `単語 | YYYY-MM-DD`。新しい単語を選ぶ前にこのログを確認し、重複を避けること。
+各行の形式: `単語 | YYYY-MM-DD`。句表現は `[句] 句表現 | YYYY-MM-DD`。
+新しい単語・句表現を選ぶ前にこのログを確認し、重複を避けること。
 
 invoice | 2026-07-18
 itinerary | 2026-07-18
@@ -107,3 +108,13 @@ shuttle | 2026-07-24
 voucher | 2026-07-24
 reception | 2026-07-24
 delay | 2026-07-24
+[句] be in charge of | 2026-07-23
+[句] carry out | 2026-07-23
+[句] prevent A from -ing | 2026-07-23
+[句] be scheduled to do | 2026-07-23
+[句] on a regular basis | 2026-07-23
+[句] look forward to -ing | 2026-07-24
+[句] check in | 2026-07-24
+[句] be supposed to do | 2026-07-24
+[句] in case of | 2026-07-24
+[句] pick up | 2026-07-24
