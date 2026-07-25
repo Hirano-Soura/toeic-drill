@@ -118,3 +118,83 @@ delay | 2026-07-24
 [句] be supposed to do | 2026-07-24
 [句] in case of | 2026-07-24
 [句] pick up | 2026-07-24
+agenda | 2026-07-25
+attendee | 2026-07-25
+venue | 2026-07-25
+keynote | 2026-07-25
+registration | 2026-07-25
+session | 2026-07-25
+handout | 2026-07-25
+moderator | 2026-07-25
+refreshments | 2026-07-25
+auditorium | 2026-07-25
+brochure | 2026-07-25
+exhibit | 2026-07-25
+badge | 2026-07-25
+catering | 2026-07-25
+workshop | 2026-07-25
+[句] sign up for | 2026-07-25
+[句] take part in | 2026-07-25
+[句] hand out | 2026-07-25
+[句] take place | 2026-07-25
+[句] refrain from -ing | 2026-07-25
+complaint | 2026-07-26
+apologize | 2026-07-26
+defective | 2026-07-26
+replacement | 2026-07-26
+courteous | 2026-07-26
+representative | 2026-07-26
+inconvenience | 2026-07-26
+satisfaction | 2026-07-26
+resolve | 2026-07-26
+exchange | 2026-07-26
+prompt | 2026-07-26
+compensation | 2026-07-26
+dissatisfied | 2026-07-26
+policy | 2026-07-26
+assistance | 2026-07-26
+[句] apologize for -ing | 2026-07-26
+[句] deal with | 2026-07-26
+[句] get in touch with | 2026-07-26
+[句] free of charge | 2026-07-26
+[句] look into | 2026-07-26
+manufacture | 2026-07-27
+assembly | 2026-07-27
+component | 2026-07-27
+plant | 2026-07-27
+output | 2026-07-27
+productivity | 2026-07-27
+specification | 2026-07-27
+durable | 2026-07-27
+malfunction | 2026-07-27
+flaw | 2026-07-27
+certify | 2026-07-27
+streamline | 2026-07-27
+shift | 2026-07-27
+quota | 2026-07-27
+compliance | 2026-07-27
+[句] comply with | 2026-07-27
+[句] be equipped with | 2026-07-27
+[句] result in | 2026-07-27
+[句] keep track of | 2026-07-27
+[句] shut down | 2026-07-27
+install | 2026-07-28
+upgrade | 2026-07-28
+compatible | 2026-07-28
+access | 2026-07-28
+technician | 2026-07-28
+troubleshoot | 2026-07-28
+downtime | 2026-07-28
+glitch | 2026-07-28
+restore | 2026-07-28
+migrate | 2026-07-28
+implement | 2026-07-28
+authorize | 2026-07-28
+subscription | 2026-07-28
+outage | 2026-07-28
+secure | 2026-07-28
+[句] log in to | 2026-07-28
+[句] back up | 2026-07-28
+[句] be compatible with | 2026-07-28
+[句] take effect | 2026-07-28
+[句] in advance | 2026-07-28

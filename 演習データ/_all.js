@@ -490,3 +490,348 @@ window.__addDrill({
     }
   ]
 });
+window.__addDrill({
+  "date": "2026-07-24",
+  "track": "R",
+  "topicNo": "R2",
+  "field": "Part 7",
+  "topic": "詳細問題とスキャニング（探し読み）",
+  "progressDone": 13,
+  "progressTotal": 40,
+  "lecture": "## 要点\nPart 7 の設問で最も数が多いのが **詳細問題**です。「いつ」「いくら」「どこで」「誰に連絡するか」「何をするよう求められているか」のように、本文の**一箇所に答えが書いてある**タイプを指します。ここは本文を頭から全部読む必要がありません。設問のキーワードを手がかりに、該当箇所だけを探し当てる **スキャニング（探し読み）** で処理します。R165 の底上げでは、この型を落とさないことが最優先です。\n\n## 解く手順（この順番を固定します）\n1. **設問を先に読む**。探すべきキーワードを1〜2語に絞ります（固有名詞・日付・金額・数字など、本文で目立つもの）。\n2. **本文を走査する**。意味を取ろうとせず、キーワードの「形」を目で探します。文の意味は探し当ててから読みます。\n3. **見つけた文とその前後1文を精読する**。答えは見つけた文そのものか、直後の文にあります。\n4. **選択肢と照合する**。正解は本文の**言い換え**であることがほとんどです。\n\n## スキャニングで狙う目印\n- **数字・日付・時刻・金額**: `30 September`、`£195`、`10:00 A.M.` はページ上で目立ちます。\n- **固有名詞**（人名・会社名・部署名・地名）: 大文字で始まるので視覚的に拾いやすいです。\n- **記号**: `@`（メールアドレス）、`%`、`#`（注文番号）、`$` `£`。\n- **文書の構造**: 見出し、箇条書き、最後の段落の連絡先。連絡先は**末尾**にある、という前提で探すと速くなります。\n\n## 設問文の型（見た瞬間に詳細問題と判断する）\n- `When must ... be submitted?` / `By what date ...?`（締切）\n- `How much will ... pay?`（金額。1回だけ計算させることがあります）\n- `Where will ... take place?`（場所）\n- `Who should be contacted about ...?`（担当者。複数の連絡先を並べる形が定番です）\n- `What are employees asked to do?`（依頼事項。命令文や `please` の近くにあります）\n\n## 言い換えの例\n- 本文: `Registration closes on 30 April.`（申込は4月30日で締め切ります）\n- 設問: `When must participants sign up?`（参加者はいつまでに申し込む必要がありますか）\n- 正解の選択肢: `By the end of April.`（4月末までに）\n\n本文の `closes on 30 April` が選択肢では `By the end of April` に置き換わっています。**本文の単語がそのまま入っている選択肢**（例: `On 30 April` ではなく、別の日付に付いていた語を流用したもの）は誤答であることが多い、と意識します。\n\n## TOEICでの狙われ方\n- **金額の計算を1回だけ挟む**: 会員価格・早期割引など、2つの数字を組み合わせて答えさせます。\n- **担当者の振り分け**: 「内容についてはAさん、支払いについてはB部署」のように書き分け、設問で片方だけを聞きます。\n- **例外の明示**: `include ... but not ...`（〜は含むが〜は含まない）の後半が答えになります。\n\n## 間違えやすい点\n- **最初に見つけた数字に飛びつく**。本文には無関係な数字が複数置かれます。設問が聞いている条件（会員か、いつ申し込むか）と一致するか必ず確認します。\n- **締切と開催日の取り違え**。日付が複数あるときは、どの動詞に係る日付かを見ます。\n- **主語の取り違え**。「誰がするのか」を確認せずに動作だけ合わせると外します。\n- **選択肢の語だけで照合する**。必ず該当文に戻って読みます。\n\n## CAT対策（基礎を確実に取る）\nIPオンラインは前半の正答率で後半の難易度と天井が決まります。詳細問題は Part 7 の中で**最も安定して取れる型**です。全文を読まず、キーワードで場所を特定 → 該当文だけ精読、という流れなら1問30〜40秒で処理できます。速く確実に取れる問題を積み上げることが、時間の足りない後半を救います。",
+  "sections": [
+    {
+      "title": "例題",
+      "groups": [
+        {
+          "passage": "Questions 1-2 refer to the following e-mail.\n\nTo: All Regional Staff\nFrom: Nadia Okonkwo <n.okonkwo@brightpath-consulting.com>\nDate: 24 July\nSubject: Software Training Sessions\n\nDear colleagues,\n\nThe IT Department will hold training sessions on our new expense-reporting system, ClearFile, during the first week of August. Each session lasts 90 minutes and will be held in Meeting Room B on the fourth floor.\n\nSessions are scheduled for Monday, August 3 at 10:00 A.M., Wednesday, August 5 at 2:00 P.M., and Friday, August 7 at 9:30 A.M. Because seating is limited to fifteen people per session, please reserve a place by replying to this message with your preferred date. Reservations must be received by Thursday, July 30.\n\nStaff members who are unable to attend in person may request a recorded version of the session from Daniel Reyes in the IT Department.\n\nNadia Okonkwo\nOffice Manager",
+          "passageJa": "設問1-2は次のEメールに関するものです。\n\n宛先: 各地域の全社員\n差出人: ナディア・オコンクウォ\n日付: 7月24日\n件名: ソフトウェア研修について\n\n皆様\n\nIT部門が、新しい経費精算システム「ClearFile」の研修を8月第1週に実施します。各回90分で、4階の会議室Bで行います。\n\n日程は8月3日(月)午前10時、8月5日(水)午後2時、8月7日(金)午前9時30分です。各回の定員は15名のため、このメールに希望日を返信して席を予約してください。予約は7月30日(木)必着です。\n\n対面で参加できない社員は、IT部門のダニエル・レイエスに録画版を請求できます。\n\nナディア・オコンクウォ\nオフィスマネージャー",
+          "items": [
+            {
+              "q": "Where will the training sessions be held?",
+              "choices": [
+                "At the IT Department's office",
+                "In a meeting room on the fourth floor",
+                "At a regional branch",
+                "In an online classroom"
+              ],
+              "answer": 1,
+              "ja": "研修はどこで行われますか。（正解: B 4階の会議室）",
+              "expl": "設問のキーワードは Where。第1段落末に「held in Meeting Room B on the fourth floor」とあり、(B) がその言い換えです。(A) IT Department は研修を主催する部署で、場所ではありません。(C) regional staff（宛先）から作った引っかけ、(D) 録画版の記述はありますがオンライン開催とは書かれていません。"
+            },
+            {
+              "q": "What are staff members asked to do by July 30?",
+              "choices": [
+                "Submit an expense report",
+                "Indicate which session they will attend",
+                "Contact Daniel Reyes",
+                "Attend a 90-minute meeting"
+              ],
+              "answer": 1,
+              "ja": "社員は7月30日までに何をするよう求められていますか。（正解: B どの回に出席するかを知らせる）",
+              "expl": "日付 July 30 で走査すると第2段落末に到達し、その直前に「please reserve a place by replying to this message with your preferred date」とあります。(B) はこの言い換えです。(A) expense-reporting system は研修の題材で、報告書の提出は求められていません。(C) レイエス氏への連絡は「参加できない場合」の話で、期限とは無関係です。(D) 90分は各回の長さで、7月30日までの依頼事項ではありません。"
+            }
+          ]
+        },
+        {
+          "passage": "Questions 3-5 refer to the following notice.\n\nRiverside Business Forum — Registration Notice\n\nThe eleventh annual Riverside Business Forum will take place at the Halden Convention Centre from 12 to 14 October. This year's programme focuses on sustainable logistics and includes forty workshops led by specialists from across the region.\n\nRegistration\nStandard registration is £280. Members of the Riverside Chamber of Commerce pay a reduced rate of £195. Registrations submitted before 15 September receive an additional £30 discount, which is applied automatically at checkout. All rates include lunch on the first two days but not on the final day, when the Forum closes at 12:30 P.M.\n\nAccommodation\nThe Convention Centre does not operate a hotel. However, participants may reserve rooms at the nearby Marlow Inn at a special rate by entering the code RBF11 on the hotel's website. Rooms held at this rate are released to the general public on 20 September.\n\nEnquiries about the programme should be directed to Priya Vance (p.vance@riversideforum.org). Questions concerning payment should be sent to the finance office at accounts@riversideforum.org.",
+          "passageJa": "設問3-5は次のお知らせに関するものです。\n\nリバーサイド・ビジネスフォーラム 参加申込のご案内\n\n第11回リバーサイド・ビジネスフォーラムを10月12日から14日まで、ハルデン・コンベンションセンターで開催します。今年のテーマは持続可能な物流で、地域各地の専門家による40のワークショップを実施します。\n\n参加費\n通常料金は280ポンドです。リバーサイド商工会議所の会員は割引料金の195ポンドです。9月15日より前の申込にはさらに30ポンドの割引が適用され、これは精算時に自動で反映されます。いずれの料金にも最初の2日間の昼食が含まれますが、最終日は含まれません。最終日は12時30分に終了します。\n\n宿泊\nコンベンションセンターはホテルを運営していません。ただし、参加者は近隣のマーロー・インのウェブサイトでコード RBF11 を入力すると特別料金で部屋を予約できます。この料金で確保された部屋は9月20日に一般販売へ切り替わります。\n\nプログラムに関するお問い合わせはプリヤ・ヴァンス宛、支払いに関するお問い合わせは経理部宛にお願いします。",
+          "items": [
+            {
+              "q": "How much will a member of the Riverside Chamber of Commerce pay if he or she registers on 1 September?",
+              "choices": [
+                "£165",
+                "£195",
+                "£250",
+                "£280"
+              ],
+              "answer": 0,
+              "ja": "リバーサイド商工会議所の会員が9月1日に申し込むと、いくら支払いますか。（正解: A 165ポンド）",
+              "expl": "条件が2つあります。会員なので £195、さらに 9月1日は 15 September より前なので £30 の追加割引が適用され、195 − 30 = £165 です。(D) £280 は非会員の通常料金、(B) £195 は割引前の会員料金、(C) £250 は 280 − 30（非会員が早期に申し込んだ場合）で、会員である条件を落とすと選んでしまいます。最初に見つけた数字で答えず、設問の条件を全部満たすか確認します。"
+            },
+            {
+              "q": "What is indicated about the final day of the Forum?",
+              "choices": [
+                "It is open only to Chamber of Commerce members.",
+                "A meal is not provided.",
+                "It begins at 12:30 P.M.",
+                "It takes place at the Marlow Inn."
+              ],
+              "answer": 1,
+              "ja": "フォーラムの最終日について何が示されていますか。（正解: B 食事は提供されない）",
+              "expl": "final day で走査すると Registration 欄の最後の文に当たります。「include lunch on the first two days but not on the final day」とあり、最終日は昼食が含まれません。(B) の a meal is not provided がその言い換えです。(C) は 12:30 P.M. を流用した誤答で、本文は closes at 12:30（終了時刻）です。(A) 会員に関する記述は料金だけ、(D) マーロー・インは宿泊先で会場ではありません。"
+            },
+            {
+              "q": "Who should be contacted with a question about the registration fee?",
+              "choices": [
+                "Priya Vance",
+                "The Marlow Inn",
+                "The finance office",
+                "The Riverside Chamber of Commerce"
+              ],
+              "answer": 2,
+              "ja": "参加費についての質問は誰に連絡すべきですか。（正解: C 経理部）",
+              "expl": "連絡先は文書の末尾にある、という前提で最終段落を見ます。「Questions concerning payment should be sent to the finance office」とあり、参加費＝支払いに関する質問なので (C)。(A) ヴァンス氏はプログラム（内容）の担当で、人名が先に出てくるため飛びつきやすい定番の誤答です。(B) は宿泊、(D) は会員割引に名前が出るだけで問い合わせ先ではありません。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "復習: 比較（原級・比較級・最上級）（1回前 2026-07-22）",
+      "groups": [
+        {
+          "items": [
+            {
+              "q": "The updated software processes invoices ______ than the previous version.",
+              "choices": [
+                "more quickly",
+                "most quickly",
+                "as quickly",
+                "quickly"
+              ],
+              "answer": 0,
+              "ja": "更新されたソフトウェアは、旧バージョンより速く請求書を処理します。（正解: more quickly）",
+              "expl": "後ろに than があるので比較級。動詞 processes を修飾するため副詞の比較級 more quickly です。(B) は最上級で than と組みません。(C) as quickly は as ... as の形が必要、(D) は原級で than と結び付きません。"
+            },
+            {
+              "q": "Of all the proposals submitted last month, Mr. Tanaka's was ______.",
+              "choices": [
+                "the most persuasive",
+                "more persuasive",
+                "most persuasively",
+                "as persuasive"
+              ],
+              "answer": 0,
+              "ja": "先月提出された全提案の中で、田中氏のものが最も説得力がありました。（正解: the most persuasive）",
+              "expl": "「Of all the proposals」が範囲を示すので最上級 the most persuasive。(B) は比較級で than が必要、(C) は副詞で be動詞の補語になれません、(D) は as ... as の後半が欠けています。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "復習: 文書タイプの見取り図と主旨問題（3回前 2026-07-17）",
+      "groups": [
+        {
+          "passage": "Refer to the following e-mail.\n\nTo: Gregory Lam\nFrom: Customer Service, Portlee Appliances\nSubject: Order #48219\n\nDear Mr. Lam,\n\nThank you for your recent order. Unfortunately, the item you selected, the Portlee X3 blender, is temporarily out of stock and will not be available until 10 August. We can either hold your order until that date or send you the X4 model, which has the same features and a two-year warranty, at no additional cost.\n\nPlease let us know which option you prefer within five business days. If we do not hear from you, we will hold your order.\n\nSincerely,\nCustomer Service Team",
+          "passageJa": "次のEメールに関する問題です。\n\n宛先: グレゴリー・ラム\n差出人: ポートリー家電 カスタマーサービス\n件名: 注文番号48219\n\nラム様\n\nご注文ありがとうございます。あいにく、お選びいただいたポートリーX3ブレンダーは一時的に在庫切れで、8月10日まで入荷いたしません。ご注文をその日までお預かりするか、同等の機能と2年保証が付くX4モデルを追加費用なしでお送りするかをお選びいただけます。\n\n5営業日以内にご希望をお知らせください。ご連絡がない場合はご注文をお預かりします。\n\nカスタマーサービス",
+          "items": [
+            {
+              "q": "What is the purpose of the e-mail?",
+              "choices": [
+                "To confirm that an item has been shipped",
+                "To inform a customer that a product is unavailable",
+                "To announce a reduction in prices",
+                "To request payment for an order"
+              ],
+              "answer": 1,
+              "ja": "このEメールの目的は何ですか。（正解: B 商品が入手できないことを客に知らせるため）",
+              "expl": "主旨は冒頭の Unfortunately 以下にあります。「temporarily out of stock」＝在庫切れの通知が用件です。(A) 発送の確認ではなく発送できない連絡、(C) 値下げの記述はなく at no additional cost は代替品の条件、(D) 支払いの請求もしていません。"
+            },
+            {
+              "q": "What will happen if Mr. Lam does not reply?",
+              "choices": [
+                "His order will be canceled.",
+                "He will be sent the X4 model.",
+                "His order will be kept until the item arrives.",
+                "He will receive a refund."
+              ],
+              "answer": 2,
+              "ja": "ラム氏が返信しなかった場合、どうなりますか。（正解: C 商品が入荷するまで注文が保留される）",
+              "expl": "最終段落の「If we do not hear from you, we will hold your order.」が該当箇所です。(B) X4 の発送は本人が選んだ場合、(A) キャンセルや (D) 返金には言及がありません。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "復習: 関係代名詞（7回前 2026-07-08）",
+      "groups": [
+        {
+          "items": [
+            {
+              "q": "The consultant ______ report was published last week will speak at the annual meeting.",
+              "choices": [
+                "who",
+                "whose",
+                "which",
+                "whom"
+              ],
+              "answer": 1,
+              "ja": "先週報告書が公表されたコンサルタントが、年次総会で講演します。（正解: whose）",
+              "expl": "空所の直後が冠詞のない名詞 report で、「そのコンサルタントの報告書」という所有関係なので所有格の whose。(A) who は主格で直後に動詞が必要、(C) which は先行詞が人なので不可、(D) whom は目的格です。"
+            },
+            {
+              "q": "Employees ______ complete the safety course by the end of the month will receive a certificate.",
+              "choices": [
+                "who",
+                "whose",
+                "which",
+                "what"
+              ],
+              "answer": 0,
+              "ja": "今月末までに安全講習を修了した社員は修了証を受け取ります。（正解: who）",
+              "expl": "先行詞 Employees は人で、空所の直後が動詞 complete なので主格の who。(B) whose は後ろに名詞が必要、(C) which は先行詞が人のとき使えません、(D) what は先行詞を取りません。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+});
+window.__addDrill({
+  "date": "2026-07-26",
+  "track": "L",
+  "topicNo": "L2",
+  "field": "Part 2",
+  "topic": "Yes/No・付加疑問・間接応答",
+  "progressDone": 14,
+  "progressTotal": 40,
+  "lecture": "## 要点\n前回(L1)はWH疑問文を扱いました。今回はもう一方の柱である **Yes/No疑問文**、**付加疑問文**、**否定疑問文**、そして近年出題が増えている **間接応答** を扱います。WH疑問文が「Yes/Noで答える選択肢は原則消去」という強い機械的ルールで解けたのに対し、この型は **Yes/Noで答えてよい** ため、消去の手がかりが1つ減ります。そのぶん「Yes/Noの後ろの内容が質問と噛み合っているか」を最後まで確認する習慣が得点差になります。音声なしのスクリプト読解形式ですが、判断の型は聞き取り時とまったく同じです。\n\n## ルールと型\n1. **Yes/No疑問文**は Do / Does / Did / Have / Has / Is / Are / Can / Will / Would などで文が始まります。基本形は `Yes, + 補足` または `No, + 補足` です。ここで重要なのは、**Yes/Noそのものではなく後続の内容で正誤が決まる**という点です。'Yes' が聞こえた瞬間に選んでしまうのが最大の失点源です。\n2. **付加疑問文**は `..., isn't it? / ..., didn't he? / ..., have they?` のように文末に短い疑問形が付く形で、確認や同意を求めます。答え方は普通のYes/No疑問文とまったく同じで、**タグ部分の肯定・否定に引きずられる必要はありません**。文の主節が示す内容について、事実がその通りならYes、違うならNoです。\n3. **否定疑問文**(`Aren't you...? / Didn't she...? / Haven't they...?`)は、日本語と答えの向きが逆になります。英語では **notを無視して事実だけで判断**し、「する・した」ならYes、「しない・しなかった」ならNoです。\n   - 例: 'Aren't you attending the workshop?'(ワークショップに出ないのですか) → 出ないなら 'No, I have another meeting.' 日本語の「はい、出ません」につられて 'Yes' を選ぶと誤答になります。\n4. **間接応答**は、Yes/Noを一切言わずに応じる型です。「まだ決まっていない」「担当者に聞いてほしい」「実は状況が違う」「確認してみます」などが該当し、TOEICの正解の相当数がこの型です。直接答えていないからという理由で消してはいけません。\n5. 間接応答には合図となる定型表現があります。`Actually, ...` / `I'm afraid ...` / `Let me check.` / `It hasn't been decided yet.` / `You'd have to ask ...` / `Not that I know of.` これらが選択肢の先頭にある場合、内容が質問と論理的につながるかを優先的に検討します。\n6. **Yes/Noの形をしていても内部矛盾している選択肢は誤り**です。例えば 'Yes, they haven't.' は Yes と否定の内容が食い違っており、この時点で消去できます。\n\n## 例文\n1) Q: 'Have you submitted the expense report yet?'\n   A: 'Yes, I sent it this morning.'\n   和訳: 「経費報告書はもう提出しましたか。」「はい、今朝送りました。」\n   Yes + 具体的な補足という直接応答の基本形です。\n\n2) Q: 'Aren't you going to the client dinner tonight?'\n   A: 'No, I have to finish the budget report.'\n   和訳: 「今夜の顧客との会食には行かないのですか。」「ええ(行きません)、予算報告書を仕上げないといけないので。」\n   否定疑問文です。行かないという事実に対して英語では No を使います。日本語の相づちの感覚とずれる代表例です。\n\n3) Q: 'Do you know when the shipment will arrive?'\n   A: 'The tracking page hasn't been updated yet.'\n   和訳: 「荷物がいつ到着するかご存じですか。」「追跡ページがまだ更新されていないんです。」\n   Yes/Noを言わずに「まだわからない」を示す間接応答です。\n\n4) Q: 'The invoices haven't been approved yet, have they?'\n   A: 'Actually, Ms. Reyes signed off on them yesterday.'\n   和訳: 「請求書はまだ承認されていませんよね。」「実は、レイエスさんが昨日承認しました。」\n   付加疑問文に対して、`Actually` で前提を訂正する間接応答です。\n\n## TOEICでの狙われ方\n- Part 2 の25問のうち、Yes/No系(付加疑問・否定疑問を含む)はWH疑問文に次ぐ大きな割合を占めます。\n- 誤答選択肢の主な型は4つです。(1)Yes/Noの後ろの内容が質問と無関係、(2)質問文中の単語をそのまま流用した音の連想トラップ、(3)別の疑問詞への応答(where を聞かれていないのに場所で答える等)、(4)Yes/Noと後続内容が矛盾する形('Yes, they haven't.' など)。\n- 否定疑問文と付加疑問文は「答えの向き」を混乱させる目的で使われます。実際には主節の内容だけを見れば普通のYes/No疑問文と同じで、形に惑わされないことが要点です。\n- 間接応答は難易度の高い問題ほど正解になりやすく、直接的なYes/No応答のほうが罠になっているケースがあります。\n- `Do you know / Could you tell me + WH節` の形は、外枠はYes/No疑問文ですが、実質的にはWHの情報を求めています。Yesだけの応答も、WHの情報を示す応答も、どちらも正解になり得ます。\n\n## 間違えやすい点\n- 'Yes' や 'No' という語だけを手がかりに選び、後続の内容が質問と噛み合っていないことを見落とします。**Yes/Noは正誤の根拠になりません**。\n- 否定疑問文で日本語の感覚のまま Yes/No を選んでしまいます。notを消して読む癖を付けます。\n- 付加疑問文のタグ(`have they?` `didn't he?`)の肯定・否定に引きずられ、答えの向きを反転させてしまいます。\n- 間接応答を「質問に直接答えていないから誤り」と判断して消してしまいます。近年はこれが正解の中心です。\n- 質問文中の単語(report, meeting, shipment など)がそのまま出てくる選択肢に安心して飛びつきます。\n\n## CAT対策: この型は確実に取る\nIPオンラインのCAT方式では、前半の正答率が後半に出題される問題の難易度と到達可能な上限点を左右します。Yes/No系の応答問題は、次の3ステップを反射的に処理できれば基礎レベルを確実に取り切れる型です。(1)**冒頭の助動詞・be動詞を聞いた瞬間にYes/No系だと判定する**。(2)**否定疑問・付加疑問は not とタグを消し、主節の内容だけで事実判断する**。(3)**Yes/Noの語ではなく、その後ろの内容が質問と噛み合うかで最終判定する**。加えて、`Actually` `I'm afraid` `Let me check` `It hasn't been decided yet` といった間接応答の定型表現を「正解候補のサイン」として覚えておくと、迷う時間そのものを減らせます。基礎問題での取りこぼしをゼロに近づけることが、後半の高難度問題に到達する土台になります。",
+  "sections": [
+    {
+      "title": "例題",
+      "groups": [
+        {
+          "passage": "Q: Have you submitted the expense report yet?",
+          "passageJa": "問: 経費報告書はもう提出しましたか。",
+          "items": [
+            {
+              "q": "Choose the best response.",
+              "choices": ["Yes, I sent it this morning.", "It's on the third floor.", "A new accounting system.", "No, thank you."],
+              "answer": 0,
+              "ja": "最も適切な応答を選びます。正解: はい、今朝送りました。",
+              "expl": "Yes/No疑問文に対して 'Yes' + 具体的な補足('this morning'に送った)で答えたAが正解です。Bは場所を答えており'where'への応答、Cは名詞句だけで質問と噛み合いません。Dは 'No, thank you.' という申し出を断る決まり文句で、提出したかどうかを問う質問への応答としては成立しません。Yes/Noという語ではなく後続内容で判断する型の練習です。"
+            }
+          ]
+        },
+        {
+          "passage": "Q: You've worked with Ms. Patel before, haven't you?",
+          "passageJa": "問: 以前パテルさんと一緒に仕事をしたことがありますよね。",
+          "items": [
+            {
+              "q": "Choose the best response.",
+              "choices": ["Yes, on the Kelton project.", "It's near the train station.", "About fifty copies, please.", "No, I don't like it either."],
+              "answer": 0,
+              "ja": "最も適切な応答を選びます。正解: はい、ケルトン案件で一緒でした。",
+              "expl": "付加疑問文ですが、答え方は普通のYes/No疑問文と同じです。一緒に働いた事実があるので 'Yes' + 案件名という補足のAが正解です。タグの'haven't you?'が否定形であることに引きずられて向きを反転させる必要はありません。Bは場所、Cは数量の応答で質問と噛み合わず、DはNoの形をしていますが「私も好きではない」という無関係な内容で、経験の有無に答えていないため誤りです。"
+            }
+          ]
+        },
+        {
+          "passage": "Q: Aren't you going to the client dinner tonight?",
+          "passageJa": "問: 今夜の顧客との会食には行かないのですか。",
+          "items": [
+            {
+              "q": "Choose the best response.",
+              "choices": ["No, I have to finish the budget report.", "Yes, it was delicious.", "The restaurant on Fifth Avenue.", "He's our newest client."],
+              "answer": 0,
+              "ja": "最も適切な応答を選びます。正解: ええ(行きません)、予算報告書を仕上げないといけないので。",
+              "expl": "否定疑問文では not を無視し、事実だけで答えの向きを決めます。「行かない」という事実なので英語では 'No' となり、さらに理由を添えたAが正解です。日本語の「はい、行きません」の感覚でYesを選ぶと誤答になります。Bは 'Yes' の後ろが過去の感想で、これから行くかどうかの質問と噛み合いません。Cは場所、Dは人物の説明で、いずれも質問されている内容ではありません。"
+            }
+          ]
+        },
+        {
+          "passage": "Q: Do you know when the shipment will arrive?",
+          "passageJa": "問: 荷物がいつ到着するかご存じですか。",
+          "items": [
+            {
+              "q": "Choose the best response.",
+              "choices": ["The tracking page hasn't been updated yet.", "Yes, I shipped it myself.", "By express delivery.", "In warehouse B."],
+              "answer": 0,
+              "ja": "最も適切な応答を選びます。正解: 追跡ページがまだ更新されていないんです。",
+              "expl": "外枠はYes/No疑問文ですが、実質は到着時期を尋ねる質問です。Aは時期を直接答えず「追跡情報がまだ出ていない」と述べることで「わからない」を示す間接応答であり、論理的に成立するため正解です。Bは 'Yes' の後ろが「自分で発送した」という内容で、到着時期を知っているかどうかに答えていません。Cは手段('how')、Dは場所('where')への応答で、質問と噛み合いません。間接応答を「直接答えていないから誤り」と消さないことが要点です。"
+            }
+          ]
+        },
+        {
+          "passage": "Q: The invoices haven't been approved yet, have they?",
+          "passageJa": "問: 請求書はまだ承認されていませんよね。",
+          "items": [
+            {
+              "q": "Choose the best response.",
+              "choices": ["Actually, Ms. Reyes signed off on them yesterday.", "Yes, they haven't.", "To the finance department.", "It costs about two hundred dollars."],
+              "answer": 0,
+              "ja": "最も適切な応答を選びます。正解: 実は、レイエスさんが昨日承認しました。",
+              "expl": "否定文+付加疑問という組み合わせです。Aは 'Actually' で質問者の前提(まだ未承認)を訂正し、実際には承認済みであることを伝える間接応答で、正解です。Bは 'Yes' と否定内容 'they haven't' が矛盾しており、英語として成立しないため即消去できます。Cは送付先を答えており'where'への応答、Dは金額の応答で、承認済みかどうかという質問に答えていません。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "復習: 詳細問題とスキャニング（探し読み）（1回前 2026-07-24）",
+      "groups": [
+        {
+          "passage": "NOTICE: Riverside Community Center - Fall Program Registration\n\nRegistration for fall classes opens on September 1 and closes on September 20. Members may register online at riversidecc.org or in person at the front desk between 9 A.M. and 5 P.M. on weekdays. A $15 late fee applies to any registration received after September 20.\n\nPlease note that the pottery workshop has been moved from Studio B to Studio D, as repair work is currently under way in Studio B. Participants who sign up for two or more classes will receive a 10 percent discount on the total fee.",
+          "passageJa": "お知らせ: リバーサイド・コミュニティセンター 秋期プログラム登録\n\n秋期クラスの登録は9月1日に開始し、9月20日に締め切ります。会員の方はriversidecc.orgでオンライン登録するか、平日午前9時から午後5時の間に受付にて直接お申し込みいただけます。9月20日以降に受け付けた登録には15ドルの遅延手数料がかかります。\n\n陶芸ワークショップは、スタジオBで現在修繕作業を行っているため、スタジオBからスタジオDに変更となりましたのでご注意ください。2つ以上のクラスに申し込まれた方は、合計料金から10パーセントの割引を受けられます。",
+          "items": [
+            {
+              "q": "By what date must people register in order to avoid an extra charge?",
+              "choices": ["September 1", "September 15", "September 20", "October 1"],
+              "answer": 2,
+              "ja": "追加料金を避けるには、いつまでに登録する必要がありますか。正解: 9月20日。",
+              "expl": "設問の'an extra charge'は本文の'a $15 late fee'の言い換えです。'A $15 late fee applies to any registration received after September 20'から、9月20日までに登録すれば手数料はかからないと分かります。September 1は登録の開始日であり締切ではありません。September 15とOctober 1は本文に記載がありません。日付が複数出てくる文書では、その日付が何の日付かをセットで確認するのがスキャニングの基本です。"
+            },
+            {
+              "q": "Why was the pottery workshop relocated?",
+              "choices": ["Because more participants enrolled than expected", "Because repairs are being made in the original room", "Because the instructor requested a larger space", "Because the room is being used for online classes"],
+              "answer": 1,
+              "ja": "陶芸ワークショップはなぜ場所が変更されたのですか。正解: 元の部屋で修繕が行われているため。",
+              "expl": "本文の'as repair work is currently under way in Studio B'が根拠で、選択肢では'repairs are being made in the original room'と言い換えられています。Aの参加者増加、Cの講師の要望、Dのオンライン授業での使用は、いずれも本文に記載がありません。理由を問う設問では、本文中の as / because / due to / since の直後を探すのが最短ルートです。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "復習: WH疑問と応答パターン（3回前 2026-07-19）",
+      "groups": [
+        {
+          "passage": "Q: When will the renovation of the lobby be completed?",
+          "passageJa": "問: ロビーの改装はいつ完了しますか。",
+          "items": [
+            {
+              "q": "Choose the best response.",
+              "choices": ["Not until the end of the month.", "By the maintenance crew.", "Yes, it looks much better now.", "On the second floor."],
+              "answer": 0,
+              "ja": "最も適切な応答を選びます。正解: 今月末まではかかります。",
+              "expl": "'when'に対しては時を答えるのが基本パターンなので、'the end of the month'という時期を示したAが正解です。Bは'who'(誰によって)への応答、DはWH疑問文へのYes/No応答なので原則として消去し、さらにCは場所を答えており'where'への応答です。"
+            },
+            {
+              "q": "Q: Where should I send the signed contract? / Choose the best response.",
+              "choices": ["It was signed yesterday.", "To the legal department on the fifth floor.", "Yes, please go ahead.", "For about a week."],
+              "answer": 1,
+              "ja": "問: 署名済みの契約書はどこへ送ればよいですか。正解: 5階の法務部宛てです。",
+              "expl": "'where'に対しては場所を答えるのが基本パターンなので、送付先を示したBが正解です。Aは質問文中の'signed'をそのまま使った音の連想トラップで、送付先を答えていません。CはWH疑問文へのYes/No応答なので消去、Dは'how long'への応答で疑問詞の種類が違います。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "復習: 関係副詞・複合関係詞（7回前 2026-07-10）",
+      "groups": [
+        {
+          "items": [
+            {
+              "q": "The board meeting was postponed to a date ______ most of the directors are available.",
+              "choices": ["which", "when", "what", "whose"],
+              "answer": 1,
+              "ja": "取締役会は、ほとんどの取締役が出席可能な日に延期されました。",
+              "expl": "先行詞'a date'は時を表し、空所の後ろは'most of the directors are available'という主語も補語も揃った完全な文です。したがって時を表す関係副詞'when'が正解です。'which'は後ろに主語または目的語が欠けた不完全な文が続く必要があり、'what'は先行詞を取れず、'whose'は後ろに名詞が必要なため、いずれも使えません。"
+            },
+            {
+              "q": "______ you decide to relocate the office, please notify the building manager in advance.",
+              "choices": ["Whoever", "However", "Whenever", "Whatever"],
+              "answer": 2,
+              "ja": "いつオフィスを移転することにしても、事前に建物の管理者に知らせてください。",
+              "expl": "空所の後ろは'you decide to relocate the office'という完全な文で、主節との関係は「いつ〜しても」という時の譲歩です。よって複合関係副詞'whenever'が正解です。'whoever'と'whatever'は名詞節を作り、後ろの文の主語や目的語が欠けている必要があります。'however'は直後に形容詞や副詞を伴って「どれほど〜でも」の意味になるため、この語順には合いません。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+});
