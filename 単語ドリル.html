@@ -170,6 +170,29 @@ try{WEAK=JSON.parse(localStorage.getItem('toeic_vocab_weak')||'{}');}catch(e){WE
 function saveWeak(){try{localStorage.setItem('toeic_vocab_weak',JSON.stringify(WEAK));}catch(e){}}
 function toggleWeak(w,el){ if(WEAK[w]){delete WEAK[w];el.classList.remove('on');}else{WEAK[w]=1;el.classList.add('on');} saveWeak(); }
 
+// ---- 項目10: 復習ミックス（今日／n_1日前／n_2日前／よく間違える語）----
+// 調整用の定数。n は「今日と合わせて最大3日次」の制約内（過去2日まで）。
+var QUIZ_SIZE=20;      // 1回の出題数
+var QUIZ_N1=1;         // n_1: 1日前
+var QUIZ_N2=3;         // n_2: 3日前
+var QUIZ_M=5;          // 「よく間違える」判定に見る直近の出題回数
+var QUIZ_P=2;          // 直近M回のうちこの回数以上間違えたら対象
+var QUIZ_TARGET={today:12, d1:4, d3:4, miss:6};  // 各群の目安。合計>SIZE、不足は他群で補填
+
+// 語ごとの直近正誤履歴（1=正解, 0=誤答）。直近10件まで保持。
+var HIST={};
+try{HIST=JSON.parse(localStorage.getItem('toeic_vocab_hist')||'{}');}catch(e){HIST={};}
+function saveHist(){try{localStorage.setItem('toeic_vocab_hist',JSON.stringify(HIST));}catch(e){}}
+function recordResult(en,ok){ var a=HIST[en]||[]; a.push(ok?1:0); if(a.length>10)a=a.slice(-10); HIST[en]=a; saveHist(); }
+function missOften(en){ var a=(HIST[en]||[]).slice(-QUIZ_M); var wrong=0; a.forEach(function(x){if(x===0)wrong++;}); return wrong>=QUIZ_P; }
+
+function todayDateStr(){ var d=new Date(); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
+function dayItemsOn(dateStr){ var d=daysData.filter(function(x){return x.date===dateStr;})[0]; return d?(d.items||[]).slice():[]; }
+function qToday(){ return dayItemsOn(todayDateStr()); }
+function qAgo(n){ var dt=new Date(); dt.setDate(dt.getDate()-n); return dayItemsOn(dt.getFullYear()+'-'+('0'+(dt.getMonth()+1)).slice(-2)+'-'+('0'+dt.getDate()).slice(-2)); }
+function qMiss(){ return allItemsRaw().filter(function(w){return missOften(w.en);}); }
+function shuffleArr(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
 function setMode(m){
   mode=m;
   ['list','card','quiz','passage'].forEach(function(x){document.getElementById('m_'+x).classList.toggle('active',x===m);});
@@ -194,6 +217,12 @@ function selDates(){
   if(v==='all')return daysData;
   if(v==='weak')return [{date:'苦手',items:allItemsRaw().filter(function(w){return WEAK[w.en];})}];
   if(v==='review')return reviewDays();
+  if(v==='qmix')return [
+    {date:'今日', items:qToday()},
+    {date:QUIZ_N1+'日前', items:qAgo(QUIZ_N1)},
+    {date:QUIZ_N2+'日前', items:qAgo(QUIZ_N2)},
+    {date:'よく間違える', items:qMiss()}
+  ];
   return daysData.filter(function(d){return d.date===v;});
 }
 function allItemsRaw(){var a=[];daysData.forEach(function(d){a=a.concat(d.items||[]);});return a;}
@@ -208,7 +237,13 @@ function reviewDays(){
   var r=daysData.filter(function(d){return targets[d.date];});
   return r.length?r:daysData.slice(-1);
 }
-function pool(){var a=[];selDates().forEach(function(d){a=a.concat(d.items||[]);});return filterKind(a);}
+function pool(){
+  var a=[];selDates().forEach(function(d){a=a.concat(d.items||[]);});
+  a=filterKind(a);
+  var seen={},out=[];
+  a.forEach(function(x){ if(!seen[x.en]){seen[x.en]=1;out.push(x);} });
+  return out;
+}
 
 function render(){
   var c=document.getElementById('content');
@@ -253,10 +288,19 @@ function shuffleCards(){
 }
 
 function buildQuiz(){
-  var ws=pool().slice();
-  ws.sort(function(){return Math.random()-0.5;});
-  quizSet=ws.slice(0,Math.min(20,ws.length));
-  quizIdx=0;quizOk=0;
+  var v=document.getElementById('daySel').value;
+  var chosen;
+  if(v==='qmix'){
+    var g={today:filterKind(qToday()), d1:filterKind(qAgo(QUIZ_N1)), d3:filterKind(qAgo(QUIZ_N2)), miss:filterKind(qMiss())};
+    var seen={}, out=[];
+    function take(list,n){ list=shuffleArr(list); for(var i=0;i<list.length&&n>0;i++){var w=list[i]; if(!seen[w.en]){seen[w.en]=1;out.push(w);n--;}} }
+    take(g.today,QUIZ_TARGET.today); take(g.d1,QUIZ_TARGET.d1); take(g.d3,QUIZ_TARGET.d3); take(g.miss,QUIZ_TARGET.miss);
+    if(out.length<QUIZ_SIZE){ var rest=shuffleArr(g.today.concat(g.d1,g.d3,g.miss)); for(var i=0;i<rest.length&&out.length<QUIZ_SIZE;i++){var w=rest[i]; if(!seen[w.en]){seen[w.en]=1;out.push(w);}} }
+    chosen=shuffleArr(out).slice(0,QUIZ_SIZE);
+  } else {
+    chosen=shuffleArr(pool()).slice(0,QUIZ_SIZE);
+  }
+  quizSet=chosen; quizIdx=0; quizOk=0;
 }
 function renderQuiz(){
   var c=document.getElementById('content');
@@ -267,6 +311,7 @@ function renderQuiz(){
     return;
   }
   var w=quizSet[quizIdx];
+  var qmixNote=(document.getElementById('daySel').value==='qmix')?'<p class="meta" style="margin-top:-4px">復習ミックス: 今日／'+QUIZ_N1+'日前／'+QUIZ_N2+'日前／よく間違える語（直近'+QUIZ_M+'回で'+QUIZ_P+'回以上）</p>':'';
   var base=allItemsRaw().filter(function(x){return x.en!==w.en&&x.ja!==w.ja;});
   var same=base.filter(function(x){return x.kind===w.kind;});   // 誤答は同じ種別から作る（単語の意味に句表現が混ざらないように）
   var others=(same.length>=3?same:base);
@@ -275,7 +320,7 @@ function renderQuiz(){
   var opts=[w].concat(others.slice(0,3));
   opts.sort(function(){return Math.random()-0.5;});
   var ph=(w.kind==='phrase');
-  var h='<p class="meta">'+(quizIdx+1)+' / '+quizSet.length+' ｜ 正答 '+quizOk+'</p>';
+  var h='<p class="meta">'+(quizIdx+1)+' / '+quizSet.length+' ｜ 正答 '+quizOk+'</p>'+qmixNote;
   h+='<div class="q"><div class="stem'+(ph?' ph':'')+'">'+esc(w.en)+'</div><div class="pos"><span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span> '+esc(w.pos||'')+' ｜ 意味を選んでください</div><div class="choices">';
   opts.forEach(function(o,i){h+='<button class="choice" data-ok="'+(o.en===w.en?1:0)+'">'+esc(o.ja)+'</button>';});
   h+='</div><div class="fb" id="fb"></div></div>';
@@ -285,6 +330,7 @@ function renderQuiz(){
       if(document.getElementById('fb').style.display==='block')return;
       var ok=b.dataset.ok==='1';
       c.querySelectorAll('.choice').forEach(function(x){x.disabled=true;if(x.dataset.ok==='1')x.classList.add('correct');});
+      recordResult(w.en,ok);
       if(ok){quizOk++;}else{b.classList.add('wrong');WEAK[w.en]=1;saveWeak();}
       var fb=document.getElementById('fb');
       fb.style.display='block';
@@ -379,7 +425,7 @@ probe().then(function(){
   daysData=window.__VOCAB.slice().sort(function(a,b){return a.date<b.date?-1:1;}).map(buildItems);
   passageDays=window.__PASSAGES.slice().sort(function(a,b){return a.date<b.date?-1:1;});
   var sel=document.getElementById('daySel');
-  var h='<option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">苦手のみ</option>';
+  var h='<option value="qmix">復習ミックス（今日／1日前／3日前／よく間違える）</option><option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">苦手のみ</option>';
   daysData.slice().reverse().forEach(function(d){h+='<option value="'+d.date+'">'+d.date+'</option>';});
   sel.innerHTML=h;
   render();
