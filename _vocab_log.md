@@ -198,3 +198,23 @@ secure | 2026-07-28
 [句] be compatible with | 2026-07-28
 [句] take effect | 2026-07-28
 [句] in advance | 2026-07-28
+contract | 2026-07-29
+negotiate | 2026-07-29
+clause | 2026-07-29
+provision | 2026-07-29
+amend | 2026-07-29
+renew | 2026-07-29
+obligation | 2026-07-29
+valid | 2026-07-29
+draft | 2026-07-29
+extension | 2026-07-29
+attorney | 2026-07-29
+binding | 2026-07-29
+breach | 2026-07-29
+confidential | 2026-07-29
+mutual | 2026-07-29
+[句] on behalf of | 2026-07-29
+[句] be subject to | 2026-07-29
+[句] in accordance with | 2026-07-29
+[句] enter into | 2026-07-29
+[句] agree to do | 2026-07-29
