@@ -218,3 +218,23 @@ mutual | 2026-07-29
 [句] in accordance with | 2026-07-29
 [句] enter into | 2026-07-29
 [句] agree to do | 2026-07-29
+recycle | 2026-07-30
+conserve | 2026-07-30
+sustainable | 2026-07-30
+initiative | 2026-07-30
+dispose | 2026-07-30
+waste | 2026-07-30
+reduce | 2026-07-30
+renewable | 2026-07-30
+efficiency | 2026-07-30
+packaging | 2026-07-30
+emission | 2026-07-30
+container | 2026-07-30
+awareness | 2026-07-30
+contribute | 2026-07-30
+donate | 2026-07-30
+[句] dispose of A | 2026-07-30
+[句] be committed to -ing | 2026-07-30
+[句] cut down on A | 2026-07-30
+[句] be aware of A | 2026-07-30
+[句] in an effort to do | 2026-07-30
