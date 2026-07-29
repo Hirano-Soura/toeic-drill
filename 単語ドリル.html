@@ -172,12 +172,13 @@ function toggleWeak(w,el){ if(WEAK[w]){delete WEAK[w];el.classList.remove('on');
 
 // ---- 項目10: 復習ミックス（今日／n_1日前／n_2日前／よく間違える語）----
 // 調整用の定数。n は「今日と合わせて最大3日次」の制約内（過去2日まで）。
-var QUIZ_SIZE=20;      // 1回の出題数
+// 【項目14】出題数の上限は撤廃。対象プールの全件を出す。
+// 群ごとの重み付け(QUIZ_TARGET)は不要になったので、代わりに「出題順」を規定する。
 var QUIZ_N1=1;         // n_1: 1日前
 var QUIZ_N2=3;         // n_2: 3日前
 var QUIZ_M=5;          // 「よく間違える」判定に見る直近の出題回数
 var QUIZ_P=2;          // 直近M回のうちこの回数以上間違えたら対象
-var QUIZ_TARGET={today:12, d1:4, d3:4, miss:6};  // 各群の目安。合計>SIZE、不足は他群で補填
+var QUIZ_ORDER=['today','d1','d3','miss'];  // 復習ミックスの出題順。群の中はシャッフルする
 
 // 語ごとの直近正誤履歴（1=正解, 0=誤答）。直近10件まで保持。
 var HIST={};
@@ -215,7 +216,9 @@ function onRangeChange(){cardIdx=0;cardBack=false;if(mode==='quiz')buildQuiz();r
 function selDates(){
   var v=document.getElementById('daySel').value;
   if(v==='all')return daysData;
-  if(v==='weak')return [{date:'苦手',items:allItemsRaw().filter(function(w){return WEAK[w.en];})}];
+  // 【項目16】「よく間違える」= missOften（直近M回でP回以上誤答）に統一。
+  // ★による手動登録は明示的な意思表示なので残し、和集合にする。
+  if(v==='weak')return [{date:'よく間違える',items:allItemsRaw().filter(function(w){return missOften(w.en)||WEAK[w.en];})}];
   if(v==='review')return reviewDays();
   if(v==='qmix')return [
     {date:'今日', items:qToday()},
@@ -252,7 +255,7 @@ function render(){
   var ws=pool();
   if(mode==='list'){
     var nw=ws.filter(function(x){return x.kind!=='phrase';}).length, np=ws.length-nw;
-    var h='<p class="meta">単語'+nw+' ／ 句表現'+np+'（計'+ws.length+'）　★をクリックすると苦手登録（クイズの「苦手」で出題）</p>';
+    var h='<p class="meta">単語'+nw+' ／ 句表現'+np+'（計'+ws.length+'）　★をクリックすると手動登録（「よく間違える＋★」で出題）</p>';
     h+='<table><tr><th></th><th>種別</th><th>見出し</th><th>品詞</th><th>意味</th><th>例文・補足</th></tr>';
     ws.forEach(function(w){
       var ph=(w.kind==='phrase');
@@ -287,18 +290,21 @@ function shuffleCards(){
   cardIdx=0;cardBack=false;render();
 }
 
+var QUIZ_GLABEL={today:'今日', d1:QUIZ_N1+'日前', d3:QUIZ_N2+'日前', miss:'よく間違える'};
 function buildQuiz(){
   var v=document.getElementById('daySel').value;
-  var chosen;
+  var chosen=[], seen={};
   if(v==='qmix'){
+    // 【項目14】全件を出す。QUIZ_ORDER の順に群を並べ、群の中だけシャッフルする。
+    // どの群から出ているかを quizGroup に持たせ、進捗表示に使う。
     var g={today:filterKind(qToday()), d1:filterKind(qAgo(QUIZ_N1)), d3:filterKind(qAgo(QUIZ_N2)), miss:filterKind(qMiss())};
-    var seen={}, out=[];
-    function take(list,n){ list=shuffleArr(list); for(var i=0;i<list.length&&n>0;i++){var w=list[i]; if(!seen[w.en]){seen[w.en]=1;out.push(w);n--;}} }
-    take(g.today,QUIZ_TARGET.today); take(g.d1,QUIZ_TARGET.d1); take(g.d3,QUIZ_TARGET.d3); take(g.miss,QUIZ_TARGET.miss);
-    if(out.length<QUIZ_SIZE){ var rest=shuffleArr(g.today.concat(g.d1,g.d3,g.miss)); for(var i=0;i<rest.length&&out.length<QUIZ_SIZE;i++){var w=rest[i]; if(!seen[w.en]){seen[w.en]=1;out.push(w);}} }
-    chosen=shuffleArr(out).slice(0,QUIZ_SIZE);
+    QUIZ_ORDER.forEach(function(k){
+      shuffleArr(g[k]||[]).forEach(function(w){
+        if(!seen[w.en]){ seen[w.en]=1; var o={};for(var p in w)o[p]=w[p]; o.quizGroup=k; chosen.push(o); }
+      });
+    });
   } else {
-    chosen=shuffleArr(pool()).slice(0,QUIZ_SIZE);
+    chosen=shuffleArr(pool());
   }
   quizSet=chosen; quizIdx=0; quizOk=0;
 }
@@ -311,7 +317,18 @@ function renderQuiz(){
     return;
   }
   var w=quizSet[quizIdx];
-  var qmixNote=(document.getElementById('daySel').value==='qmix')?'<p class="meta" style="margin-top:-4px">復習ミックス: 今日／'+QUIZ_N1+'日前／'+QUIZ_N2+'日前／よく間違える語（直近'+QUIZ_M+'回で'+QUIZ_P+'回以上）</p>':'';
+  // 全件出題は1回が長くなるので、いまどの群を解いているかと、その群の何問目かを示す
+  var qmixNote='';
+  if(document.getElementById('daySel').value==='qmix'){
+    var gk=w.quizGroup, gAll=quizSet.filter(function(x){return x.quizGroup===gk;});
+    var gIdx=0; for(var i=0;i<=quizIdx;i++){ if(quizSet[i].quizGroup===gk) gIdx++; }
+    qmixNote='<p class="meta" style="margin-top:-4px">'
+      +'<b>'+esc(QUIZ_GLABEL[gk]||'')+'</b> '+gIdx+' / '+gAll.length
+      +' ｜ 復習ミックス: '+QUIZ_ORDER.map(function(k){
+          var n=quizSet.filter(function(x){return x.quizGroup===k;}).length;
+          return QUIZ_GLABEL[k]+(n?'('+n+')':'(0)');
+        }).join(' → ')+'</p>';
+  }
   var base=allItemsRaw().filter(function(x){return x.en!==w.en&&x.ja!==w.ja;});
   var same=base.filter(function(x){return x.kind===w.kind;});   // 誤答は同じ種別から作る（単語の意味に句表現が混ざらないように）
   var others=(same.length>=3?same:base);
@@ -331,10 +348,13 @@ function renderQuiz(){
       var ok=b.dataset.ok==='1';
       c.querySelectorAll('.choice').forEach(function(x){x.disabled=true;if(x.dataset.ok==='1')x.classList.add('correct');});
       recordResult(w.en,ok);
-      if(ok){quizOk++;}else{b.classList.add('wrong');WEAK[w.en]=1;saveWeak();}
+      // 【項目16】誤答時の自動「苦手」登録は廃止。1回のミスで苦手扱いになる旧仕様と
+      // missOften（直近M回でP回以上）が二重定義になっていたため、判定は履歴に一本化する。
+      // WEAK は★による手動登録の意味に純化した。
+      if(ok){quizOk++;}else{b.classList.add('wrong');}
       var fb=document.getElementById('fb');
       fb.style.display='block';
-      fb.innerHTML=(ok?'<b style="color:var(--ok)">正解</b>':'<b style="color:var(--ng)">不正解</b>（自動で苦手登録）')
+      fb.innerHTML=(ok?'<b style="color:var(--ok)">正解</b>':'<b style="color:var(--ng)">不正解</b>'+(missOften(w.en)?'（よく間違える語）':''))
         +'<br>'+esc(w.ex||'')+'<br><span class="meta">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</span>'
         +'<div class="rowbtns" style="justify-content:flex-start;margin-top:8px"><button onclick="quizIdx++;render()">次の問題 →</button></div>';
     };
@@ -425,7 +445,7 @@ probe().then(function(){
   daysData=window.__VOCAB.slice().sort(function(a,b){return a.date<b.date?-1:1;}).map(buildItems);
   passageDays=window.__PASSAGES.slice().sort(function(a,b){return a.date<b.date?-1:1;});
   var sel=document.getElementById('daySel');
-  var h='<option value="qmix">復習ミックス（今日／1日前／3日前／よく間違える）</option><option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">苦手のみ</option>';
+  var h='<option value="qmix">復習ミックス（今日／1日前／3日前／よく間違える）</option><option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">よく間違える＋★</option>';
   daysData.slice().reverse().forEach(function(d){h+='<option value="'+d.date+'">'+d.date+'</option>';});
   sel.innerHTML=h;
   render();
