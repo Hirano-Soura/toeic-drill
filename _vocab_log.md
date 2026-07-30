@@ -238,3 +238,23 @@ donate | 2026-07-30
 [句] cut down on A | 2026-07-30
 [句] be aware of A | 2026-07-30
 [句] in an effort to do | 2026-07-30
+seminar | 2026-07-31
+instructor | 2026-07-31
+enroll | 2026-07-31
+mandatory | 2026-07-31
+curriculum | 2026-07-31
+proficiency | 2026-07-31
+evaluate | 2026-07-31
+assignment | 2026-07-31
+participant | 2026-07-31
+lecture | 2026-07-31
+trainee | 2026-07-31
+objective | 2026-07-31
+acquire | 2026-07-31
+optional | 2026-07-31
+conduct | 2026-07-31
+[句] be eligible for A | 2026-07-31
+[句] take advantage of A | 2026-07-31
+[句] participate in A | 2026-07-31
+[句] consist of A | 2026-07-31
+[句] no later than A | 2026-07-31
