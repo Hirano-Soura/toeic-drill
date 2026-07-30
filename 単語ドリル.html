@@ -43,7 +43,12 @@
   .kind.ph{background:#ede9fe;border-color:#c4b5fd;color:#5b21b6}
   .en.ph{color:#5b21b6}
   #card .big.ph{font-size:26px}
-  .cardband{position:absolute;left:0;right:0;bottom:0;height:12px}
+  .cardband{position:absolute;left:0;right:0;bottom:0;height:12px;display:flex;flex-direction:column}
+  .cardband>i{display:block;flex:1;min-height:0}
+  .tr{display:inline-block;font-size:10.5px;border-radius:8px;padding:0 6px;margin-left:4px;border:1px solid;vertical-align:1px;white-space:nowrap}
+  .tr.vt{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}
+  .tr.vi{background:#fef2f2;border-color:#fca5a5;color:#b91c1c}
+  .tr.both{background:#f5f3ff;border-color:#c4b5fd;color:#6d28d9}
   .poslegend{display:flex;flex-wrap:wrap;gap:5px 12px;justify-content:center;margin:8px 0 0;font-size:11.5px;color:var(--sub)}
   .poslegend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:4px}
   .q .stem.ph{font-size:20px}
@@ -137,33 +142,66 @@ function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 // 単語の pos は "名"/"動"/"形" 等。複数品詞は "動/名" のように / 区切り。句表現は kind==='phrase'。
 var POS_COLORS={'名':'#2563eb','代':'#2563eb','動':'#0d9488','形':'#d97706','副':'#7c3aed','前':'#db2777','接':'#0891b2','冠':'#64748b','助':'#64748b','間':'#64748b','数':'#64748b','句':'#7c3aed'};
 var POS_LABEL={'名':'名詞','代':'代名詞','動':'動詞','形':'形容詞','副':'副詞','前':'前置詞','接':'接続詞','冠':'冠詞','助':'助動詞','間':'間投詞','数':'数詞','句':'句表現'};
+// 品詞を配列に分解する。単語は "動/名" のように / 区切り。
+// 句は【項目12】で pos が "動詞句" "形容詞句/副詞句" 等になる（旧データの "句" も許容）。
 function posParts(w){
-  if(w.kind==='phrase') return ['句'];
   var raw=String(w.pos||'').replace(/[（(][^）)]*[）)]/g,'');   // 括弧書きの補足を除く
   var parts=raw.split(/[\/・,、|]/).map(function(x){return x.trim();}).filter(Boolean);
-  return parts.length?parts:[''];
+  if(!parts.length) parts=[w.kind==='phrase'?'句':''];
+  return parts;
 }
 function posColorOf(p){
-  for(var k in POS_COLORS){ if(p.indexOf(k)===0) return {c:POS_COLORS[k],lab:POS_LABEL[k]}; }
+  // "動詞句" は先頭一致で 動 の色を引く。ラベルは「〜句」をそのまま見せる。
+  for(var k in POS_COLORS){
+    if(p.indexOf(k)===0) return {c:POS_COLORS[k], lab:(/句$/.test(p)&&p!=='句')?p:POS_LABEL[k]};
+  }
   return {c:'#9ca3af',lab:p||'その他'};
 }
-// カード下端の帯。複数品詞は色を等分（2色なら左右半々）にする。
-function cardBandStyle(w){
-  var cs=posParts(w).map(function(p){return posColorOf(p).c;});
-  if(cs.length<=1) return 'background:'+(cs[0]||'#9ca3af');
+// 複数の色を左右に等分する背景を作る（1色ならそのまま塗る）
+function splitBg(cs){
+  if(!cs.length) return 'background:#9ca3af';
+  if(cs.length===1) return 'background:'+cs[0];
   var seg=100/cs.length, stops=[];
   for(var i=0;i<cs.length;i++){ stops.push(cs[i]+' '+(seg*i)+'%'); stops.push(cs[i]+' '+(seg*(i+1))+'%'); }
   return 'background:linear-gradient(90deg,'+stops.join(',')+')';
+}
+/** カード下端の帯。
+    単語 … 1段。複数品詞は左右に等分（項目9）
+    句   … 上下2段。上=句であることを示す色、下=何句かの色（項目12）
+    軸を変えることで「複数品詞」と「句の品詞」を見分けられる。 */
+function cardBandHtml(w){
+  var cs=posParts(w).map(function(p){return posColorOf(p).c;});
+  if(w.kind==='phrase'){
+    return '<div class="cardband">'
+      +'<i style="'+splitBg([POS_COLORS['句']])+'"></i>'
+      +'<i style="'+splitBg(cs)+'"></i></div>';
+  }
+  return '<div class="cardband"><i style="'+splitBg(cs)+'"></i></div>';
 }
 // カード集合に現れる品詞の凡例（色と名称の対応）
 function posLegend(ws){
   var seen={},order=[];
   ws.forEach(function(w){ posParts(w).forEach(function(p){ var o=posColorOf(p); var key=o.lab; if(!seen[key]){seen[key]=o;order.push(key);} }); });
   if(!order.length) return '';
-  return '<div class="poslegend">'+order.map(function(key){
+  var h='<div class="poslegend">'+order.map(function(key){
     var o=seen[key]; return '<span><span class="sw" style="background:'+o.c+'"></span>'+esc(o.lab)+'</span>';
-  }).join('')+'</div>';
+  }).join('');
+  if(ws.some(function(w){return w.kind==='phrase';})){
+    h+='<span style="opacity:.8">句表現は帯が上下2段（上=句・下=品詞）</span>';
+  }
+  return h+'</div>';
 }
+
+/** 【項目13】動詞の自他。trans は "vt" / "vi" / "vt/vi"。 */
+var TRANS_LABEL={vt:'他',vi:'自','vt/vi':'他自'};
+var TRANS_TITLE={vt:'他動詞（目的語を直接とる）',vi:'自動詞（目的語を直接とらない。前置詞が必要）','vt/vi':'他動詞・自動詞の両用'};
+function transBadge(w){
+  var t=w.trans; if(!t||!TRANS_LABEL[t]) return '';
+  var cls=(t==='vt/vi')?'both':t;
+  return '<span class="tr '+cls+'" title="'+esc(TRANS_TITLE[t])+'">'+TRANS_LABEL[t]+'</span>';
+}
+/** 一覧・カード・クイズで共通に使う「品詞（＋自他）」の表示 */
+function posText(w){ return esc(w.pos||'')+transBadge(w); }
 
 var WEAK={};
 try{WEAK=JSON.parse(localStorage.getItem('toeic_vocab_weak')||'{}');}catch(e){WEAK={};}
@@ -289,7 +327,7 @@ function render(){
       var ph=(w.kind==='phrase');
       h+='<tr><td><span class="star'+(WEAK[w.en]?' on':'')+'" onclick="toggleWeak(\''+esc(w.en).replace(/'/g,"\\'")+'\',this)">★</span></td>'
         +'<td><span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span></td>'
-        +'<td class="en'+(ph?' ph':'')+'">'+esc(w.en)+'</td><td>'+esc(w.pos||'')+'</td><td>'+esc(w.ja)+'</td>'
+        +'<td class="en'+(ph?' ph':'')+'">'+esc(w.en)+'</td><td>'+posText(w)+'</td><td>'+esc(w.ja)+'</td>'
         +'<td>'+esc(w.ex||'')+'<div class="ex">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</div></td></tr>';
     });
     c.innerHTML=h+'</table>';
@@ -299,9 +337,9 @@ function render(){
     var w=ws[cardIdx];
     var h='<p class="meta">'+(cardIdx+1)+' / '+ws.length+'（カードをクリックで表裏切替）</p>';
     h+='<div id="card" onclick="cardBack=!cardBack;render()">';
-    if(!cardBack){ h+='<div class="big'+(w.kind==='phrase'?' ph':'')+'">'+esc(w.en)+'</div><div class="pos"><span class="kind'+(w.kind==='phrase'?' ph':'')+'">'+(w.kind==='phrase'?'句表現':'単語')+'</span> '+esc(w.pos||'')+'</div>'; }
+    if(!cardBack){ h+='<div class="big'+(w.kind==='phrase'?' ph':'')+'">'+esc(w.en)+'</div><div class="pos"><span class="kind'+(w.kind==='phrase'?' ph':'')+'">'+(w.kind==='phrase'?'句表現':'単語')+'</span> '+posText(w)+'</div>'; }
     else{ h+='<div class="back">'+esc(w.ja)+'</div><div class="ex">'+esc(w.ex||'')+'<br>'+esc(w.exJa||'')+(w.note?'<br>'+esc(w.note):'')+'</div>'; }
-    h+='<div class="cardband" style="'+cardBandStyle(w)+'"></div>';
+    h+=cardBandHtml(w);
     h+='</div><div class="rowbtns">'
       +'<button onclick="cardIdx=Math.max(0,cardIdx-1);cardBack=false;render()">← 前へ</button>'
       +'<button onclick="cardIdx=(cardIdx+1)%'+ws.length+';cardBack=false;render()">次へ →</button>'
@@ -371,7 +409,7 @@ function renderQuiz(){
   opts.sort(function(){return Math.random()-0.5;});
   var ph=(w.kind==='phrase');
   var h='<p class="meta">'+(quizIdx+1)+' / '+quizSet.length+' ｜ 正答 '+quizOk+'</p>'+qmixNote;
-  h+='<div class="q"><div class="stem'+(ph?' ph':'')+'">'+esc(w.en)+'</div><div class="pos"><span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span> '+esc(w.pos||'')+' ｜ 意味を選んでください</div><div class="choices">';
+  h+='<div class="q"><div class="stem'+(ph?' ph':'')+'">'+esc(w.en)+'</div><div class="pos"><span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span> '+posText(w)+' ｜ 意味を選んでください</div><div class="choices">';
   opts.forEach(function(o,i){h+='<button class="choice" data-ok="'+(o.en===w.en?1:0)+'">'+esc(o.ja)+'</button>';});
   h+='</div><div class="fb" id="fb"></div></div>';
   c.innerHTML=h;
