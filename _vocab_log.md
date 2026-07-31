@@ -258,3 +258,23 @@ conduct | 2026-07-31
 [句] participate in A | 2026-07-31
 [句] consist of A | 2026-07-31
 [句] no later than A | 2026-07-31
+cuisine | 2026-08-01
+ingredient | 2026-08-01
+beverage | 2026-08-01
+appetizer | 2026-08-01
+patron | 2026-08-01
+banquet | 2026-08-01
+hospitality | 2026-08-01
+specialty | 2026-08-01
+atmosphere | 2026-08-01
+greet | 2026-08-01
+dine | 2026-08-01
+serve | 2026-08-01
+rave | 2026-08-01
+reasonable | 2026-08-01
+seasonal | 2026-08-01
+[句] be known for A | 2026-08-01
+[句] rave about A | 2026-08-01
+[句] a variety of A | 2026-08-01
+[句] upon arrival | 2026-08-01
+[句] in addition to A | 2026-08-01
