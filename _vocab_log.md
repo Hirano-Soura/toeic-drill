@@ -278,3 +278,23 @@ seasonal | 2026-08-01
 [句] a variety of A | 2026-08-01
 [句] upon arrival | 2026-08-01
 [句] in addition to A | 2026-08-01
+publish | 2026-08-02
+submit | 2026-08-02
+article | 2026-08-02
+subscriber | 2026-08-02
+edition | 2026-08-02
+editor | 2026-08-02
+deadline | 2026-08-02
+issue | 2026-08-02
+broadcast | 2026-08-02
+column | 2026-08-02
+circulation | 2026-08-02
+journalist | 2026-08-02
+release | 2026-08-02
+coverage | 2026-08-02
+quarterly | 2026-08-02
+[句] come out | 2026-08-02
+[句] keep up with A | 2026-08-02
+[句] as of A | 2026-08-02
+[句] be responsible for A | 2026-08-02
+[句] in response to A | 2026-08-02
