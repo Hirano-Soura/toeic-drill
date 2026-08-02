@@ -36,6 +36,14 @@
   .choice{text-align:left;border:1px solid var(--line);background:#fafafa;border-radius:8px;padding:10px 14px;cursor:pointer;font-size:15px;font-family:inherit}
   .choice.correct{background:#dcfce7;border-color:var(--ok);font-weight:600}
   .choice.wrong{background:#fee2e2;border-color:var(--ng)}
+  /* 【項目15】2段階クイズ */
+  .choices.two{grid-template-columns:1fr 1fr}
+  .choice.self{text-align:center;font-size:16px;font-weight:600;padding:14px 10px}
+  .choice.self.yes{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}
+  .choice.self.no{background:#fef2f2;border-color:#fca5a5;color:#b91c1c}
+  .choice.none{background:#f8fafc;color:var(--sub);border-style:dashed}
+  .stagenote{font-size:12px;color:var(--sub);margin:10px 0 0;line-height:1.6}
+  .stagebanner{font-size:12.5px;background:#fffbeb;border:1px solid #fcd34d;color:#b45309;border-radius:8px;padding:7px 11px;margin:0 0 10px;line-height:1.6}
   .fb{margin-top:10px;font-size:14px;display:none}
   .meta{color:var(--sub);font-size:13px}
   .empty{color:var(--sub);text-align:center;margin-top:60px}
@@ -138,6 +146,8 @@ function probe(){
 }
 
 var daysData=[], passageDays=[], mode='list', cardIdx=0, cardBack=false, quizSet=[], quizIdx=0, quizOk=0;
+// 【項目15】2段階クイズの状態。stage 1=自己申告, 2=選択肢。self は第1段階の答え（null/1/0）。
+var quizStage=1, quizSelf=null, quizOpts=null, quizOptsIdx=-1;
 function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 // ---- 品詞別の色分け（項目9）----
@@ -272,6 +282,18 @@ try{HIST=JSON.parse(localStorage.getItem('toeic_vocab_hist')||'{}');}catch(e){HI
 function saveHist(){try{localStorage.setItem('toeic_vocab_hist',JSON.stringify(HIST));}catch(e){}}
 function recordResult(en,ok){ var a=HIST[en]||[]; a.push(ok?1:0); if(a.length>10)a=a.slice(-10); HIST[en]=a; saveHist(); }
 function missOften(en){ var a=(HIST[en]||[]).slice(-QUIZ_M); var wrong=0; a.forEach(function(x){if(x===0)wrong++;}); return wrong>=QUIZ_P; }
+
+/** 【項目15】第1段階の自己申告（1=わかる, 0=わからない）。HIST と必ず同じ回数だけ積む。
+    「わかると思ったが違った（思い違い）」を後から数えられるようにするための記録。
+    HIST と足並みを揃えるため、記録は必ず recordResult と同時に行う。 */
+var SELF={};
+try{SELF=JSON.parse(localStorage.getItem('toeic_vocab_self')||'{}');}catch(e){SELF={};}
+function saveSelf(){try{localStorage.setItem('toeic_vocab_self',JSON.stringify(SELF));}catch(e){}}
+/** 正誤と自己申告を1回分まとめて記録する。片方だけ積むと対応が崩れるので、必ずこれを通す。 */
+function recordAnswer(key,ok,self){
+  recordResult(key,ok);
+  var a=SELF[key]||[]; a.push(self?1:0); if(a.length>10)a=a.slice(-10); SELF[key]=a; saveSelf();
+}
 
 function todayDateStr(){ var d=new Date(); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
 function dayItemsOn(dateStr){ var d=daysData.filter(function(x){return x.date===dateStr;})[0]; return d?(d.items||[]).slice():[]; }
@@ -421,13 +443,17 @@ function buildQuiz(){
   } else {
     chosen=shuffleArr(pool());
   }
-  quizSet=chosen; quizIdx=0; quizOk=0;
+  quizSet=chosen; quizIdx=0; quizOk=0; resetStage();
 }
+function resetStage(){ quizStage=1; quizSelf=null; quizOpts=null; quizOptsIdx=-1; }
+function nextQuestion(){ quizIdx++; resetStage(); render(); }
 function renderQuiz(){
   var c=document.getElementById('content');
   if(!quizSet.length){c.innerHTML='<p class="empty">対象の単語がありません。範囲を変えてください。</p>';return;}
   if(quizIdx>=quizSet.length){
+    resetStage();
     c.innerHTML='<div class="q"><div class="stem">結果: '+quizOk+' / '+quizSet.length+'</div>'
+      +'<p class="stagenote">「わかる」と答えて選択肢も正解したものだけを正答として数えています。</p>'
       +'<div class="rowbtns"><button onclick="buildQuiz();render()">もう一度</button></div></div>';
     return;
   }
@@ -445,37 +471,104 @@ function renderQuiz(){
           return QUIZ_GLABEL[k]+(n?'('+n+')':'(0)');
         }).join(' → ')+'</p>';
   }
-  var base=allItemsRaw().filter(function(x){return x.en!==w.en&&x.ja!==w.ja;});
-  var same=base.filter(function(x){return x.kind===w.kind;});   // 誤答は同じ種別から作る（単語の意味に句表現が混ざらないように）
-  var others=(same.length>=3?same:base);
-  others=others.slice();
-  others.sort(function(){return Math.random()-0.5;});
-  var opts=[w].concat(others.slice(0,3));
-  opts.sort(function(){return Math.random()-0.5;});
   var ph=(w.kind==='phrase');
-  var h='<p class="meta">'+(quizIdx+1)+' / '+quizSet.length+' ｜ 正答 '+quizOk+'</p>'+qmixNote;
-  h+='<div class="q"><div class="stem'+(ph?' ph':'')+'">'+esc(w.en)+'</div><div class="pos">'+homoBadge(w)+'<span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span> '+posText(w)+' ｜ 意味を選んでください</div><div class="choices">';
+  var head='<p class="meta">'+(quizIdx+1)+' / '+quizSet.length+' ｜ 正答 '+quizOk
+    +' ｜ 第'+quizStage+'段階</p>'+qmixNote;
+  var stem='<div class="stem'+(ph?' ph':'')+'">'+esc(w.en)+'</div>';
+  var posline=function(tail){
+    return '<div class="pos">'+homoBadge(w)+'<span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')
+      +'</span> '+posText(w)+' ｜ '+tail+'</div>';
+  };
+
+  if(quizStage===1){ renderStage1(c,w,head,stem,posline); }
+  else{ renderStage2(c,w,head,stem,posline); }
+}
+
+/** 【項目15】第1段階: 選択肢を見せる前に「わかる／わからない」を自己申告させる。
+    4択だけだと消去法で当たってしまい、思い出せていないのに正答率が上がる。
+    先に自己申告させることで、その水増しを切り離す。 */
+function renderStage1(c,w,head,stem,posline){
+  var h=head+'<div class="q">'+stem+posline('意味を思い出せますか')
+    +'<div class="choices two">'
+    +'<button class="choice self yes" data-self="1">わかる</button>'
+    +'<button class="choice self no" data-self="0">わからない</button>'
+    +'</div>'
+    +'<p class="stagenote">「わからない」を押しても、このあと選択肢と解説は表示されます。'
+    +'その回答は記録に入らないので、正直に押してください。</p></div>';
+  c.innerHTML=h;
+  c.querySelectorAll('.choice').forEach(function(b){
+    b.onclick=function(){
+      quizSelf=(b.dataset.self==='1')?1:0;
+      // 「わからない」はこの時点で不正解が確定する。第2段階は正解を見るための表示。
+      if(quizSelf===0) recordAnswer(keyOf(w),false,0);
+      quizStage=2; render();
+    };
+  });
+}
+
+/** 【項目15】第2段階: 4択＋「思い浮かべた訳が選択肢に無い」の5択。
+    5つ目があることで、第1段階で「わかる」と答えたのに該当が無い＝思い違い、を拾える。 */
+function renderStage2(c,w,head,stem,posline){
+  var opts=quizOptions(w);
+  var rec=(quizSelf===1);   // 記録するのは「わかる」を選んだときだけ
+  var h=head+'<div class="q">'+stem+posline('意味を選んでください');
+  if(!rec){
+    h+='<p class="stagebanner">「わからない」を選んだので、この問題は<b>不正解として記録済み</b>です。'
+      +'ここから先の回答は記録に入りません。正解を確認してください。</p>';
+  }
+  h+='<div class="choices">';
   // 正解判定は keyOf で行う。同綴りの別品詞を「正解扱い」にしないため。
-  opts.forEach(function(o,i){h+='<button class="choice" data-ok="'+(keyOf(o)===keyOf(w)?1:0)+'">'+esc(o.ja)+'</button>';});
+  opts.forEach(function(o){h+='<button class="choice" data-ok="'+(keyOf(o)===keyOf(w)?1:0)+'">'+esc(o.ja)+'</button>';});
+  h+='<button class="choice none" data-ok="0" data-none="1">思い浮かべた訳が選択肢に無い</button>';
   h+='</div><div class="fb" id="fb"></div></div>';
   c.innerHTML=h;
   c.querySelectorAll('.choice').forEach(function(b){
     b.onclick=function(){
       if(document.getElementById('fb').style.display==='block')return;
-      var ok=b.dataset.ok==='1';
+      var pick=(b.dataset.ok==='1');
+      var none=(b.dataset.none==='1');
       c.querySelectorAll('.choice').forEach(function(x){x.disabled=true;if(x.dataset.ok==='1')x.classList.add('correct');});
-      recordResult(keyOf(w),ok);
-      // 【項目16】誤答時の自動「苦手」登録は廃止。1回のミスで苦手扱いになる旧仕様と
-      // missOften（直近M回でP回以上）が二重定義になっていたため、判定は履歴に一本化する。
-      // WEAK は★による手動登録の意味に純化した。
-      if(ok){quizOk++;}else{b.classList.add('wrong');}
+      if(!pick)b.classList.add('wrong');
+
+      // 【項目15】判定表:
+      //   わかる  + 正解            → ○（記録する）
+      //   わかる  + 不正解/該当なし → ✗ 思い違い（記録する）
+      //   わからない + 何を選んでも → ✗（第1段階で記録済み。ここでは記録しない）
+      var final=rec&&pick;
+      if(rec) recordAnswer(keyOf(w),pick,1);
+      if(final)quizOk++;
+
+      var head2;
+      if(final){ head2='<b style="color:var(--ok)">正解</b>'; }
+      else if(rec){
+        head2='<b style="color:var(--ng)">不正解</b>'
+          +(none?'（思い浮かべた訳が選択肢にありませんでした）':'（思い違い）');
+      }else{
+        head2='<b style="color:var(--ng)">不正解</b>（わからないと申告）'
+          +(pick?' ／ 選択肢では正解を選べました':'');
+      }
+      head2+=(missOften(keyOf(w))?' <span class="meta">よく間違える語</span>':'');
+
       var fb=document.getElementById('fb');
       fb.style.display='block';
-      fb.innerHTML=(ok?'<b style="color:var(--ok)">正解</b>':'<b style="color:var(--ng)">不正解</b>'+(missOften(keyOf(w))?'（よく間違える語）':''))
+      fb.innerHTML=head2
         +'<br>'+esc(w.ex||'')+'<br><span class="meta">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</span>'
-        +'<div class="rowbtns" style="justify-content:flex-start;margin-top:8px"><button onclick="quizIdx++;render()">次の問題 →</button></div>';
+        +'<div class="rowbtns" style="justify-content:flex-start;margin-top:8px"><button onclick="nextQuestion()">次の問題 →</button></div>';
     };
   });
+}
+
+/** 第2段階の選択肢。設問ごとに1度だけ作って使い回す（再描画で並びが変わらないように）。 */
+function quizOptions(w){
+  if(quizOptsIdx===quizIdx&&quizOpts)return quizOpts;
+  var base=allItemsRaw().filter(function(x){return x.en!==w.en&&x.ja!==w.ja;});
+  var same=base.filter(function(x){return x.kind===w.kind;});   // 誤答は同じ種別から作る（単語の意味に句表現が混ざらないように）
+  var others=(same.length>=3?same:base).slice();
+  others.sort(function(){return Math.random()-0.5;});
+  var opts=[w].concat(others.slice(0,3));
+  opts.sort(function(){return Math.random()-0.5;});
+  quizOpts=opts; quizOptsIdx=quizIdx;
+  return opts;
 }
 
 // ---- 長文タブ ----
