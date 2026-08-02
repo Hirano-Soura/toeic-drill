@@ -298,3 +298,23 @@ quarterly | 2026-08-02
 [句] as of A | 2026-08-02
 [句] be responsible for A | 2026-08-02
 [句] in response to A | 2026-08-02
+prospect | 2026-08-03
+sales | 2026-08-03
+pitch | 2026-08-03
+client | 2026-08-03
+close | 2026-08-03
+commission | 2026-08-03
+proposal | 2026-08-03
+competitive | 2026-08-03
+margin | 2026-08-03
+attain | 2026-08-03
+secure | 2026-08-03
+incentive | 2026-08-03
+outreach | 2026-08-03
+identify | 2026-08-03
+exceed | 2026-08-03
+[句] close a deal | 2026-08-03
+[句] build relationships | 2026-08-03
+[句] reach out to A | 2026-08-03
+[句] in line with A | 2026-08-03
+[句] on track to do | 2026-08-03

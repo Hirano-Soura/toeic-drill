@@ -1,9 +1,9 @@
 window.__portalStatus({
  "id": "toeic",
- "date": "2026-08-01",
- "updated": "2026-08-01",
- "headline": "単語15語＋句表現5 つ（飲食・接客サービス（レストラン運営））",
- "sub": "長文「Harborview Bistro: A New Favorite on Maple Street」",
+ "date": "2026-08-02",
+ "updated": "2026-08-02",
+ "headline": "単語15語＋句表現5 つ（メディア・出版（新聞社・編集業務））",
+ "sub": "長文「Memo: The Riverside Weekly Goes Digital」 ／ 本編: 会話スクリプト読解(場面・話者・目的の把握)",
  "items": [
   {
    "label": "単語",
@@ -17,8 +17,8 @@ window.__portalStatus({
   },
   {
    "label": "本編",
-   "state": "none",
-   "detail": "今日は対象外"
+   "state": "ready",
+   "detail": "L 会話スクリプト読解(場面・話者・目的の把握)"
   }
  ]
 });
