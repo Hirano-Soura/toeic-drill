@@ -49,6 +49,8 @@
   .tr.vt{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}
   .tr.vi{background:#fef2f2;border-color:#fca5a5;color:#b91c1c}
   .tr.both{background:#f5f3ff;border-color:#c4b5fd;color:#6d28d9}
+  /* 【項目26】同じ綴りで別品詞の項目があることを示す */
+  .homo{display:inline-block;font-size:10.5px;border-radius:8px;padding:0 6px;margin-left:4px;border:1px solid #fcd34d;background:#fffbeb;color:#b45309;vertical-align:1px;white-space:nowrap}
   .poslegend{display:flex;flex-wrap:wrap;gap:5px 12px;justify-content:center;margin:8px 0 0;font-size:11.5px;color:var(--sub)}
   .poslegend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:4px}
   .q .stem.ph{font-size:20px}
@@ -203,6 +205,48 @@ function transBadge(w){
 /** 一覧・カード・クイズで共通に使う「品詞（＋自他）」の表示 */
 function posText(w){ return esc(w.pos||'')+transBadge(w); }
 
+/** 【項目26】語の同一性は「見出し＋品詞」で決める。
+    secure(形:安全な) と secure(動:確保する) のように、同じ綴りで品詞も語義も違う語がある。
+    見出しだけを鍵にすると、一覧・カード・クイズの重複除去で片方が黙って消え、
+    正誤履歴と★も2語で共有されてしまう。表示・履歴・重複除去のすべてをこの鍵で揃える。 */
+function normPos(w){ return String(w.pos||'').replace(/[（(][^）)]*[）)]/g,'').trim(); }
+function keyOf(w){ return w.en+'|'+normPos(w); }
+
+/** 読み込み済みデータ中で綴りが重複している見出しの集合（表示の注意喚起用） */
+var HOMO={};
+function buildHomo(){
+  var n={}; HOMO={};
+  allItemsRaw().forEach(function(w){ n[w.en]=(n[w.en]||0)+1; });
+  for(var k in n){ if(n[k]>1) HOMO[k]=1; }
+}
+function homoBadge(w){
+  return HOMO[w.en] ? '<span class="homo" title="同じ綴りで品詞の違う項目が別の日にあります。別の語として扱います">同綴</span>' : '';
+}
+
+/** 旧形式（見出しだけを鍵にした）localStorage を1度だけ移行する。
+    同綴りが複数ある場合、履歴を積めたのは先に出題された方だけなので、最も古い項目へ引き継ぐ。 */
+var KEYVER='toeic_vocab_keyver';
+function migrateKeys(){
+  try{
+    if(localStorage.getItem(KEYVER)==='2') return;
+    var oldest={};
+    daysData.forEach(function(d){ (d.items||[]).forEach(function(w){ if(!oldest[w.en]) oldest[w.en]=w; }); });
+    [[HIST,saveHist],[WEAK,saveWeak]].forEach(function(pair){
+      var store=pair[0], save=pair[1], moved={};
+      Object.keys(store).forEach(function(k){
+        if(k.indexOf('|')>=0) return;              // すでに新形式
+        var w=oldest[k];
+        if(!w){ moved[k]=store[k]; return; }        // 該当語が消えている場合はそのまま残す
+        moved[keyOf(w)]=store[k];
+      });
+      Object.keys(store).forEach(function(k){ delete store[k]; });
+      Object.keys(moved).forEach(function(k){ store[k]=moved[k]; });
+      save();
+    });
+    localStorage.setItem(KEYVER,'2');
+  }catch(e){}
+}
+
 var WEAK={};
 try{WEAK=JSON.parse(localStorage.getItem('toeic_vocab_weak')||'{}');}catch(e){WEAK={};}
 function saveWeak(){try{localStorage.setItem('toeic_vocab_weak',JSON.stringify(WEAK));}catch(e){}}
@@ -233,7 +277,7 @@ function todayDateStr(){ var d=new Date(); return d.getFullYear()+'-'+('0'+(d.ge
 function dayItemsOn(dateStr){ var d=daysData.filter(function(x){return x.date===dateStr;})[0]; return d?(d.items||[]).slice():[]; }
 function qToday(){ return dayItemsOn(todayDateStr()); }
 function qAgo(n){ var dt=new Date(); dt.setDate(dt.getDate()-n); return dayItemsOn(dt.getFullYear()+'-'+('0'+(dt.getMonth()+1)).slice(-2)+'-'+('0'+dt.getDate()).slice(-2)); }
-function qMiss(){ return allItemsRaw().filter(function(w){return missOften(w.en);}); }
+function qMiss(){ return allItemsRaw().filter(function(w){return missOften(keyOf(w));}); }
 /** 語の総回答回数（履歴の件数）。未回答は0。 */
 function answerCount(en){ return (HIST[en]||[]).length; }
 /** 【項目17】回答数が少ない語。未回答を最優先に、少ない順で QUIZ_FEW 件まで。
@@ -245,15 +289,15 @@ function answerCount(en){ return (HIST[en]||[]).length; }
 function qFew(exclude){
   exclude=exclude||{};
   return shuffleArr(allItemsRaw())
-    .filter(function(w){ return !exclude[w.en]; })
-    .sort(function(a,b){ return answerCount(a.en)-answerCount(b.en); })
+    .filter(function(w){ return !exclude[keyOf(w)]; })
+    .sort(function(a,b){ return answerCount(keyOf(a))-answerCount(keyOf(b)); })
     .slice(0, QUIZ_FEW);
 }
 /** 今日/n日前/よく間違える に含まれる語の集合（few群の除外用） */
 function qCoveredSet(){
   var m={};
   [qToday(), qAgo(QUIZ_N1), qAgo(QUIZ_N2), qMiss()].forEach(function(list){
-    list.forEach(function(w){ m[w.en]=1; });
+    list.forEach(function(w){ m[keyOf(w)]=1; });
   });
   return m;
 }
@@ -283,7 +327,7 @@ function selDates(){
   if(v==='all')return daysData;
   // 【項目16】「よく間違える」= missOften（直近M回でP回以上誤答）に統一。
   // ★による手動登録は明示的な意思表示なので残し、和集合にする。
-  if(v==='weak')return [{date:'よく間違える',items:allItemsRaw().filter(function(w){return missOften(w.en)||WEAK[w.en];})}];
+  if(v==='weak')return [{date:'よく間違える',items:allItemsRaw().filter(function(w){return missOften(keyOf(w))||WEAK[keyOf(w)];})}];
   if(v==='review')return reviewDays();
   if(v==='qmix')return [
     {date:'今日', items:qToday()},
@@ -310,7 +354,7 @@ function pool(){
   var a=[];selDates().forEach(function(d){a=a.concat(d.items||[]);});
   a=filterKind(a);
   var seen={},out=[];
-  a.forEach(function(x){ if(!seen[x.en]){seen[x.en]=1;out.push(x);} });
+  a.forEach(function(x){ var k=keyOf(x); if(!seen[k]){seen[k]=1;out.push(x);} });
   return out;
 }
 
@@ -325,9 +369,9 @@ function render(){
     h+='<table><tr><th></th><th>種別</th><th>見出し</th><th>品詞</th><th>意味</th><th>例文・補足</th></tr>';
     ws.forEach(function(w){
       var ph=(w.kind==='phrase');
-      h+='<tr><td><span class="star'+(WEAK[w.en]?' on':'')+'" onclick="toggleWeak(\''+esc(w.en).replace(/'/g,"\\'")+'\',this)">★</span></td>'
+      h+='<tr><td><span class="star'+(WEAK[keyOf(w)]?' on':'')+'" onclick="toggleWeak(\''+esc(keyOf(w)).replace(/'/g,"\\'")+'\',this)">★</span></td>'
         +'<td><span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span></td>'
-        +'<td class="en'+(ph?' ph':'')+'">'+esc(w.en)+'</td><td>'+posText(w)+'</td><td>'+esc(w.ja)+'</td>'
+        +'<td class="en'+(ph?' ph':'')+'">'+esc(w.en)+homoBadge(w)+'</td><td>'+posText(w)+'</td><td>'+esc(w.ja)+'</td>'
         +'<td>'+esc(w.ex||'')+'<div class="ex">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</div></td></tr>';
     });
     c.innerHTML=h+'</table>';
@@ -337,7 +381,7 @@ function render(){
     var w=ws[cardIdx];
     var h='<p class="meta">'+(cardIdx+1)+' / '+ws.length+'（カードをクリックで表裏切替）</p>';
     h+='<div id="card" onclick="cardBack=!cardBack;render()">';
-    if(!cardBack){ h+='<div class="big'+(w.kind==='phrase'?' ph':'')+'">'+esc(w.en)+'</div><div class="pos"><span class="kind'+(w.kind==='phrase'?' ph':'')+'">'+(w.kind==='phrase'?'句表現':'単語')+'</span> '+posText(w)+'</div>'; }
+    if(!cardBack){ h+='<div class="big'+(w.kind==='phrase'?' ph':'')+'">'+esc(w.en)+'</div><div class="pos">'+homoBadge(w)+'<span class="kind'+(w.kind==='phrase'?' ph':'')+'">'+(w.kind==='phrase'?'句表現':'単語')+'</span> '+posText(w)+'</div>'; }
     else{ h+='<div class="back">'+esc(w.ja)+'</div><div class="ex">'+esc(w.ex||'')+'<br>'+esc(w.exJa||'')+(w.note?'<br>'+esc(w.note):'')+'</div>'; }
     h+=cardBandHtml(w);
     h+='</div><div class="rowbtns">'
@@ -370,7 +414,8 @@ function buildQuiz(){
       // （途中でやめても「最も測れていない語」から消化できる）。他の群は群内をシャッフル。
       var list = (k==='few') ? (g[k]||[]) : shuffleArr(g[k]||[]);
       list.forEach(function(w){
-        if(!seen[w.en]){ seen[w.en]=1; var o={};for(var p in w)o[p]=w[p]; o.quizGroup=k; chosen.push(o); }
+        var kk=keyOf(w);
+        if(!seen[kk]){ seen[kk]=1; var o={};for(var p in w)o[p]=w[p]; o.quizGroup=k; chosen.push(o); }
       });
     });
   } else {
@@ -394,7 +439,7 @@ function renderQuiz(){
     var gIdx=0; for(var i=0;i<=quizIdx;i++){ if(quizSet[i].quizGroup===gk) gIdx++; }
     qmixNote='<p class="meta" style="margin-top:-4px">'
       +'<b>'+esc(QUIZ_GLABEL[gk]||'')+'</b> '+gIdx+' / '+gAll.length
-      +(gk==='few'?'（この語の回答 '+answerCount(w.en)+' 回）':'')
+      +(gk==='few'?'（この語の回答 '+answerCount(keyOf(w))+' 回）':'')
       +' ｜ 復習ミックス: '+QUIZ_ORDER.map(function(k){
           var n=quizSet.filter(function(x){return x.quizGroup===k;}).length;
           return QUIZ_GLABEL[k]+(n?'('+n+')':'(0)');
@@ -409,8 +454,9 @@ function renderQuiz(){
   opts.sort(function(){return Math.random()-0.5;});
   var ph=(w.kind==='phrase');
   var h='<p class="meta">'+(quizIdx+1)+' / '+quizSet.length+' ｜ 正答 '+quizOk+'</p>'+qmixNote;
-  h+='<div class="q"><div class="stem'+(ph?' ph':'')+'">'+esc(w.en)+'</div><div class="pos"><span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span> '+posText(w)+' ｜ 意味を選んでください</div><div class="choices">';
-  opts.forEach(function(o,i){h+='<button class="choice" data-ok="'+(o.en===w.en?1:0)+'">'+esc(o.ja)+'</button>';});
+  h+='<div class="q"><div class="stem'+(ph?' ph':'')+'">'+esc(w.en)+'</div><div class="pos">'+homoBadge(w)+'<span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span> '+posText(w)+' ｜ 意味を選んでください</div><div class="choices">';
+  // 正解判定は keyOf で行う。同綴りの別品詞を「正解扱い」にしないため。
+  opts.forEach(function(o,i){h+='<button class="choice" data-ok="'+(keyOf(o)===keyOf(w)?1:0)+'">'+esc(o.ja)+'</button>';});
   h+='</div><div class="fb" id="fb"></div></div>';
   c.innerHTML=h;
   c.querySelectorAll('.choice').forEach(function(b){
@@ -418,14 +464,14 @@ function renderQuiz(){
       if(document.getElementById('fb').style.display==='block')return;
       var ok=b.dataset.ok==='1';
       c.querySelectorAll('.choice').forEach(function(x){x.disabled=true;if(x.dataset.ok==='1')x.classList.add('correct');});
-      recordResult(w.en,ok);
+      recordResult(keyOf(w),ok);
       // 【項目16】誤答時の自動「苦手」登録は廃止。1回のミスで苦手扱いになる旧仕様と
       // missOften（直近M回でP回以上）が二重定義になっていたため、判定は履歴に一本化する。
       // WEAK は★による手動登録の意味に純化した。
       if(ok){quizOk++;}else{b.classList.add('wrong');}
       var fb=document.getElementById('fb');
       fb.style.display='block';
-      fb.innerHTML=(ok?'<b style="color:var(--ok)">正解</b>':'<b style="color:var(--ng)">不正解</b>'+(missOften(w.en)?'（よく間違える語）':''))
+      fb.innerHTML=(ok?'<b style="color:var(--ok)">正解</b>':'<b style="color:var(--ng)">不正解</b>'+(missOften(keyOf(w))?'（よく間違える語）':''))
         +'<br>'+esc(w.ex||'')+'<br><span class="meta">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</span>'
         +'<div class="rowbtns" style="justify-content:flex-start;margin-top:8px"><button onclick="quizIdx++;render()">次の問題 →</button></div>';
     };
@@ -515,6 +561,8 @@ function renderPassage(){
 probe().then(function(){
   daysData=window.__VOCAB.slice().sort(function(a,b){return a.date<b.date?-1:1;}).map(buildItems);
   passageDays=window.__PASSAGES.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+  buildHomo();      // 同綴りの検出（表示の注意喚起用）
+  migrateKeys();    // 旧形式の localStorage を「見出し＋品詞」へ移行（初回のみ）
   var sel=document.getElementById('daySel');
   var h='<option value="qmix">復習ミックス（今日／1日前／3日前／よく間違える／回答数が少ない）</option><option value="review">復習セット(今日+1/3/7/14/30日前)</option><option value="all">全期間</option><option value="weak">よく間違える＋★</option>';
   daysData.slice().reverse().forEach(function(d){h+='<option value="'+d.date+'">'+d.date+'</option>';});
