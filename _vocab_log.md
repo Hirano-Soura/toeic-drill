@@ -318,3 +318,23 @@ exceed | 2026-08-03
 [句] reach out to A | 2026-08-03
 [句] in line with A | 2026-08-03
 [句] on track to do | 2026-08-03
+complaint | 2026-08-04
+resolve | 2026-08-04
+frustrate | 2026-08-04
+acknowledge | 2026-08-04
+courtesy | 2026-08-04
+apologize | 2026-08-04
+satisfaction | 2026-08-04
+concern | 2026-08-04
+address | 2026-08-04
+compensate | 2026-08-04
+rapport | 2026-08-04
+assistance | 2026-08-04
+disruptive | 2026-08-04
+hassle | 2026-08-04
+mitigate | 2026-08-04
+[句] handle A | 2026-08-04
+[句] make up for A | 2026-08-04
+[句] deal with A | 2026-08-04
+[句] look into A | 2026-08-04
+[句] get back to A | 2026-08-04
