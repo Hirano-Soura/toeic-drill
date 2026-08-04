@@ -1,9 +1,9 @@
 window.__portalStatus({
  "id": "toeic",
- "date": "2026-08-03",
- "updated": "2026-08-03",
- "headline": "単語15語＋句表現5 つ（営業・セールス）",
- "sub": "長文「Q3 Sales Strategy Update」",
+ "date": "2026-08-04",
+ "updated": "2026-08-04",
+ "headline": "単語15語＋句表現5 つ（カスタマーサービス・顧客対応）",
+ "sub": "長文「Customer Service Excellence Policy」",
  "items": [
   {
    "label": "単語",

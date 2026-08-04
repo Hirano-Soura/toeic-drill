@@ -609,20 +609,20 @@ window.__addVocab({
   "level": "600",
   "theme": "カスタマーサービス・顧客対応",
   "words": [
-    {"en": "complaint", "pos": "名", "ja": "苦情、不満", "ex": "We received several complaints about the product delivery time.", "exJa": "商品配達時間についていくつかの苦情を受けました。", "note": "TOEIC頻出。「異議、苦情」の両義。"},
-    {"en": "resolve", "pos": "動", "trans": "vt", "ja": "解決する、決定する", "ex": "Our customer service team worked quickly to resolve the issue.", "exJa": "カスタマーサービスチームが迅速に問題を解決しました。", "note": "自動詞では「決心する」。他動詞の「解決する」とは意味が異なる。"},
+    {"en": "grievance", "pos": "名", "ja": "不満、苦情", "ex": "Employees can file a formal grievance through the HR department.", "exJa": "従業員は人事部を通じて正式な苦情を申し立てることができます。", "note": "complaint よりやや硬い語。file a grievance が定型表現。"},
+    {"en": "remedy", "pos": "動", "trans": "vt", "ja": "改善する、是正する", "ex": "The support team moved quickly to remedy the shipping error.", "exJa": "サポートチームは配送ミスを是正するため迅速に動きました。", "note": "名詞としても使われる（a remedy for ~）。correct / fix と類義。"},
     {"en": "frustrate", "pos": "動", "trans": "vt", "ja": "～をいらいらさせる、～を阻止する", "ex": "Delayed responses frustrate customers and damage relationships.", "exJa": "遅い対応は顧客をいらいらさせ、関係を損なう。", "note": "受動態 be frustrated が Part 7 で頻出。"},
     {"en": "acknowledge", "pos": "動", "trans": "vt", "ja": "認める、承認する、受け取ったことを示す", "ex": "Please acknowledge receipt of this email.", "exJa": "このメールの受け取りを確認してください。", "note": "「認める」「確認する」の2層の意味。法律・ビジネス文書で頻出。"},
     {"en": "courtesy", "pos": "名", "ja": "礼儀、丁寧さ、親切", "ex": "Your courtesy during the meeting was much appreciated.", "exJa": "会議での丁寧な対応は大変感謝されました。", "note": "形容詞形 courteous。"},
-    {"en": "apologize", "pos": "動", "trans": "vi", "ja": "謝罪する、わび入る", "ex": "We sincerely apologize for the inconvenience caused.", "exJa": "生じた不便について心よりお詫びします。", "note": "自動詞（for + -ing が標準）。受動態は不可。"},
-    {"en": "satisfaction", "pos": "名", "ja": "満足、満足感", "ex": "Customer satisfaction is our top priority.", "exJa": "顧客満足は私たちの最優先事項です。", "note": "satisfactory / satisfy と対応。"},
-    {"en": "concern", "pos": "名/動", "ja": "懸念、関心事項 / 関心を持つ", "ex": "Your concern about shipping costs is valid.", "exJa": "送料に関する懸念は妥当です。", "note": "名詞がメイン。動詞は「関係する」の意。be concerned about は TOEIC 頻出。"},
+    {"en": "reassure", "pos": "動", "trans": "vt", "ja": "安心させる、再確認させる", "ex": "The agent reassured the customer that a refund would be processed.", "exJa": "担当者は返金が処理されることを伝え、顧客を安心させました。", "note": "reassure A that ~ の形が定番。名詞は reassurance。"},
+    {"en": "goodwill", "pos": "名", "ja": "信頼、好意、のれん", "ex": "Offering a small discount helps maintain goodwill with regular clients.", "exJa": "小さな割引を提供することは常連客との信頼関係の維持に役立ちます。", "note": "不可算名詞。会計用語では「のれん代」の意味もある多義語。"},
+    {"en": "concern", "pos": "名/動", "trans": "vt", "ja": "懸念、関心事項 / 関係する、関わる", "ex": "Your concern about shipping costs is valid.", "exJa": "送料に関する懸念は妥当です。", "note": "名詞がメイン。動詞は他動詞で「〜に関係する」の意。be concerned about は TOEIC 頻出。"},
     {"en": "address", "pos": "動", "trans": "vt", "ja": "対処する、扱う、演説する、宛てる", "ex": "We will address your feedback in our next update.", "exJa": "次の更新でフィードバックに対処します。", "note": "「住所」は名詞。「対処する」は他動詞で to の後は不要。"},
     {"en": "compensate", "pos": "動", "trans": "vt", "ja": "補償する、埋め合わせする", "ex": "The company will compensate affected customers immediately.", "exJa": "会社は影響を受けた顧客に直ちに補償します。", "note": "for を伴う場合 compensate for A。"},
     {"en": "rapport", "pos": "名", "ja": "友好的な関係、一致", "ex": "Building strong rapport with clients ensures repeat business.", "exJa": "クライアントとの強い信頼関係を築くことで、リピートビジネスが確保される。", "note": "フランス語由来。build ~ establish ~ develop rapport はセット表現。"},
-    {"en": "assistance", "pos": "名", "ja": "援助、補助", "ex": "If you need further assistance, please contact our support team.", "exJa": "さらに援助が必要な場合は、サポートチームにお問い合わせください。", "note": "assist (動) と対応。"},
+    {"en": "helpline", "pos": "名", "ja": "相談窓口、電話相談サービス", "ex": "Call our helpline if you have any questions about your order.", "exJa": "ご注文について質問がある場合は相談窓口までお電話ください。", "note": "hotline とほぼ同義。customer helpline のコロケーションで頻出。"},
     {"en": "disruptive", "pos": "形", "ja": "混乱を引き起こす、中断させる", "ex": "Technical issues have a disruptive effect on service quality.", "exJa": "技術上の問題はサービス品質に混乱をもたらします。", "note": "disrupt (動) の形容詞形。"},
-    {"en": "hassle", "pos": "名/動", "ja": "面倒、手数 / ～を悩ませる", "ex": "We aim to resolve issues without any hassle to the customer.", "exJa": "顧客に面倒をかけずに問題を解決することを目指しています。", "note": "名詞と動詞で意味ほぼ同じ。be a hassle / cause a hassle が日常的。"},
+    {"en": "hassle", "pos": "名/動", "trans": "vt", "ja": "面倒、手数 / ～を悩ませる", "ex": "We aim to remedy issues without any hassle to the customer.", "exJa": "顧客に面倒をかけずに問題を是正することを目指しています。", "note": "名詞と動詞で意味ほぼ同じ。動詞は他動詞。be a hassle / cause a hassle が日常的。"},
     {"en": "mitigate", "pos": "動", "trans": "vt", "ja": "緩和する、軽減する", "ex": "Additional discounts help mitigate customer dissatisfaction.", "exJa": "追加割引は顧客不満の軽減に役立ちます。", "note": "法律・リスク管理での頻出語。「悪影響を減らす」。"}
   ],
   "phrases": [
@@ -631,5 +631,34 @@ window.__addVocab({
     {"en": "deal with A", "pos": "動詞句", "ja": "～に対処する、扱う", "ex": "How will we deal with the upcoming service outage?", "exJa": "今後のサービス停止にどう対処しますか。", "note": "address / handle と近いが、より「困難に対処する」ニュアンス。受動態: be dealt with。"},
     {"en": "look into A", "pos": "動詞句", "ja": "～を調査する、検討する", "ex": "We will look into your complaint and provide an update by Friday.", "exJa": "苦情を調査し、金曜日までに更新を提供します。", "note": "investigate の同義語。Part 5: 分離型可（look A into は不可）。"},
     {"en": "get back to A", "pos": "動詞句", "ja": "～に返信する、返事する", "ex": "I will get back to you as soon as I have the information.", "exJa": "情報が得られたらすぐに返信します。", "note": "call A back / contact A の同義語。get back to someone で「返事する」。"}
+  ]
+});
+window.__addVocab({
+  "date": "2026-08-05",
+  "level": "600",
+  "theme": "銀行・金融サービス",
+  "words": [
+    {"en": "withdraw", "pos": "動", "trans": "vt/vi", "ja": "（お金を）引き出す、撤回する、退く", "ex": "You can withdraw up to 2,000 dollars from this machine.", "exJa": "この機械から2,000ドルまで引き出せます。", "note": "deposit（預ける）の対義語。「撤回する」の意味では withdraw an offer / withdraw an application。目的語なしで「退く、身を引く」の自動詞用法もある多義語。"},
+    {"en": "teller", "pos": "名", "ja": "銀行の窓口係", "ex": "The teller asked for a photo ID before processing the request.", "exJa": "窓口係は手続きの前に写真付き身分証を求めました。", "note": "bank clerk / cashier と近い。TOEICでは銀行の場面で bank teller の形で出る。"},
+    {"en": "transfer", "pos": "名/動", "trans": "vt/vi", "ja": "送金、移動、転勤 ／ 送金する、移す、乗り換える", "ex": "Please transfer the payment to our account by Friday.", "exJa": "金曜日までに当社の口座へ送金してください。", "note": "「乗り換える」の自動詞用法（transfer to Line 3）は Part 2/3 で頻出。名詞の強勢は前、動詞は後ろ。move / relocate と類義。"},
+    {"en": "currency", "pos": "名", "ja": "通貨、流通", "ex": "Foreign currency can be ordered online at any time.", "exJa": "外貨はいつでもオンラインで注文できます。", "note": "foreign currency / local currency がコロケーション。money は不可算だが currency は通貨の種類として可算にもなる。"},
+    {"en": "verify", "pos": "動", "trans": "vt", "ja": "確認する、真実だと証明する", "ex": "Please verify your contact details before the change takes effect.", "exJa": "変更が発効する前に連絡先の情報を確認してください。", "note": "confirm / check と言い換えられ、Part 7 の同義語問題で狙われる。名詞は verification。"},
+    {"en": "interest", "pos": "名", "ja": "利子、利息 ／ 関心、利益", "ex": "The interest rate on a new mortgage stays fixed for three years.", "exJa": "新規住宅ローンの金利は3年間固定されます。", "note": "「利子」の意味では不可算。「関心」の意味との多義が Part 7 で狙われる。interest rate（金利）はセットで覚える。"},
+    {"en": "mortgage", "pos": "名", "ja": "住宅ローン、抵当", "ex": "She applied for a mortgage to buy her first apartment.", "exJa": "彼女は初めてのマンションを買うため住宅ローンを申し込みました。", "note": "t は発音しない（モーゲッジ）。home loan / housing loan と言い換えられる。"},
+    {"en": "loan", "pos": "名/動", "trans": "vt", "ja": "融資、貸付金 ／ 貸す", "ex": "Any outstanding balance on a personal loan accrues charges monthly.", "exJa": "個人ローンの未払い残高には毎月手数料が発生します。", "note": "lend が動詞の標準形で、loan は主に名詞。take out a loan（融資を受ける）／repay a loan が定型。borrow（借りる）と混同注意。"},
+    {"en": "outstanding", "pos": "形", "ja": "未払いの、未処理の ／ 傑出した", "ex": "Please settle any outstanding balance before the end of the month.", "exJa": "月末までに未払いの残高を精算してください。", "note": "「優秀な」と「未払いの」の二つの意味を持ち、Part 7 の言い換え問題の定番。金銭の文脈では unpaid / overdue と同義。"},
+    {"en": "accrue", "pos": "動", "trans": "vi/vt", "ja": "（利息などが）発生する、蓄積する", "ex": "Interest accrues on the balance from the date of purchase.", "exJa": "利息は購入日から残高に対して発生します。", "note": "金融文脈では自動詞が中心で、受動態にしない（Interest accrues であって is accrued としない）。accumulate / build up と類義。名詞は accrual。"},
+    {"en": "portfolio", "pos": "名", "ja": "資産構成、運用資産 ／ 作品集", "ex": "An adviser can review your portfolio at no cost.", "exJa": "アドバイザーが無料で資産構成を見直します。", "note": "金融では「保有資産の組み合わせ」、就職の文脈では「作品集」。この多義が Part 7 で狙われる。"},
+    {"en": "dividend", "pos": "名", "ja": "配当金", "ex": "The company will pay a dividend to shareholders in October.", "exJa": "同社は10月に株主へ配当金を支払います。", "note": "pay / issue / declare a dividend がコロケーション。profit（利益）そのものではなく、株主に分配される部分を指す。"},
+    {"en": "shareholder", "pos": "名", "ja": "株主", "ex": "If you are a shareholder, your annual report will arrive by e-mail.", "exJa": "株主の方には年次報告書がメールで届きます。", "note": "stockholder（主に米）と同義。shareholders' meeting（株主総会）は TOEIC 頻出。"},
+    {"en": "insurance", "pos": "名", "ja": "保険、保険料", "ex": "New cardholders receive travel insurance at no extra cost.", "exJa": "新規カード会員は追加費用なしで旅行保険を受けられます。", "note": "不可算名詞なので an insurance とは言わない（a policy と数える）。coverage（補償範囲）と一緒に覚える。"},
+    {"en": "premium", "pos": "名/形", "ja": "保険料、割増料金 ／ 高級な、上質の", "ex": "After the first year, a monthly premium of 4 dollars applies.", "exJa": "1年目以降は月4ドルの保険料がかかります。", "note": "「保険料」と「高級な（premium seats）」の多義。at a premium は「品薄で、割高で」の意。"}
+  ],
+  "phrases": [
+    {"en": "apply for A", "pos": "動詞句", "ja": "～に申し込む、～を申請する", "ex": "Customers who apply for a new credit card before 30 September will receive a bonus.", "exJa": "9月30日までに新しいクレジットカードを申し込んだ顧客は特典を受けられます。", "note": "Part 5: 前置詞は for。apply to A は「A（機関・人）に申請する」「A に当てはまる」で意味が変わるため区別が狙われる。sign up for / request と類義。"},
+    {"en": "pay off A", "pos": "動詞句", "ja": "～を完済する ／ （努力が）実を結ぶ", "ex": "Customers who pay off a housing loan early will not be charged a penalty.", "exJa": "住宅ローンを早期に完済した顧客には違約金がかかりません。", "note": "Part 5: 分離型の句動詞で pay the loan off も可。代名詞は必ず pay it off の語順。目的語なしの自動詞用法「実を結ぶ」（The effort paid off）も出る。repay / settle と類義。"},
+    {"en": "be entitled to A", "pos": "動詞句", "ja": "～を受ける権利がある、～の資格がある", "ex": "Existing borrowers are entitled to a free review of their repayment plan.", "exJa": "既存の借り手は返済計画の無料見直しを受ける権利があります。", "note": "Part 5: to は前置詞なので後ろは名詞か動名詞（be entitled to receive のように原形が続く用法もあり、両方を問われる）。be eligible for A / have the right to do と類義。"},
+    {"en": "set aside A", "pos": "動詞句", "ja": "～を取っておく、（金・時間を）確保する", "ex": "We advise you to set aside a small amount every payday.", "exJa": "給料日ごとに少額を取っておくことをお勧めします。", "note": "Part 5: 分離型で set A aside も可。代名詞は set it aside。reserve / put aside / save と類義。「（判決などを）破棄する」の意味もある。"},
+    {"en": "in the event of A", "pos": "前置詞句", "ja": "～の場合には、万一～のときは", "ex": "In the event of a job loss, borrowers may pause repayments for three months.", "exJa": "失職した場合、借り手は3か月間返済を停止できます。", "note": "Part 5: 後ろは名詞。節を続けるときは in the event that S V に変える点が狙われる。in case of A とほぼ同義で、if 節に言い換えられる。"}
   ]
 });

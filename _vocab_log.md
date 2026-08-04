@@ -318,18 +318,18 @@ exceed | 2026-08-03
 [句] reach out to A | 2026-08-03
 [句] in line with A | 2026-08-03
 [句] on track to do | 2026-08-03
-complaint | 2026-08-04
-resolve | 2026-08-04
+grievance | 2026-08-04
+remedy | 2026-08-04
 frustrate | 2026-08-04
 acknowledge | 2026-08-04
 courtesy | 2026-08-04
-apologize | 2026-08-04
-satisfaction | 2026-08-04
+reassure | 2026-08-04
+goodwill | 2026-08-04
 concern | 2026-08-04
 address | 2026-08-04
 compensate | 2026-08-04
 rapport | 2026-08-04
-assistance | 2026-08-04
+helpline | 2026-08-04
 disruptive | 2026-08-04
 hassle | 2026-08-04
 mitigate | 2026-08-04
@@ -338,3 +338,23 @@ mitigate | 2026-08-04
 [句] deal with A | 2026-08-04
 [句] look into A | 2026-08-04
 [句] get back to A | 2026-08-04
+withdraw | 2026-08-05
+teller | 2026-08-05
+transfer | 2026-08-05
+currency | 2026-08-05
+verify | 2026-08-05
+interest | 2026-08-05
+mortgage | 2026-08-05
+loan | 2026-08-05
+outstanding | 2026-08-05
+accrue | 2026-08-05
+portfolio | 2026-08-05
+dividend | 2026-08-05
+shareholder | 2026-08-05
+insurance | 2026-08-05
+premium | 2026-08-05
+[句] apply for A | 2026-08-05
+[句] pay off A | 2026-08-05
+[句] be entitled to A | 2026-08-05
+[句] set aside A | 2026-08-05
+[句] in the event of A | 2026-08-05
