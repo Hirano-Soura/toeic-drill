@@ -358,3 +358,23 @@ premium | 2026-08-05
 [句] be entitled to A | 2026-08-05
 [句] set aside A | 2026-08-05
 [句] in the event of A | 2026-08-05
+appointment | 2026-08-06
+physician | 2026-08-06
+prescription | 2026-08-06
+pharmacy | 2026-08-06
+symptom | 2026-08-06
+checkup | 2026-08-06
+patient | 2026-08-06
+wellness | 2026-08-06
+nutrition | 2026-08-06
+dental | 2026-08-06
+recover | 2026-08-06
+treatment | 2026-08-06
+consult | 2026-08-06
+reschedule | 2026-08-06
+referral | 2026-08-06
+[句] make an appointment | 2026-08-06
+[句] fill out A | 2026-08-06
+[句] suffer from A | 2026-08-06
+[句] prior to A | 2026-08-06
+[句] on a first-come, first-served basis | 2026-08-06
