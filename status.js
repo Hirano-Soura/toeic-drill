@@ -1,9 +1,9 @@
 window.__portalStatus({
  "id": "toeic",
- "date": "2026-08-05",
- "updated": "2026-08-05",
- "headline": "単語15語＋句表現5 つ（銀行・金融サービス）",
- "sub": "長文「Notice to Account Holders: Updates to Personal Banking Services」 ／ 本編: 分詞・分詞構文",
+ "date": "2026-08-06",
+ "updated": "2026-08-06",
+ "headline": "単語15語＋句表現5 つ（医療・健康管理）",
+ "sub": "長文「Notice to All Staff: This Year's Employee Wellness Program」",
  "items": [
   {
    "label": "単語",
@@ -17,8 +17,8 @@ window.__portalStatus({
   },
   {
    "label": "本編",
-   "state": "ready",
-   "detail": "G 分詞・分詞構文"
+   "state": "none",
+   "detail": "今日は対象外"
   }
  ]
 });

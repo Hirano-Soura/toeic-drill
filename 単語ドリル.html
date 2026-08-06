@@ -207,8 +207,14 @@ function posLegend(ws){
 /** 【項目13】動詞の自他。trans は "vt" / "vi" / "vt/vi"。 */
 var TRANS_LABEL={vt:'他',vi:'自','vt/vi':'他自'};
 var TRANS_TITLE={vt:'他動詞（目的語を直接とる）',vi:'自動詞（目的語を直接とらない。前置詞が必要）','vt/vi':'他動詞・自動詞の両用'};
+/** trans の表記ゆれを吸収する。データ側の正しい形は "vt/vi" だが、
+    "vi/vt" と書かれても表示が黙って消えないようにする（検査は tests 側で厳密に見る）。 */
+function normTrans(t){
+  t=String(t||'').trim().toLowerCase();
+  return (t==='vi/vt')?'vt/vi':t;
+}
 function transBadge(w){
-  var t=w.trans; if(!t||!TRANS_LABEL[t]) return '';
+  var t=normTrans(w.trans); if(!t||!TRANS_LABEL[t]) return '';
   var cls=(t==='vt/vi')?'both':t;
   return '<span class="tr '+cls+'" title="'+esc(TRANS_TITLE[t])+'">'+TRANS_LABEL[t]+'</span>';
 }
