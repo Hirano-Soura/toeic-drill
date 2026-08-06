@@ -378,3 +378,23 @@ referral | 2026-08-06
 [句] suffer from A | 2026-08-06
 [句] prior to A | 2026-08-06
 [句] on a first-come, first-served basis | 2026-08-06
+package | 2026-08-07
+parcel | 2026-08-07
+postage | 2026-08-07
+envelope | 2026-08-07
+mailbox | 2026-08-07
+tracking | 2026-08-07
+signature | 2026-08-07
+recipient | 2026-08-07
+sender | 2026-08-07
+deliver | 2026-08-07
+forward | 2026-08-07
+weigh | 2026-08-07
+notify | 2026-08-07
+undeliverable | 2026-08-07
+fragile | 2026-08-07
+[句] in transit | 2026-08-07
+[句] be addressed to A | 2026-08-07
+[句] sign for A | 2026-08-07
+[句] return A to sender | 2026-08-07
+[句] notify A of B | 2026-08-07
