@@ -61,6 +61,8 @@
   .tr.vt{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}
   .tr.vi{background:#fef2f2;border-color:#fca5a5;color:#b91c1c}
   .tr.both{background:#f5f3ff;border-color:#c4b5fd;color:#6d28d9}
+  /* 【項目27】訳語の中の品詞・自他ラベル (名)(動)(自)(他) */
+  .jl{display:inline-block;font-size:10.5px;border-radius:6px;padding:0 5px;margin-right:3px;border:1px solid var(--line);background:#f1f5f9;color:var(--sub);vertical-align:1.5px}
   /* 【項目26】同じ綴りで別品詞の項目があることを示す */
   .homo{display:inline-block;font-size:10.5px;border-radius:8px;padding:0 6px;margin-left:4px;border:1px solid #fcd34d;background:#fffbeb;color:#b45309;vertical-align:1px;white-space:nowrap}
   .poslegend{display:flex;flex-wrap:wrap;gap:5px 12px;justify-content:center;margin:8px 0 0;font-size:11.5px;color:var(--sub)}
@@ -244,6 +246,13 @@ function keyOf(w){ return w.en+'|'+normPos(w); }
       助詞       … 「を対処する」と「に対処する」を同じ語義とみなすため
     助詞まで落とすのは、意図的に**過剰に**寄せている。誤答候補は余っているので、
     取りこぼす（紛らわしい語を出してしまう）方が害が大きい。 */
+/** 【項目27】訳語を表示用の HTML にする。
+    規約上、**半角かっこは品詞・自他のラベル専用**（補足は全角かっこ）なので、
+    機械的に見分けてラベルだけ小さく見せられる。意味の本体を読みやすくするため。 */
+function jaHtml(ja){
+  return esc(String(ja||'')).replace(/\((名|動|形|副|前|接|自|他)\)/g,'<span class="jl">$1</span>');
+}
+
 var _senseCache={};
 function jaSenses(ja){
   ja=String(ja||'');
@@ -434,7 +443,7 @@ function render(){
       var ph=(w.kind==='phrase');
       h+='<tr><td><span class="star'+(WEAK[keyOf(w)]?' on':'')+'" onclick="toggleWeak(\''+esc(keyOf(w)).replace(/'/g,"\\'")+'\',this)">★</span></td>'
         +'<td><span class="kind'+(ph?' ph':'')+'">'+(ph?'句表現':'単語')+'</span></td>'
-        +'<td class="en'+(ph?' ph':'')+'">'+esc(w.en)+homoBadge(w)+'</td><td>'+posText(w)+'</td><td>'+esc(w.ja)+'</td>'
+        +'<td class="en'+(ph?' ph':'')+'">'+esc(w.en)+homoBadge(w)+'</td><td>'+posText(w)+'</td><td>'+jaHtml(w.ja)+'</td>'
         +'<td>'+esc(w.ex||'')+'<div class="ex">'+esc(w.exJa||'')+(w.note?' ／ '+esc(w.note):'')+'</div></td></tr>';
     });
     c.innerHTML=h+'</table>';
@@ -445,7 +454,7 @@ function render(){
     var h='<p class="meta">'+(cardIdx+1)+' / '+ws.length+'（カードをクリックで表裏切替）</p>';
     h+='<div id="card" onclick="cardBack=!cardBack;render()">';
     if(!cardBack){ h+='<div class="big'+(w.kind==='phrase'?' ph':'')+'">'+esc(w.en)+'</div><div class="pos">'+homoBadge(w)+'<span class="kind'+(w.kind==='phrase'?' ph':'')+'">'+(w.kind==='phrase'?'句表現':'単語')+'</span> '+posText(w)+'</div>'; }
-    else{ h+='<div class="back">'+esc(w.ja)+'</div><div class="ex">'+esc(w.ex||'')+'<br>'+esc(w.exJa||'')+(w.note?'<br>'+esc(w.note):'')+'</div>'; }
+    else{ h+='<div class="back">'+jaHtml(w.ja)+'</div><div class="ex">'+esc(w.ex||'')+'<br>'+esc(w.exJa||'')+(w.note?'<br>'+esc(w.note):'')+'</div>'; }
     h+=cardBandHtml(w);
     h+='</div><div class="rowbtns">'
       +'<button onclick="cardIdx=Math.max(0,cardIdx-1);cardBack=false;render()">← 前へ</button>'
@@ -559,7 +568,7 @@ function renderStage2(c,w,head,stem,posline){
   }
   h+='<div class="choices">';
   // 正解判定は keyOf で行う。同綴りの別品詞を「正解扱い」にしないため。
-  opts.forEach(function(o){h+='<button class="choice" data-ok="'+(keyOf(o)===keyOf(w)?1:0)+'">'+esc(o.ja)+'</button>';});
+  opts.forEach(function(o){h+='<button class="choice" data-ok="'+(keyOf(o)===keyOf(w)?1:0)+'">'+jaHtml(o.ja)+'</button>';});
   h+='<button class="choice none" data-ok="0" data-none="1">思い浮かべた訳が選択肢に無い</button>';
   h+='</div><div class="fb" id="fb"></div></div>';
   c.innerHTML=h;

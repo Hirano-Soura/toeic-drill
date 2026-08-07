@@ -8,14 +8,14 @@ window.__addVocab({
   {"en": "reimburse", "pos": "動", "trans": "vt", "ja": "（費用を）払い戻す", "ex": "Employees will be reimbursed for travel expenses.", "exJa": "従業員には交通費が払い戻されます。", "note": "名詞形: reimbursement"},
   {"en": "warranty", "pos": "名", "ja": "（製品の）保証", "ex": "This laptop comes with a two-year warranty.", "exJa": "このノートPCには2年間の保証が付いています。", "note": "under warranty = 保証期間中"},
   {"en": "inquiry", "pos": "名", "ja": "問い合わせ", "ex": "Thank you for your inquiry about our services.", "exJa": "当社のサービスに関するお問い合わせありがとうございます。", "note": "動詞形: inquire"},
-  {"en": "estimate", "pos": "名/動", "trans": "vt", "ja": "見積もり／見積もる", "ex": "Could you give us an estimate for the repair work?", "exJa": "修理作業の見積もりをいただけますか。", "note": "名詞と動詞で発音が変わる（名: -mət / 動: -meɪt）"},
+  {"en": "estimate", "pos": "名/動", "trans": "vt", "ja": "(名)見積もり ／ (動)見積もる", "ex": "Could you give us an estimate for the repair work?", "exJa": "修理作業の見積もりをいただけますか。", "note": "名詞と動詞で発音が変わる（名: -mət / 動: -meɪt）"},
   {"en": "shipment", "pos": "名", "ja": "発送、積み荷", "ex": "The shipment is scheduled to arrive on Monday.", "exJa": "積み荷は月曜日に到着する予定です。", "note": "ship（動: 発送する）も頻出"},
   {"en": "postpone", "pos": "動", "trans": "vt", "ja": "延期する", "ex": "The meeting has been postponed until next week.", "exJa": "会議は来週まで延期されました。", "note": "言い換え: put off / reschedule"},
   {"en": "accommodate", "pos": "動", "trans": "vt", "ja": "収容する、（要望に）応える", "ex": "The conference room can accommodate up to 50 people.", "exJa": "その会議室は最大50人を収容できます。", "note": "accommodations = 宿泊施設"},
   {"en": "merchandise", "pos": "名", "ja": "商品（集合的・不可算）", "ex": "All merchandise in the store is 20% off this weekend.", "exJa": "今週末は店内全商品が20%引きです。", "note": "言い換え: goods / items / products"},
   {"en": "appliance", "pos": "名", "ja": "家電製品、器具", "ex": "We sell a wide range of kitchen appliances.", "exJa": "当店では幅広い台所家電を販売しています。", "note": "home appliances = 家庭用電化製品"},
   {"en": "expire", "pos": "動", "trans": "vi", "ja": "期限が切れる", "ex": "Your membership will expire at the end of this month.", "exJa": "あなたの会員資格は今月末で期限が切れます。", "note": "名詞形: expiration (date)"},
-  {"en": "refund", "pos": "名/動", "trans": "vt", "ja": "返金（する）", "ex": "You may request a full refund within 30 days.", "exJa": "30日以内であれば全額返金を請求できます。", "note": "セット表現: refund policy"},
+  {"en": "refund", "pos": "名/動", "trans": "vt", "ja": "(名)返金 ／ (動)返金する", "ex": "You may request a full refund within 30 days.", "exJa": "30日以内であれば全額返金を請求できます。", "note": "セット表現: refund policy"},
   {"en": "supervisor", "pos": "名", "ja": "上司、監督者", "ex": "Please submit the form to your supervisor by Friday.", "exJa": "金曜日までに用紙を上司に提出してください。", "note": "言い換え: manager"},
   {"en": "complimentary", "pos": "形", "ja": "無料の", "ex": "All guests receive a complimentary breakfast.", "exJa": "全ての宿泊客に無料の朝食が提供されます。", "note": "言い換え: free / at no charge。complementary（補完的な）と混同注意"}
  ]
@@ -47,18 +47,18 @@ window.__addVocab({
  "level": "600",
  "theme": "経理・財務（請求・予算・監査）",
  "words": [
-  {"en": "budget", "pos": "名/動", "trans": "vt/vi", "ja": "予算／予算を組む", "ex": "The finance department will finalize next year's budget by the end of this month.", "exJa": "経理部は今月末までに来年度の予算を確定します。", "note": "形容詞形budgetary（予算の）。budget for〜で「〜のために予算を組む」。"},
+  {"en": "budget", "pos": "名/動", "trans": "vt/vi", "ja": "(名)予算 ／ (動)予算を組む", "ex": "The finance department will finalize next year's budget by the end of this month.", "exJa": "経理部は今月末までに来年度の予算を確定します。", "note": "形容詞形budgetary（予算の）。budget for〜で「〜のために予算を組む」。"},
   {"en": "expense", "pos": "名", "ja": "経費", "ex": "Employees must submit all travel expenses within two weeks of their trip.", "exJa": "従業員は出張から2週間以内にすべての旅費経費を提出しなければなりません。", "note": "類義語expenditure, cost。expense report（経費報告書）は頻出コロケーション。"},
   {"en": "receipt", "pos": "名", "ja": "領収書", "ex": "Please keep your receipt as proof of purchase for any future refund.", "exJa": "今後の返金のため、購入証明として領収書を保管してください。", "note": "pは発音しない。類義語proof of purchase。upon receipt of〜（〜を受領次第）も頻出表現。"},
-  {"en": "deposit", "pos": "名/動", "trans": "vt", "ja": "頭金、預金／預ける", "ex": "A 20% deposit is required to confirm your hotel reservation.", "exJa": "ホテルの予約確定には20％の頭金が必要です。", "note": "動詞・名詞同形。類義語（動詞）put down, pay in advance。"},
+  {"en": "deposit", "pos": "名/動", "trans": "vt", "ja": "(名)頭金、預金 ／ (動)預ける", "ex": "A 20% deposit is required to confirm your hotel reservation.", "exJa": "ホテルの予約確定には20％の頭金が必要です。", "note": "動詞・名詞同形。類義語（動詞）put down, pay in advance。"},
   {"en": "balance", "pos": "名", "ja": "残高", "ex": "You can check your account balance online at any time.", "exJa": "口座残高はいつでもオンラインで確認できます。", "note": "balance due（未払い残高）、outstanding balance（未決済残高）はPart 7の言い換えで狙われる表現。"},
   {"en": "transaction", "pos": "名", "ja": "取引", "ex": "All transactions over $500 require manager approval.", "exJa": "500ドルを超えるすべての取引にはマネージャーの承認が必要です。", "note": "類義語deal, purchase。動詞形transact。"},
-  {"en": "fund", "pos": "名/動", "trans": "vt", "ja": "資金／資金を提供する", "ex": "The company set aside a fund for employee training programs.", "exJa": "会社は従業員研修プログラムのために資金を確保しました。", "note": "類義語capital, resources。set aside a fund（資金を確保する）のコロケーションに注意。"},
+  {"en": "fund", "pos": "名/動", "trans": "vt", "ja": "(名)資金 ／ (動)資金を提供する", "ex": "The company set aside a fund for employee training programs.", "exJa": "会社は従業員研修プログラムのために資金を確保しました。", "note": "類義語capital, resources。set aside a fund（資金を確保する）のコロケーションに注意。"},
   {"en": "revenue", "pos": "名", "ja": "収益", "ex": "Quarterly revenue increased by 15 percent compared to last year.", "exJa": "四半期の収益は前年比15パーセント増加しました。", "note": "類義語income, earnings。profit（利益）とは区別されるが言い換え問題で近い意味として扱われることがある。"},
   {"en": "deduct", "pos": "動", "trans": "vt", "ja": "差し引く", "ex": "The shipping fee will be deducted from your final refund.", "exJa": "送料は最終的な返金額から差し引かれます。", "note": "名詞形deduction（控除）も頻出。類義語subtract, withhold。"},
   {"en": "installment", "pos": "名", "ja": "分割払い", "ex": "Customers may pay for the equipment in monthly installments.", "exJa": "顧客はその機器を月々の分割払いで支払うことができます。", "note": "pay in installments（分割払いで支払う）のコロケーションで頻出。"},
   {"en": "overdue", "pos": "形", "ja": "支払期限を過ぎた", "ex": "Please settle your overdue invoice as soon as possible.", "exJa": "期限超過の請求書をできるだけ早くお支払いください。", "note": "類義語past due。反意語on time。settle an invoice（請求書を清算する）もあわせて覚える。"},
-  {"en": "audit", "pos": "名/動", "trans": "vt", "ja": "監査（する）", "ex": "An external accountant will audit the company's financial records next month.", "exJa": "外部の会計士が来月、会社の財務記録を監査します。", "note": "名詞・動詞同形。関連語auditor（監査人）。"},
+  {"en": "audit", "pos": "名/動", "trans": "vt", "ja": "(名)監査 ／ (動)監査する", "ex": "An external accountant will audit the company's financial records next month.", "exJa": "外部の会計士が来月、会社の財務記録を監査します。", "note": "名詞・動詞同形。関連語auditor（監査人）。"},
   {"en": "fiscal", "pos": "形", "ja": "会計の", "ex": "The fiscal year begins in April for most Japanese companies.", "exJa": "日本の多くの企業では会計年度は4月に始まります。", "note": "fiscal year（会計年度）は必須コロケーション。類義語financial（financial year）。"},
   {"en": "asset", "pos": "名", "ja": "資産", "ex": "Skilled employees are considered the company's most valuable asset.", "exJa": "熟練した従業員は会社の最も貴重な資産とみなされます。", "note": "人材を比喩的にassetと呼ぶ用法にも注意。対義語liability（負債）。"},
   {"en": "statement", "pos": "名", "ja": "明細書", "ex": "Your monthly bank statement is now available on our website.", "exJa": "月次銀行明細書は現在弊社のウェブサイトでご覧いただけます。", "note": "account statement（口座明細書）。類義語report, summary。"}
@@ -74,14 +74,14 @@ window.__addVocab({
   {"en": "carrier", "pos": "名", "ja": "運送業者", "ex": "The package was handed over to a shipping carrier for delivery.", "exJa": "荷物は配達のために運送業者に引き渡された。", "note": "類義語 shipping company / courier service。Part7の言い換えで頻出。"},
   {"en": "freight", "pos": "名", "ja": "貨物、貨物運送", "ex": "Freight charges increased due to rising fuel costs.", "exJa": "燃料費の上昇により運送料が値上がりした。", "note": "類義語 cargo。「freight train」=貨物列車。"},
   {"en": "distributor", "pos": "名", "ja": "販売代理店", "ex": "The firm signed a contract with a local distributor to expand sales.", "exJa": "その会社は販売を拡大するため地元の販売代理店と契約を結んだ。", "note": "類義語 dealer / agent。動詞distribute(流通させる)と混同注意。"},
-  {"en": "wholesale", "pos": "名/形", "ja": "卸売(の)", "ex": "Retailers buy products at wholesale prices before selling them to customers.", "exJa": "小売業者は顧客に販売する前に卸売価格で商品を購入する。", "note": "対義語 retail(小売)。「wholesaler」=卸売業者。"},
+  {"en": "wholesale", "pos": "名/形", "ja": "(名)卸売 ／ (形)卸売の", "ex": "Retailers buy products at wholesale prices before selling them to customers.", "exJa": "小売業者は顧客に販売する前に卸売価格で商品を購入する。", "note": "対義語 retail(小売)。「wholesaler」=卸売業者。"},
   {"en": "retailer", "pos": "名", "ja": "小売業者", "ex": "The retailer offered a discount to attract more customers.", "exJa": "その小売業者はより多くの客を引きつけるため割引を提供した。", "note": "対義語 wholesaler。類義語 store / shop。"},
   {"en": "dispatch", "pos": "動", "trans": "vt", "ja": "発送する、派遣する", "ex": "The order will be dispatched within 24 hours of purchase.", "exJa": "注文は購入から24時間以内に発送される。", "note": "類義語 send out / ship。名詞としても「発送」の意味で使う。"},
   {"en": "procurement", "pos": "名", "ja": "調達", "ex": "The procurement department is responsible for purchasing raw materials.", "exJa": "調達部門は原材料の購入を担当している。", "note": "類義語 purchasing / acquisition。動詞形は procure(調達する)。"},
   {"en": "supplier", "pos": "名", "ja": "仕入先、供給業者", "ex": "The factory relies on a single supplier for most of its components.", "exJa": "その工場は部品の大部分を単一の仕入先に頼っている。", "note": "類義語 vendor / provider。"},
   {"en": "backorder", "pos": "名", "ja": "入荷待ち注文", "ex": "The item is currently on backorder and will ship next week.", "exJa": "その商品は現在入荷待ちで、来週発送予定である。", "note": "「out of stock」(在庫切れ)と混同注意。backorderは注文自体は受理済みの状態。"},
   {"en": "customs", "pos": "名", "ja": "税関", "ex": "The shipment was delayed at customs due to missing documents.", "exJa": "その貨物は書類不備のため税関で遅れた。", "note": "常に複数形customsで使う。「customs duty」=関税。"},
-  {"en": "consignment", "pos": "名", "ja": "委託販売(品)", "ex": "The store sells artwork on consignment from local artists.", "exJa": "その店は地元の芸術家からの委託販売で美術品を販売している。", "note": "「on consignment」=委託販売で。「consignment shop」=委託販売店。"},
+  {"en": "consignment", "pos": "名", "ja": "委託販売（品）", "ex": "The store sells artwork on consignment from local artists.", "exJa": "その店は地元の芸術家からの委託販売で美術品を販売している。", "note": "「on consignment」=委託販売で。「consignment shop」=委託販売店。"},
   {"en": "courier", "pos": "名", "ja": "宅配業者、配達員", "ex": "A courier delivered the documents directly to the client's office.", "exJa": "宅配業者が書類を直接クライアントのオフィスに届けた。", "note": "類義語 delivery person / carrier。"},
   {"en": "replenish", "pos": "動", "trans": "vt", "ja": "補充する", "ex": "Staff replenish the shelves with new stock every morning.", "exJa": "スタッフは毎朝新しい在庫で棚を補充する。", "note": "類義語 restock / refill。名詞形は replenishment(補充)。"}
  ]
@@ -92,20 +92,20 @@ window.__addVocab({
  "theme": "マーケティング・広告",
  "words": [
   {"en": "advertisement", "pos": "名", "ja": "広告", "ex": "The company placed an advertisement in the local newspaper to promote its new product.", "exJa": "その会社は新商品を宣伝するため地元紙に広告を掲載しました。", "note": "類義語: ad, commercial(CM)。動詞形はadvertise。"},
-  {"en": "campaign", "pos": "名", "ja": "キャンペーン、(組織的な)運動", "ex": "The marketing team launched a campaign to increase brand awareness.", "exJa": "マーケティングチームはブランド認知度を高めるためキャンペーンを開始しました。", "note": "launch a campaign、advertising campaignの形で頻出。"},
+  {"en": "campaign", "pos": "名", "ja": "キャンペーン、（組織的な）運動", "ex": "The marketing team launched a campaign to increase brand awareness.", "exJa": "マーケティングチームはブランド認知度を高めるためキャンペーンを開始しました。", "note": "launch a campaign、advertising campaignの形で頻出。"},
   {"en": "consumer", "pos": "名", "ja": "消費者", "ex": "Consumer demand for eco-friendly products has increased significantly.", "exJa": "環境に優しい製品への消費者の需要が大幅に増加しました。", "note": "類義語: customer, client。consumer goods(消費財)も頻出。"},
-  {"en": "demographic", "pos": "形/名", "ja": "人口統計(学)の、(複数形で)人口統計的属性", "ex": "The survey targets a specific demographic: young professionals in urban areas.", "exJa": "その調査は都市部の若手社会人という特定の層を対象としています。", "note": "target demographic(ターゲット層)というコロケーションで頻出。"},
-  {"en": "endorse", "pos": "動", "trans": "vt", "ja": "(公に)支持する、推奨する", "ex": "A famous athlete was hired to endorse the new sports drink.", "exJa": "有名な運動選手が新しいスポーツドリンクを宣伝するために起用されました。", "note": "Part7同義語問題でrecommend/supportに言い換えられやすい。名詞形endorsement。"},
+  {"en": "demographic", "pos": "形/名", "ja": "(形)人口統計（学）の ／ (名)（複数形で）人口統計的属性", "ex": "The survey targets a specific demographic: young professionals in urban areas.", "exJa": "その調査は都市部の若手社会人という特定の層を対象としています。", "note": "target demographic(ターゲット層)というコロケーションで頻出。"},
+  {"en": "endorse", "pos": "動", "trans": "vt", "ja": "（公に）支持する、推奨する", "ex": "A famous athlete was hired to endorse the new sports drink.", "exJa": "有名な運動選手が新しいスポーツドリンクを宣伝するために起用されました。", "note": "Part7同義語問題でrecommend/supportに言い換えられやすい。名詞形endorsement。"},
   {"en": "feedback", "pos": "名", "ja": "意見、感想、フィードバック", "ex": "The company asked customers to provide feedback on the new website design.", "exJa": "会社は顧客に新しいウェブサイトのデザインについて意見を求めました。", "note": "類義語: comments, input, response。不可算名詞である点に注意。"},
-  {"en": "impression", "pos": "名", "ja": "印象;(広告の)表示回数", "ex": "First impressions of the product were mostly positive.", "exJa": "その製品への第一印象はおおむね好意的でした。", "note": "make a good impression(良い印象を与える)というコロケーション頻出。"},
-  {"en": "launch", "pos": "動/名", "trans": "vt", "ja": "開始する、発売する;発売、開始", "ex": "The company will launch its new smartphone next month.", "exJa": "その会社は来月新しいスマートフォンを発売する予定です。", "note": "類義語: introduce, release, unveil。"},
-  {"en": "loyalty", "pos": "名", "ja": "忠誠(心)、愛顧", "ex": "The store introduced a loyalty program to reward repeat customers.", "exJa": "その店はリピーター客に報いるためロイヤルティプログラムを導入しました。", "note": "customer loyalty、loyalty programの形で頻出。"},
+  {"en": "impression", "pos": "名", "ja": "印象、（広告の）表示回数", "ex": "First impressions of the product were mostly positive.", "exJa": "その製品への第一印象はおおむね好意的でした。", "note": "make a good impression(良い印象を与える)というコロケーション頻出。"},
+  {"en": "launch", "pos": "動/名", "trans": "vt", "ja": "(動)開始する、発売する ／ (名)発売、開始", "ex": "The company will launch its new smartphone next month.", "exJa": "その会社は来月新しいスマートフォンを発売する予定です。", "note": "類義語: introduce, release, unveil。"},
+  {"en": "loyalty", "pos": "名", "ja": "忠誠（心）、愛顧", "ex": "The store introduced a loyalty program to reward repeat customers.", "exJa": "その店はリピーター客に報いるためロイヤルティプログラムを導入しました。", "note": "customer loyalty、loyalty programの形で頻出。"},
   {"en": "publicity", "pos": "名", "ja": "宣伝、広報、世間の注目", "ex": "The product launch received a lot of publicity in the media.", "exJa": "その製品の発売はメディアで大きな注目を集めました。", "note": "類義語: attention, coverage。不可算名詞。"},
   {"en": "slogan", "pos": "名", "ja": "スローガン、標語", "ex": "The advertising team came up with a catchy slogan for the campaign.", "exJa": "広告チームはそのキャンペーン向けに覚えやすいスローガンを考案しました。", "note": "come up with a slogan(スローガンを考案する)というコロケーション。"},
-  {"en": "sponsor", "pos": "動/名", "trans": "vt", "ja": "後援する、資金提供する;スポンサー", "ex": "The event was sponsored by several local businesses.", "exJa": "そのイベントはいくつかの地元企業によって後援されました。", "note": "名詞形sponsorship(後援、協賛)も頻出。"},
-  {"en": "survey", "pos": "名/動", "trans": "vt", "ja": "調査(する)", "ex": "The company conducted a survey to find out what customers think of the service.", "exJa": "会社は顧客がサービスについてどう思っているかを調べるため調査を実施しました。", "note": "類義語: questionnaire, poll。conduct a surveyの形で頻出。"},
-  {"en": "target", "pos": "動/名", "trans": "vt", "ja": "対象とする、狙う;目標、対象", "ex": "The advertisement is designed to target young consumers.", "exJa": "その広告は若い消費者を対象にするよう作られています。", "note": "target audience/market(ターゲット層/市場)というコロケーション。"},
-  {"en": "audience", "pos": "名", "ja": "聴衆、観客、(メディアの)視聴者・読者層", "ex": "The commercial was designed to appeal to a wide audience.", "exJa": "そのコマーシャルは幅広い視聴者層に訴求するよう作られました。", "note": "target audience(ターゲット層)。媒体により類義語はviewers, readersなど変わる。"}
+  {"en": "sponsor", "pos": "動/名", "trans": "vt", "ja": "(動)後援する、資金提供する ／ (名)スポンサー", "ex": "The event was sponsored by several local businesses.", "exJa": "そのイベントはいくつかの地元企業によって後援されました。", "note": "名詞形sponsorship(後援、協賛)も頻出。"},
+  {"en": "survey", "pos": "名/動", "trans": "vt", "ja": "(名)調査 ／ (動)調査する", "ex": "The company conducted a survey to find out what customers think of the service.", "exJa": "会社は顧客がサービスについてどう思っているかを調べるため調査を実施しました。", "note": "類義語: questionnaire, poll。conduct a surveyの形で頻出。"},
+  {"en": "target", "pos": "動/名", "trans": "vt", "ja": "(動)対象とする、狙う ／ (名)目標、対象", "ex": "The advertisement is designed to target young consumers.", "exJa": "その広告は若い消費者を対象にするよう作られています。", "note": "target audience/market(ターゲット層/市場)というコロケーション。"},
+  {"en": "audience", "pos": "名", "ja": "聴衆、観客、（メディアの）視聴者、読者層", "ex": "The commercial was designed to appeal to a wide audience.", "exJa": "そのコマーシャルは幅広い視聴者層に訴求するよう作られました。", "note": "target audience(ターゲット層)。媒体により類義語はviewers, readersなど変わる。"}
  ]
 });
 window.__addVocab({
@@ -120,12 +120,12 @@ window.__addVocab({
   {"en": "tenant", "pos": "名", "ja": "賃借人、テナント、入居者", "ex": "All tenants are required to report any damage to the building manager.", "exJa": "すべての入居者は建物の損傷を管理人に報告する必要があります。", "note": "landlord(家主)と対の語。混同注意: tenant(借主) ⇔ landlord(貸主)。"},
   {"en": "occupancy", "pos": "名", "ja": "入居、占有、稼働率", "ex": "The hotel reported a high occupancy rate during the summer season.", "exJa": "そのホテルは夏の期間中、高い稼働率を報告しました。", "note": "occupancy rate(稼働率・入居率)。動詞occupy、形容詞occupied(使用中の)。"},
   {"en": "inspection", "pos": "名", "ja": "点検、検査", "ex": "A safety inspection of the building is conducted every six months.", "exJa": "建物の安全点検は6か月ごとに実施されます。", "note": "類義語: examination, check, review。動詞inspect。conduct an inspectionの形で頻出。"},
-  {"en": "lease", "pos": "名/動", "trans": "vt", "ja": "賃貸借(契約);賃貸しする、賃借りする", "ex": "The company signed a five-year lease for the downtown office.", "exJa": "その会社は中心部のオフィスについて5年間の賃貸借契約を結びました。", "note": "類義語: rent, rental agreement。renew a lease(契約を更新する)。"},
+  {"en": "lease", "pos": "名/動", "trans": "vt", "ja": "(名)賃貸借（契約） ／ (動)賃貸しする、賃借りする", "ex": "The company signed a five-year lease for the downtown office.", "exJa": "その会社は中心部のオフィスについて5年間の賃貸借契約を結びました。", "note": "類義語: rent, rental agreement。renew a lease(契約を更新する)。"},
   {"en": "vendor", "pos": "名", "ja": "業者、供給業者、販売業者", "ex": "We hired an outside vendor to handle the office cleaning.", "exJa": "私たちはオフィス清掃を担当してもらうため外部業者を雇いました。", "note": "類義語: supplier, contractor, seller。Part7で外注先を指す語として頻出。"},
   {"en": "relocate", "pos": "動", "trans": "vt/vi", "ja": "移転する、移転させる", "ex": "The headquarters will relocate to a larger building next year.", "exJa": "本社は来年、より大きな建物へ移転する予定です。", "note": "類義語: move, transfer。名詞形relocation。move to より少し硬い語。"},
   {"en": "spacious", "pos": "形", "ja": "広々とした", "ex": "The conference room is spacious enough to seat fifty people.", "exJa": "その会議室は50人が座れるほど広々としています。", "note": "類義語: roomy, large。反意語cramped(窮屈な)。名詞space。"},
   {"en": "adjacent", "pos": "形", "ja": "隣接した、隣の", "ex": "The parking lot is adjacent to the main entrance.", "exJa": "駐車場は正面玄関に隣接しています。", "note": "類義語: neighboring, next to, adjoining。adjacent toの形で頻出。"},
-  {"en": "utility", "pos": "名", "ja": "公共料金、(電気・ガス・水道などの)設備", "ex": "The monthly rent includes all utilities such as water and electricity.", "exJa": "毎月の家賃には水道や電気などすべての公共料金が含まれています。", "note": "通例複数形utilitiesで電気・ガス・水道を指す。utility bill(公共料金の請求書)。"},
+  {"en": "utility", "pos": "名", "ja": "公共料金、（電気・ガス・水道などの）設備", "ex": "The monthly rent includes all utilities such as water and electricity.", "exJa": "毎月の家賃には水道や電気などすべての公共料金が含まれています。", "note": "通例複数形utilitiesで電気・ガス・水道を指す。utility bill(公共料金の請求書)。"},
   {"en": "custodian", "pos": "名", "ja": "管理人、用務員、守衛", "ex": "The custodian locks all the doors at the end of the day.", "exJa": "用務員は一日の終わりにすべてのドアに施錠します。", "note": "類義語: janitor, caretaker。建物の清掃・管理を担う人。"},
   {"en": "corridor", "pos": "名", "ja": "廊下、通路", "ex": "Please do not leave boxes in the corridor, as they block the exit.", "exJa": "出口をふさぐため、廊下に箱を置かないでください。", "note": "類義語: hallway, passage。図面・避難経路の説明で頻出。"}
  ],
@@ -287,7 +287,7 @@ window.__addVocab({
  "level": "600",
  "theme": "契約・交渉",
  "words": [
-  {"en": "contract", "pos": "名/動", "trans": "vt/vi", "ja": "契約、契約書／契約する", "ex": "The service contract with the supplier will expire at the end of October.", "exJa": "その供給業者との業務契約は10月末で期限切れになります。", "note": "類義: agreement, deal。動詞では「契約する」のほか「縮小する」の意味もある。sign a contract / renew a contract のコロケーションで頻出。"},
+  {"en": "contract", "pos": "名/動", "trans": "vt/vi", "ja": "(名)契約、契約書 ／ (動)契約する", "ex": "The service contract with the supplier will expire at the end of October.", "exJa": "その供給業者との業務契約は10月末で期限切れになります。", "note": "類義: agreement, deal。動詞では「契約する」のほか「縮小する」の意味もある。sign a contract / renew a contract のコロケーションで頻出。"},
   {"en": "negotiate", "pos": "動", "trans": "vt/vi", "ja": "交渉する、取り決める", "ex": "Our team negotiated better delivery terms with the carrier.", "exJa": "私たちのチームは運送業者とより良い配送条件を交渉しました。", "note": "類義: bargain, discuss terms。名詞形 negotiation、交渉担当者は negotiator。negotiate with 人 / negotiate a contract。"},
   {"en": "clause", "pos": "名", "ja": "条項", "ex": "The delivery clause requires the vendor to notify us of any delay.", "exJa": "配送条項では、遅延があれば業者が当社に通知することが求められています。", "note": "類義: provision, article, term。Part 7の言い換えで clause = provision がよく狙われる。"},
   {"en": "provision", "pos": "名", "ja": "条項、規定／供給、備え", "ex": "A new provision limits annual price increases to three percent.", "exJa": "新しい条項は年間の値上げを3パーセントまでに制限しています。", "note": "多義語。契約文脈では clause と同義。provisions と複数形で「食料・必需品」の意味にもなる。動詞 provide と結びつけて覚える。"},
@@ -295,11 +295,11 @@ window.__addVocab({
   {"en": "renew", "pos": "動", "trans": "vt", "ja": "更新する、継続する", "ex": "We plan to renew the lease for another two years.", "exJa": "当社は賃貸契約をさらに2年更新する予定です。", "note": "類義: extend, continue。名詞形 renewal。renew a subscription / renew a contract。expire(期限が切れる)と対で覚える。"},
   {"en": "obligation", "pos": "名", "ja": "義務、責務", "ex": "Under the agreement, we accept the obligation to submit quarterly forecasts.", "exJa": "その合意のもと、当社は四半期ごとに予測を提出する義務を負います。", "note": "類義: duty, responsibility, commitment。形容詞 obligatory(義務的な)。have an obligation to do の形で頻出。"},
   {"en": "valid", "pos": "形", "ja": "有効な、妥当な", "ex": "The current agreement remains valid until 31 October.", "exJa": "現在の合意は10月31日まで有効です。", "note": "類義: effective, in force, good(有効期限の文脈)。反意語 invalid, expired。valid for six months / valid until ~ の形に注意。"},
-  {"en": "draft", "pos": "名/動", "trans": "vt", "ja": "草案、下書き／草案を作る", "ex": "Our attorney reviewed the second draft of the renewal document.", "exJa": "当社の弁護士は更新書類の第2稿を確認しました。", "note": "類義(名): preliminary version, outline。類義(動): prepare, compose。final version と対比される。"},
+  {"en": "draft", "pos": "名/動", "trans": "vt", "ja": "(名)草案、下書き ／ (動)草案を作る", "ex": "Our attorney reviewed the second draft of the renewal document.", "exJa": "当社の弁護士は更新書類の第2稿を確認しました。", "note": "類義(名): preliminary version, outline。類義(動): prepare, compose。final version と対比される。"},
   {"en": "extension", "pos": "名", "ja": "延長／内線番号／増築", "ex": "The board requested a six-month extension of the current terms.", "exJa": "取締役会は現行条件の6か月の延長を要請しました。", "note": "多義語で狙われやすい。deadline extension(期限延長)、phone extension(内線)、building extension(増築)。動詞 extend。"},
   {"en": "attorney", "pos": "名", "ja": "弁護士", "ex": "An outside attorney examined the confidentiality section.", "exJa": "社外の弁護士が守秘条項を精査しました。", "note": "類義: lawyer, legal counsel, legal representative。Part 7では attorney = lawyer の言い換えが定番。"},
   {"en": "binding", "pos": "形", "ja": "拘束力のある", "ex": "Once signed, the document becomes legally binding on both parties.", "exJa": "署名されれば、その書類は両当事者に対して法的な拘束力を持ちます。", "note": "類義: enforceable, obligatory。動詞 bind の分詞由来。non-binding(拘束力のない)と対で覚える。"},
-  {"en": "breach", "pos": "名/動", "trans": "vt", "ja": "違反、不履行／違反する", "ex": "Any breach of the contract may result in termination.", "exJa": "契約のいかなる違反も解除につながる可能性があります。", "note": "類義: violation, infringement。breach of contract は決まり文句。動詞 violate と置き換え可能。"},
+  {"en": "breach", "pos": "名/動", "trans": "vt", "ja": "(名)違反、不履行 ／ (動)違反する", "ex": "Any breach of the contract may result in termination.", "exJa": "契約のいかなる違反も解除につながる可能性があります。", "note": "類義: violation, infringement。breach of contract は決まり文句。動詞 violate と置き換え可能。"},
   {"en": "confidential", "pos": "形", "ja": "機密の、秘密の", "ex": "All pricing information must be kept confidential.", "exJa": "価格情報はすべて機密として扱わなければなりません。", "note": "類義: private, classified, secret。名詞 confidentiality(守秘義務)。keep ~ confidential のコロケーション。"},
   {"en": "mutual", "pos": "形", "ja": "相互の、共通の", "ex": "The revisions reflect a mutual effort to reduce risk.", "exJa": "その修正はリスクを減らそうとする相互の努力を反映しています。", "note": "類義: reciprocal, shared, joint。mutual agreement / mutual benefit / by mutual consent。副詞 mutually。"}
  ],
@@ -307,7 +307,7 @@ window.__addVocab({
   {"en": "on behalf of", "pos": "前置詞句", "ja": "～を代表して、～の代わりに", "ex": "The legal team negotiated the new terms on behalf of the entire company.", "exJa": "法務チームは全社を代表して新しい条件を交渉しました。", "note": "Part 5では behalf の前後の前置詞が狙われる。on behalf of ~ / on one's behalf の2形のみで、in behalf of は原則不可。類義: representing ~, in place of ~, for ~。"},
   {"en": "be subject to", "pos": "動詞句", "ja": "～の対象となる、～次第である", "ex": "The new terms will be subject to a final review by both boards.", "exJa": "新しい条件は両取締役会による最終確認の対象となります。", "note": "Part 5頻出。subject to の to は前置詞なので後ろは名詞か動名詞(be subject to change / to being reviewed)。原形は不可。類義: be liable to, depend on, be conditional upon。"},
   {"en": "in accordance with", "pos": "前置詞句", "ja": "～に従って、～に準拠して", "ex": "Every shipment must be handled in accordance with the updated safety standards.", "exJa": "すべての出荷は最新の安全基準に従って扱われなければなりません。", "note": "Part 5では with の選択が狙われる(in accordance to は誤り)。according to は「～によれば」で出典を示す点が異なる。類義: in compliance with, in line with, pursuant to。"},
-  {"en": "enter into", "pos": "動詞句", "ja": "(契約・交渉などを)結ぶ、始める", "ex": "The board decided not to enter into a long-term arrangement this year.", "exJa": "取締役会は今年は長期の取り決めを結ばないことを決めました。", "note": "契約文書で頻出。enter a room(部屋に入る)は他動詞で into を取らないが、契約・議論には into が必要という対比が狙われる。類義: sign, conclude, embark on。"},
+  {"en": "enter into", "pos": "動詞句", "ja": "（契約・交渉などを）結ぶ、始める", "ex": "The board decided not to enter into a long-term arrangement this year.", "exJa": "取締役会は今年は長期の取り決めを結ばないことを決めました。", "note": "契約文書で頻出。enter a room(部屋に入る)は他動詞で into を取らないが、契約・議論には into が必要という対比が狙われる。類義: sign, conclude, embark on。"},
   {"en": "agree to do", "pos": "動詞句", "ja": "～することに同意する", "ex": "Managers who agree to adopt the new reporting format should confirm by Friday.", "exJa": "新しい報告形式の採用に同意する管理職は金曜までに確認を返してください。", "note": "Part 5では後ろの形が狙われる。agree to do(行為に同意)と agree to + 名詞(提案・条件に同意)、agree with 人(人に賛成)、agree on 事柄(合意点)を区別する。類義: consent to, be willing to do。"}
  ]
 });
@@ -317,7 +317,7 @@ window.__addVocab({
  "theme": "環境・サステナビリティ",
  "words": [
   {"en": "recycle", "pos": "動", "trans": "vt", "ja": "リサイクルする、再利用する", "ex": "All employees are asked to recycle paper and plastic in the bins on each floor.", "exJa": "全従業員は各階のごみ箱で紙とプラスチックをリサイクルするよう求められています。", "note": "名詞形は recycling。類義: reuse(再利用する)。掲示や社内連絡では recycling program(リサイクル制度)の形で頻出します。"},
-  {"en": "conserve", "pos": "動", "trans": "vt", "ja": "(資源を)節約する、保護する", "ex": "The new sensors will help the company conserve electricity at night.", "exJa": "新しいセンサーは会社が夜間に電力を節約する助けになります。", "note": "言い換えは save。conserve energy / water / resources がコロケーション。converse(会話する)との混同に注意します。"},
+  {"en": "conserve", "pos": "動", "trans": "vt", "ja": "（資源を）節約する、保護する", "ex": "The new sensors will help the company conserve electricity at night.", "exJa": "新しいセンサーは会社が夜間に電力を節約する助けになります。", "note": "言い換えは save。conserve energy / water / resources がコロケーション。converse(会話する)との混同に注意します。"},
   {"en": "sustainable", "pos": "形", "ja": "持続可能な、環境に配慮した", "ex": "The firm was praised for its sustainable packaging design.", "exJa": "その会社は持続可能な包装設計で称賛されました。", "note": "名詞形は sustainability。動詞 sustain(維持する)から。類義: environmentally friendly, eco-friendly。"},
   {"en": "initiative", "pos": "名", "ja": "新たな取り組み、主導権", "ex": "The recycling initiative will begin at the headquarters in September.", "exJa": "そのリサイクルの取り組みは9月に本社で始まります。", "note": "Part 7では program / effort / campaign への言い換えが狙われます。take the initiative(率先して行う)も重要です。"},
   {"en": "dispose", "pos": "動", "trans": "vi", "ja": "処分する、捨てる", "ex": "Old computers must be disposed of at the recycling center.", "exJa": "古いコンピューターはリサイクルセンターで処分しなければなりません。", "note": "自動詞なので必ず of を伴い dispose of A の形にします。受動態でも of が残り be disposed of。名詞形は disposal。類義: discard, get rid of。"},
@@ -354,12 +354,12 @@ window.__addVocab({
   {"en": "evaluate", "pos": "動", "trans": "vt", "ja": "評価する、査定する", "ex": "Managers will evaluate each trainee's progress at the end of the month.", "exJa": "管理職は月末に各研修生の進捗を評価します。", "note": "言い換えは assess / appraise / review。名詞形は evaluation(performance evaluation は人事評価)。estimate(見積もる)は金額や数量の概算で、evaluate とは使い分けます。"},
   {"en": "assignment", "pos": "名", "ja": "課題、任務、割り当て", "ex": "Each participant must submit a written assignment before the final session.", "exJa": "各参加者は最終回の前に書面の課題を提出しなければなりません。", "note": "言い換えは task / duty。「(海外)赴任」の意味もあります(an overseas assignment)。動詞は assign(assign A to B で A を B に割り当てる)。"},
   {"en": "participant", "pos": "名", "ja": "参加者", "ex": "Participants are asked to arrive ten minutes before the workshop begins.", "exJa": "参加者は研修会の開始10分前に到着するよう求められています。", "note": "言い換えは attendee。動詞は participate(participate in ~)、名詞の行為は participation。人を表す -ant の語尾に注目します。"},
-  {"en": "lecture", "pos": "名/動", "trans": "vt/vi", "ja": "講義、講演／講義する", "ex": "Dr. Okafor will lecture on data privacy during the afternoon session.", "exJa": "オカフォー博士は午後の回でデータプライバシーについて講義します。", "note": "動詞では自動詞用法 lecture on ~(~について講義する)が普通です。他動詞では lecture someone(人に説教する)。名詞は give a lecture / attend a lecture が典型のコロケーション。"},
+  {"en": "lecture", "pos": "名/動", "trans": "vt/vi", "ja": "(名)講義、講演 ／ (動)講義する", "ex": "Dr. Okafor will lecture on data privacy during the afternoon session.", "exJa": "オカフォー博士は午後の回でデータプライバシーについて講義します。", "note": "動詞では自動詞用法 lecture on ~(~について講義する)が普通です。他動詞では lecture someone(人に説教する)。名詞は give a lecture / attend a lecture が典型のコロケーション。"},
   {"en": "trainee", "pos": "名", "ja": "研修生、訓練を受ける人", "ex": "New trainees will be paired with an experienced staff member for two weeks.", "exJa": "新しい研修生は2週間、経験のあるスタッフと組みます。", "note": "-ee は「~される人」を表します(employee, interviewee, attendee)。対になる語は trainer(訓練する側)。この -er / -ee の対比は Part 5 の語彙問題で狙われます。"},
-  {"en": "objective", "pos": "名/形", "ja": "目標／客観的な", "ex": "The main objective of the program is to improve written communication.", "exJa": "そのプログラムの主な目標は、文書によるコミュニケーションを向上させることです。", "note": "名詞では goal / aim の言い換え。形容詞では「客観的な」で、反意語は subjective(主観的な)。文脈でどちらの品詞かを見分ける問題が出ます。"},
+  {"en": "objective", "pos": "名/形", "ja": "(名)目標 ／ (形)客観的な", "ex": "The main objective of the program is to improve written communication.", "exJa": "そのプログラムの主な目標は、文書によるコミュニケーションを向上させることです。", "note": "名詞では goal / aim の言い換え。形容詞では「客観的な」で、反意語は subjective(主観的な)。文脈でどちらの品詞かを見分ける問題が出ます。"},
   {"en": "acquire", "pos": "動", "trans": "vt", "ja": "習得する、獲得する、買収する", "ex": "The course helps staff acquire the skills needed for supervisory roles.", "exJa": "その講座はスタッフが管理職に必要な技能を習得する助けになります。", "note": "言い換えは obtain / gain / develop。ビジネス文脈では「企業を買収する」の意味も頻出します(acquire a company)。名詞形は acquisition。"},
   {"en": "optional", "pos": "形", "ja": "任意の、選択制の", "ex": "The Saturday review class is optional but strongly recommended.", "exJa": "土曜日の復習クラスは任意ですが、強く推奨されます。", "note": "反意語は mandatory / required。言い換えは voluntary。名詞は option。案内文で mandatory と optional が対比されて出題されることが多いです。"},
-  {"en": "conduct", "pos": "動/名", "trans": "vt", "ja": "(業務などを)行う、実施する／行動", "ex": "The human resources team will conduct the orientation on Monday morning.", "exJa": "人事チームは月曜日の午前にオリエンテーションを実施します。", "note": "言い換えは carry out / perform。conduct a survey / an interview / a training session がコロケーション。名詞では「行動、品行」(code of conduct 行動規範)で、発音のアクセント位置が動詞と異なります。"}
+  {"en": "conduct", "pos": "動/名", "trans": "vt", "ja": "(動)（業務などを）行う、実施する ／ (名)行動", "ex": "The human resources team will conduct the orientation on Monday morning.", "exJa": "人事チームは月曜日の午前にオリエンテーションを実施します。", "note": "言い換えは carry out / perform。conduct a survey / an interview / a training session がコロケーション。名詞では「行動、品行」(code of conduct 行動規範)で、発音のアクセント位置が動詞と異なります。"}
  ],
  "phrases": [
   {"en": "be eligible for A", "pos": "形容詞句", "ja": "Aの資格がある、Aを受ける資格を満たす", "ex": "Staff members are eligible for the leadership program after one year of service.", "exJa": "スタッフは勤続1年を経ると、そのリーダーシップ研修を受ける資格があります。", "note": "Part 5 では前置詞 for の選択が狙われます。to 不定詞をとる形 be eligible to do も可(be eligible to apply)。類義は be qualified for A / be entitled to A(entitled は to をとる点で対比されます)。"},
@@ -410,14 +410,14 @@ window.__addVocab({
     {"en": "edition", "pos": "名", "ja": "版、（刊行物の）号", "ex": "The revised edition of the guidebook comes out in May.", "exJa": "そのガイドブックの改訂版は5月に発売されます。", "note": "「版」＝内容や形式の違い（digital edition, revised edition, second edition）。同じ雑誌の「○月号」のような回ごとの発行分は issue を使う点が違いです。editor（編集者）と綴りが似るので注意します。"},
     {"en": "editor", "pos": "名", "ja": "編集者、編集長", "ex": "The editor asked for two more photographs.", "exJa": "編集者は写真をあと2枚求めました。", "note": "動詞 edit（編集する、他動詞）、形容詞 editorial（編集の）、名詞 editorial（社説）。editor in chief（編集長）も出ます。edition（版）との区別がPart 5の語彙問題で狙われます。"},
     {"en": "deadline", "pos": "名", "ja": "締め切り、期限", "ex": "The deadline for the fall issue has been moved to Friday.", "exJa": "秋号の締め切りは金曜日に変更されました。", "note": "meet the deadline（締め切りに間に合わせる）／miss the deadline（間に合わない）／extend the deadline（延長する）のコロケーションで覚えます。類義: due date, cutoff date。"},
-    {"en": "issue", "pos": "名/動", "trans": "vt", "ja": "（雑誌などの）号、問題、発行する", "ex": "The company issued a statement about the delay.", "exJa": "その会社は遅延について声明を発表しました。", "note": "多義語でPart 7の言い換えの常連です。名詞は「号」（the July issue）と「問題点」（an important issue）。動詞は他動詞で「発行する、交付する」（issue a permit / issue a refund）＝ release, publish に言い換えられます。"},
-    {"en": "broadcast", "pos": "動/名", "trans": "vt/vi", "ja": "放送する、放送（番組）", "ex": "The station will broadcast the interview on Wednesday morning.", "exJa": "その放送局は水曜の朝にそのインタビューを放送します。", "note": "他動詞（broadcast a program）が中心ですが、自動詞用法（The station broadcasts 24 hours a day.）もあります。過去形・過去分詞は broadcast のまま（broadcasted も可だが試験では原形同形が基本）。名詞 broadcaster（放送局、キャスター）。"},
+    {"en": "issue", "pos": "名/動", "trans": "vt", "ja": "(名)（雑誌などの）号、問題 ／ (動)発行する", "ex": "The company issued a statement about the delay.", "exJa": "その会社は遅延について声明を発表しました。", "note": "多義語でPart 7の言い換えの常連です。名詞は「号」（the July issue）と「問題点」（an important issue）。動詞は他動詞で「発行する、交付する」（issue a permit / issue a refund）＝ release, publish に言い換えられます。"},
+    {"en": "broadcast", "pos": "動/名", "trans": "vt/vi", "ja": "(動)放送する ／ (名)放送、番組", "ex": "The station will broadcast the interview on Wednesday morning.", "exJa": "その放送局は水曜の朝にそのインタビューを放送します。", "note": "他動詞（broadcast a program）が中心ですが、自動詞用法（The station broadcasts 24 hours a day.）もあります。過去形・過去分詞は broadcast のまま（broadcasted も可だが試験では原形同形が基本）。名詞 broadcaster（放送局、キャスター）。"},
     {"en": "column", "pos": "名", "ja": "コラム、（新聞の）欄、（表の）列、柱", "ex": "His weekly column appears on the opinion page.", "exJa": "彼の週刊コラムは意見欄に掲載されます。", "note": "新聞の「コラム」のほか、表計算の「列」（縦。横は row）、建物の「柱」の意味もあり、Part 7の図表問題では「列」の意味で出ます。書き手は columnist。"},
     {"en": "circulation", "pos": "名", "ja": "発行部数、流通、循環", "ex": "The paper's circulation has grown for three straight years.", "exJa": "その新聞の発行部数は3年連続で伸びています。", "note": "出版では「発行部数」。ほかに「（貨幣などの）流通」「（空気・血液の）循環」。動詞 circulate（自動詞で「出回る、循環する」／他動詞で「回覧する」）も社内文書で頻出です（circulate the memo）。"},
     {"en": "journalist", "pos": "名", "ja": "記者、ジャーナリスト", "ex": "Two journalists were assigned to cover the trade fair.", "exJa": "2人の記者が見本市の取材を担当することになりました。", "note": "類義: reporter, correspondent（特派員）。動詞 cover（取材する、報道する）とセットで出ます。分野の名詞は journalism。"},
-    {"en": "release", "pos": "動/名", "trans": "vt", "ja": "公表する、発売する、解放する／発表", "ex": "The company will release its annual report next week.", "exJa": "その会社は来週、年次報告書を公表します。", "note": "他動詞。press release（報道発表）は名詞用法の定番。Part 7の同義語問題で release ⇔ issue / publish / announce の言い換えが狙われます。「解放する」の意味もあります。"},
+    {"en": "release", "pos": "動/名", "trans": "vt", "ja": "(動)公表する、発売する、解放する ／ (名)発表", "ex": "The company will release its annual report next week.", "exJa": "その会社は来週、年次報告書を公表します。", "note": "他動詞。press release（報道発表）は名詞用法の定番。Part 7の同義語問題で release ⇔ issue / publish / announce の言い換えが狙われます。「解放する」の意味もあります。"},
     {"en": "coverage", "pos": "名", "ja": "報道、取材（範囲）、（保険の）補償範囲", "ex": "The magazine is known for its detailed coverage of local politics.", "exJa": "その雑誌は地方政治の詳細な報道で知られています。", "note": "不可算。動詞 cover（取材する、～に及ぶ、～を賄う）から派生します。保険文書では「補償範囲」（insurance coverage）、通信では「通信可能範囲」の意味になり、Part 7で文脈判断が要ります。類義: reporting。"},
-    {"en": "quarterly", "pos": "形/副", "ja": "四半期の、年4回の／四半期ごとに", "ex": "The firm publishes a quarterly report on local businesses.", "exJa": "その会社は地元企業に関する四半期報告書を発行しています。", "note": "quarter（四半期）から。同系列の monthly（毎月の）、biweekly（隔週の／週2回の）、annual（年次の）とまとめて覚えます。形容詞と副詞が同形で、The magazine is published quarterly. のように副詞でも使えます。"}
+    {"en": "quarterly", "pos": "形/副", "ja": "(形)四半期の、年4回の ／ (副)四半期ごとに", "ex": "The firm publishes a quarterly report on local businesses.", "exJa": "その会社は地元企業に関する四半期報告書を発行しています。", "note": "quarter（四半期）から。同系列の monthly（毎月の）、biweekly（隔週の／週2回の）、annual（年次の）とまとめて覚えます。形容詞と副詞が同形で、The magazine is published quarterly. のように副詞でも使えます。"}
   ],
   "phrases": [
     {"en": "come out", "pos": "動詞句", "ja": "発売される、出版される、（事実などが）明らかになる", "ex": "The digital issue comes out every Thursday at 6:00 A.M.", "exJa": "デジタル版は毎週木曜の午前6時に発行されます。", "note": "Part 5で狙われる点: come は自動詞なので目的語をとれず、受動態にできません（The book was come out は誤り）。「本が出る」は The book comes out（能動）か The book is published（受動）と表します。類義: be released, be published, appear。"},
@@ -436,7 +436,7 @@ window.__addVocab({
       "en": "prospect",
       "pos": "名/動",
       "trans": "vt/vi",
-      "ja": "見込み客；顧客候補を探す",
+      "ja": "(名)見込み客 ／ (動)顧客候補を探す",
       "ex": "We prospect for new clients in emerging markets.",
       "exJa": "新興市場で新規顧客の候補を探しています。",
       "note": "Part 7で「potential customer」「lead」と言い換え。自動詞は『prospect for A（~を探す）』と前置詞必須。"
@@ -444,7 +444,7 @@ window.__addVocab({
     {
       "en": "sales",
       "pos": "名",
-      "ja": "売上；営業",
+      "ja": "売上、営業",
       "ex": "Our sales team exceeded the target last quarter.",
       "exJa": "営業チームは先四半期に目標を超過しました。",
       "note": "複数形で「sales figures（売上数字）」。Part 7で「revenue」と区別（sales=営業活動、revenue=売上高）。"
@@ -453,7 +453,7 @@ window.__addVocab({
       "en": "pitch",
       "pos": "名/動",
       "trans": "vt",
-      "ja": "プレゼンテーション；プレゼンする",
+      "ja": "(名)プレゼンテーション ／ (動)プレゼンする",
       "ex": "The sales manager pitched the new product to key clients.",
       "exJa": "営業マネージャーは新製品を主要顧客にプレゼンしました。",
       "note": "Part 5で「present」と言い換え。「a winning pitch（説得力のあるプレゼン）」。"
@@ -461,7 +461,7 @@ window.__addVocab({
     {
       "en": "client",
       "pos": "名",
-      "ja": "クライアント；顧客",
+      "ja": "クライアント、顧客",
       "ex": "We maintain strong relationships with all our major clients.",
       "exJa": "主要クライアントとの強い関係を維持しています。",
       "note": "Part 7で「customer」と区別（client=ビジネス関係が深い、長期）。「client base」「corporate client」。"
@@ -478,7 +478,7 @@ window.__addVocab({
     {
       "en": "commission",
       "pos": "名",
-      "ja": "手数料；歩合給",
+      "ja": "手数料、歩合給",
       "ex": "Sales staff earn commission on every sale they make.",
       "exJa": "営業担当者は売上に応じた歩合給を得られます。",
       "note": "「earn a commission」「sales commission」。Part 7で「bonus」と区別。"
@@ -486,7 +486,7 @@ window.__addVocab({
     {
       "en": "proposal",
       "pos": "名",
-      "ja": "提案；企画書",
+      "ja": "提案、企画書",
       "ex": "We submitted a detailed proposal to the client yesterday.",
       "exJa": "昨日、顧客に詳細な提案書を提出しました。",
       "note": "Part 7で「offer」「plan」と言い換え可。「submit a proposal」「review a proposal」。"
@@ -494,7 +494,7 @@ window.__addVocab({
     {
       "en": "competitive",
       "pos": "形",
-      "ja": "競争力のある；競争的な",
+      "ja": "競争力のある、競争的な",
       "ex": "Our pricing is competitive compared to our rivals.",
       "exJa": "競合他社と比べて、当社の価格設定は競争力があります。",
       "note": "Part 7で「competitively priced」「market-competitive」と言い換え。「competitive advantage」。"
@@ -502,7 +502,7 @@ window.__addVocab({
     {
       "en": "margin",
       "pos": "名",
-      "ja": "マージン；利幅",
+      "ja": "マージン、利幅",
       "ex": "We improved our profit margin by reducing operational costs.",
       "exJa": "運営コストを削減することで利益率を改善しました。",
       "note": "「profit margin」「sales margin」。Part 7で「profit」「profitability」と区別。"
@@ -511,7 +511,7 @@ window.__addVocab({
       "en": "attain",
       "pos": "動",
       "trans": "vt",
-      "ja": "達成する；到達する",
+      "ja": "達成する、到達する",
       "ex": "We aim to attain a 20% growth rate this fiscal year.",
       "exJa": "今会計年度で20%の成長率達成を目指しています。",
       "note": "Part 7で「achieve」「reach」と言い換え。「attain a goal」「attain profitability」。"
@@ -520,7 +520,7 @@ window.__addVocab({
       "en": "secure",
       "pos": "動",
       "trans": "vt",
-      "ja": "（契約・許可を）確保する；獲得する",
+      "ja": "（契約・許可を）確保する、獲得する",
       "ex": "We secured a major contract with the client.",
       "exJa": "クライアントとの大型契約を確保しました。",
       "note": "Part 7で「obtain」「acquire」と言い換え。「secure funding」「secure approval」。"
@@ -528,7 +528,7 @@ window.__addVocab({
     {
       "en": "incentive",
       "pos": "名",
-      "ja": "インセンティブ；動機付け",
+      "ja": "インセンティブ、動機付け",
       "ex": "The company offers attractive incentives to top performers.",
       "exJa": "会社は優秀者に魅力的なインセンティブを提供しています。",
       "note": "Part 7で「motivation」「bonus」と区別。「sales incentive」「performance incentive」。"
@@ -537,7 +537,7 @@ window.__addVocab({
       "en": "outreach",
       "pos": "名/動",
       "trans": "vt",
-      "ja": "アウトリーチ；（人々に）連絡・働きかけする",
+      "ja": "(名)アウトリーチ ／ (動)（人々に）連絡する、働きかける",
       "ex": "Our marketing team outreach to potential customers regularly.",
       "exJa": "マーケティングチームは定期的に見込み客に働きかけます。",
       "note": "Part 7で「contact」「reach out」と言い換え。「community outreach」も出現。"
@@ -546,7 +546,7 @@ window.__addVocab({
       "en": "identify",
       "pos": "動",
       "trans": "vt",
-      "ja": "特定する；識別する",
+      "ja": "特定する、識別する",
       "ex": "We identified several key opportunities in the market.",
       "exJa": "市場内でいくつかの重要な機会を特定しました。",
       "note": "Part 7で「recognize」「pinpoint」と言い換え。「identify a need」「identify trends」。"
@@ -555,7 +555,7 @@ window.__addVocab({
       "en": "exceed",
       "pos": "動",
       "trans": "vt",
-      "ja": "超える；上回る",
+      "ja": "超える、上回る",
       "ex": "Our sales exceeded expectations this quarter.",
       "exJa": "今四半期の売上は予想を上回りました。",
       "note": "Part 5で「go beyond」「surpass」と言い換え。「exceed the target」「exceed projections」。"
@@ -565,7 +565,7 @@ window.__addVocab({
     {
       "en": "close a deal",
       "pos": "動詞句",
-      "ja": "取引を成立させる；契約を決める",
+      "ja": "取引を成立させる、契約を決める",
       "ex": "The sales team closed a major deal with the Fortune 500 company.",
       "exJa": "営業チームはフォーチュン500企業との大型取引を成立させました。",
       "note": "Part 5で「reach an agreement」「finalize a contract」と言い換え。分離型：「close the deal」。"
@@ -573,7 +573,7 @@ window.__addVocab({
     {
       "en": "build relationships",
       "pos": "動詞句",
-      "ja": "関係を構築する；信頼関係を作る",
+      "ja": "関係を構築する、信頼関係を作る",
       "ex": "Our manager emphasizes the importance of building relationships with clients.",
       "exJa": "マネージャーはクライアントとの関係構築の重要性を強調しています。",
       "note": "Part 5で「develop connections」「foster partnerships」と言い換え。「build long-term relationships」。"
@@ -581,7 +581,7 @@ window.__addVocab({
     {
       "en": "reach out to A",
       "pos": "動詞句",
-      "ja": "Aに連絡する；Aに働きかける",
+      "ja": "Aに連絡する、Aに働きかける",
       "ex": "We reach out to potential customers through email campaigns.",
       "exJa": "メールキャンペーンを通じて見込み客に連絡します。",
       "note": "Part 5で「contact」「communicate with」と言い換え。前置詞『to』必須。分離型不可。"
@@ -589,7 +589,7 @@ window.__addVocab({
     {
       "en": "in line with A",
       "pos": "前置詞句/副詞句",
-      "ja": "Aに沿う；Aと一致して",
+      "ja": "Aに沿って、Aと一致して",
       "ex": "Our pricing strategy is in line with market standards.",
       "exJa": "当社の価格戦略は市場基準に沿っています。",
       "note": "Part 5で「according to A」「in accordance with A」と言い換え。「in line with expectations」。"
@@ -597,7 +597,7 @@ window.__addVocab({
     {
       "en": "on track to do",
       "pos": "副詞句",
-      "ja": "~する見通しである；軌道に乗っている",
+      "ja": "～する見通しである、軌道に乗っている",
       "ex": "We are on track to exceed our annual sales goal.",
       "exJa": "年間売上目標を超える見通しです。",
       "note": "Part 5で「on course to」「likely to」と言い換え。「on track」だけでも名詞修飾可。"
@@ -616,13 +616,13 @@ window.__addVocab({
     {"en": "courtesy", "pos": "名", "ja": "礼儀、丁寧さ、親切", "ex": "Your courtesy during the meeting was much appreciated.", "exJa": "会議での丁寧な対応は大変感謝されました。", "note": "形容詞形 courteous。"},
     {"en": "reassure", "pos": "動", "trans": "vt", "ja": "安心させる、再確認させる", "ex": "The agent reassured the customer that a refund would be processed.", "exJa": "担当者は返金が処理されることを伝え、顧客を安心させました。", "note": "reassure A that ~ の形が定番。名詞は reassurance。"},
     {"en": "goodwill", "pos": "名", "ja": "信頼、好意、のれん", "ex": "Offering a small discount helps maintain goodwill with regular clients.", "exJa": "小さな割引を提供することは常連客との信頼関係の維持に役立ちます。", "note": "不可算名詞。会計用語では「のれん代」の意味もある多義語。"},
-    {"en": "concern", "pos": "名/動", "trans": "vt", "ja": "懸念、関心事項 / 関係する、関わる", "ex": "Your concern about shipping costs is valid.", "exJa": "送料に関する懸念は妥当です。", "note": "名詞がメイン。動詞は他動詞で「〜に関係する」の意。be concerned about は TOEIC 頻出。"},
+    {"en": "concern", "pos": "名/動", "trans": "vt", "ja": "(名)懸念、関心事項 ／ (動)関係する、関わる", "ex": "Your concern about shipping costs is valid.", "exJa": "送料に関する懸念は妥当です。", "note": "名詞がメイン。動詞は他動詞で「〜に関係する」の意。be concerned about は TOEIC 頻出。"},
     {"en": "address", "pos": "動", "trans": "vt", "ja": "対処する、扱う、演説する、宛てる", "ex": "We will address your feedback in our next update.", "exJa": "次の更新でフィードバックに対処します。", "note": "「住所」は名詞。「対処する」は他動詞で to の後は不要。"},
     {"en": "compensate", "pos": "動", "trans": "vt", "ja": "補償する、埋め合わせする", "ex": "The company will compensate affected customers immediately.", "exJa": "会社は影響を受けた顧客に直ちに補償します。", "note": "for を伴う場合 compensate for A。"},
     {"en": "rapport", "pos": "名", "ja": "友好的な関係、一致", "ex": "Building strong rapport with clients ensures repeat business.", "exJa": "クライアントとの強い信頼関係を築くことで、リピートビジネスが確保される。", "note": "フランス語由来。build ~ establish ~ develop rapport はセット表現。"},
     {"en": "helpline", "pos": "名", "ja": "相談窓口、電話相談サービス", "ex": "Call our helpline if you have any questions about your order.", "exJa": "ご注文について質問がある場合は相談窓口までお電話ください。", "note": "hotline とほぼ同義。customer helpline のコロケーションで頻出。"},
     {"en": "disruptive", "pos": "形", "ja": "混乱を引き起こす、中断させる", "ex": "Technical issues have a disruptive effect on service quality.", "exJa": "技術上の問題はサービス品質に混乱をもたらします。", "note": "disrupt (動) の形容詞形。"},
-    {"en": "hassle", "pos": "名/動", "trans": "vt", "ja": "面倒、手数 / ～を悩ませる", "ex": "We aim to remedy issues without any hassle to the customer.", "exJa": "顧客に面倒をかけずに問題を是正することを目指しています。", "note": "名詞と動詞で意味ほぼ同じ。動詞は他動詞。be a hassle / cause a hassle が日常的。"},
+    {"en": "hassle", "pos": "名/動", "trans": "vt", "ja": "(名)面倒、手数 ／ (動)～を悩ませる", "ex": "We aim to remedy issues without any hassle to the customer.", "exJa": "顧客に面倒をかけずに問題を是正することを目指しています。", "note": "名詞と動詞で意味ほぼ同じ。動詞は他動詞。be a hassle / cause a hassle が日常的。"},
     {"en": "mitigate", "pos": "動", "trans": "vt", "ja": "緩和する、軽減する", "ex": "Additional discounts help mitigate customer dissatisfaction.", "exJa": "追加割引は顧客不満の軽減に役立ちます。", "note": "法律・リスク管理での頻出語。「悪影響を減らす」。"}
   ],
   "phrases": [
@@ -640,19 +640,19 @@ window.__addVocab({
   "words": [
     {"en": "withdraw", "pos": "動", "trans": "vt/vi", "ja": "（お金を）引き出す、撤回する、退く", "ex": "You can withdraw up to 2,000 dollars from this machine.", "exJa": "この機械から2,000ドルまで引き出せます。", "note": "deposit（預ける）の対義語。「撤回する」の意味では withdraw an offer / withdraw an application。目的語なしで「退く、身を引く」の自動詞用法もある多義語。"},
     {"en": "teller", "pos": "名", "ja": "銀行の窓口係", "ex": "The teller asked for a photo ID before processing the request.", "exJa": "窓口係は手続きの前に写真付き身分証を求めました。", "note": "bank clerk / cashier と近い。TOEICでは銀行の場面で bank teller の形で出る。"},
-    {"en": "transfer", "pos": "名/動", "trans": "vt/vi", "ja": "送金、移動、転勤 ／ 送金する、移す、乗り換える", "ex": "Please transfer the payment to our account by Friday.", "exJa": "金曜日までに当社の口座へ送金してください。", "note": "「乗り換える」の自動詞用法（transfer to Line 3）は Part 2/3 で頻出。名詞の強勢は前、動詞は後ろ。move / relocate と類義。"},
+    {"en": "transfer", "pos": "名/動", "trans": "vt/vi", "ja": "(名)送金、移動、転勤 ／ (動)送金する、移す、乗り換える", "ex": "Please transfer the payment to our account by Friday.", "exJa": "金曜日までに当社の口座へ送金してください。", "note": "「乗り換える」の自動詞用法（transfer to Line 3）は Part 2/3 で頻出。名詞の強勢は前、動詞は後ろ。move / relocate と類義。"},
     {"en": "currency", "pos": "名", "ja": "通貨、流通", "ex": "Foreign currency can be ordered online at any time.", "exJa": "外貨はいつでもオンラインで注文できます。", "note": "foreign currency / local currency がコロケーション。money は不可算だが currency は通貨の種類として可算にもなる。"},
     {"en": "verify", "pos": "動", "trans": "vt", "ja": "確認する、真実だと証明する", "ex": "Please verify your contact details before the change takes effect.", "exJa": "変更が発効する前に連絡先の情報を確認してください。", "note": "confirm / check と言い換えられ、Part 7 の同義語問題で狙われる。名詞は verification。"},
     {"en": "interest", "pos": "名", "ja": "利子、利息 ／ 関心、利益", "ex": "The interest rate on a new mortgage stays fixed for three years.", "exJa": "新規住宅ローンの金利は3年間固定されます。", "note": "「利子」の意味では不可算。「関心」の意味との多義が Part 7 で狙われる。interest rate（金利）はセットで覚える。"},
     {"en": "mortgage", "pos": "名", "ja": "住宅ローン、抵当", "ex": "She applied for a mortgage to buy her first apartment.", "exJa": "彼女は初めてのマンションを買うため住宅ローンを申し込みました。", "note": "t は発音しない（モーゲッジ）。home loan / housing loan と言い換えられる。"},
-    {"en": "loan", "pos": "名/動", "trans": "vt", "ja": "融資、貸付金 ／ 貸す", "ex": "Any outstanding balance on a personal loan accrues charges monthly.", "exJa": "個人ローンの未払い残高には毎月手数料が発生します。", "note": "lend が動詞の標準形で、loan は主に名詞。take out a loan（融資を受ける）／repay a loan が定型。borrow（借りる）と混同注意。"},
+    {"en": "loan", "pos": "名/動", "trans": "vt", "ja": "(名)融資、貸付金 ／ (動)貸す", "ex": "Any outstanding balance on a personal loan accrues charges monthly.", "exJa": "個人ローンの未払い残高には毎月手数料が発生します。", "note": "lend が動詞の標準形で、loan は主に名詞。take out a loan（融資を受ける）／repay a loan が定型。borrow（借りる）と混同注意。"},
     {"en": "outstanding", "pos": "形", "ja": "未払いの、未処理の ／ 傑出した", "ex": "Please settle any outstanding balance before the end of the month.", "exJa": "月末までに未払いの残高を精算してください。", "note": "「優秀な」と「未払いの」の二つの意味を持ち、Part 7 の言い換え問題の定番。金銭の文脈では unpaid / overdue と同義。"},
     {"en": "accrue", "pos": "動", "trans": "vt/vi", "ja": "（利息などが）発生する、蓄積する", "ex": "Interest accrues on the balance from the date of purchase.", "exJa": "利息は購入日から残高に対して発生します。", "note": "金融文脈では自動詞が中心で、受動態にしない（Interest accrues であって is accrued としない）。accumulate / build up と類義。名詞は accrual。"},
     {"en": "portfolio", "pos": "名", "ja": "資産構成、運用資産 ／ 作品集", "ex": "An adviser can review your portfolio at no cost.", "exJa": "アドバイザーが無料で資産構成を見直します。", "note": "金融では「保有資産の組み合わせ」、就職の文脈では「作品集」。この多義が Part 7 で狙われる。"},
     {"en": "dividend", "pos": "名", "ja": "配当金", "ex": "The company will pay a dividend to shareholders in October.", "exJa": "同社は10月に株主へ配当金を支払います。", "note": "pay / issue / declare a dividend がコロケーション。profit（利益）そのものではなく、株主に分配される部分を指す。"},
     {"en": "shareholder", "pos": "名", "ja": "株主", "ex": "If you are a shareholder, your annual report will arrive by e-mail.", "exJa": "株主の方には年次報告書がメールで届きます。", "note": "stockholder（主に米）と同義。shareholders' meeting（株主総会）は TOEIC 頻出。"},
     {"en": "insurance", "pos": "名", "ja": "保険、保険料", "ex": "New cardholders receive travel insurance at no extra cost.", "exJa": "新規カード会員は追加費用なしで旅行保険を受けられます。", "note": "不可算名詞なので an insurance とは言わない（a policy と数える）。coverage（補償範囲）と一緒に覚える。"},
-    {"en": "premium", "pos": "名/形", "ja": "保険料、割増料金 ／ 高級な、上質の", "ex": "After the first year, a monthly premium of 4 dollars applies.", "exJa": "1年目以降は月4ドルの保険料がかかります。", "note": "「保険料」と「高級な（premium seats）」の多義。at a premium は「品薄で、割高で」の意。"}
+    {"en": "premium", "pos": "名/形", "ja": "(名)保険料、割増料金 ／ (形)高級な、上質の", "ex": "After the first year, a monthly premium of 4 dollars applies.", "exJa": "1年目以降は月4ドルの保険料がかかります。", "note": "「保険料」と「高級な（premium seats）」の多義。at a premium は「品薄で、割高で」の意。"}
   ],
   "phrases": [
     {"en": "apply for A", "pos": "動詞句", "ja": "～に申し込む、～を申請する", "ex": "Customers who apply for a new credit card before 30 September will receive a bonus.", "exJa": "9月30日までに新しいクレジットカードを申し込んだ顧客は特典を受けられます。", "note": "Part 5: 前置詞は for。apply to A は「A（機関・人）に申請する」「A に当てはまる」で意味が変わるため区別が狙われる。sign up for / request と類義。"},
@@ -673,13 +673,13 @@ window.__addVocab({
     {"en": "pharmacy", "pos": "名", "ja": "薬局、調剤室", "ex": "The pharmacy on the first floor is open until eight o'clock on weekdays.", "exJa": "1階の薬局は平日は8時まで開いています。", "note": "類義: drugstore（米）、chemist's（英）。薬剤師は pharmacist。Part 2/7の店舗案内で頻出。"},
     {"en": "symptom", "pos": "名", "ja": "症状、兆候", "ex": "Employees who notice any unusual symptoms should contact the clinic immediately.", "exJa": "異常な症状に気づいた従業員は、ただちに診療所に連絡してください。", "note": "類義: sign, indication。比喩的に「（問題の）兆候」の意味でもビジネス記事に出ます。a symptom of A の形が基本。"},
     {"en": "checkup", "pos": "名", "ja": "健康診断、点検", "ex": "All staff members are entitled to a free checkup once a year.", "exJa": "全職員は年に一度、無料の健康診断を受ける権利があります。", "note": "check-up とも綴ります。類義: examination, physical（米で「健康診断」の名詞）。機械の「点検」にも使え、その場合は inspection が類義語です。"},
-    {"en": "patient", "pos": "名/形", "ja": "（名）患者　（形）忍耐強い", "ex": "Each patient must present an identification card at the reception desk.", "exJa": "各患者は受付で身分証明書を提示する必要があります。", "note": "名詞「患者」と形容詞「忍耐強い」の多義語で、Part 5・Part 7の言い換えで狙われます。形容詞のときの類義: tolerant。名詞の副詞形はなく、形容詞の副詞は patiently。"},
+    {"en": "patient", "pos": "名/形", "ja": "(名)患者 ／ (形)忍耐強い", "ex": "Each patient must present an identification card at the reception desk.", "exJa": "各患者は受付で身分証明書を提示する必要があります。", "note": "名詞「患者」と形容詞「忍耐強い」の多義語で、Part 5・Part 7の言い換えで狙われます。形容詞のときの類義: tolerant。名詞の副詞形はなく、形容詞の副詞は patiently。"},
     {"en": "wellness", "pos": "名", "ja": "健康、健康増進", "ex": "The company launched a wellness program to help employees reduce stress.", "exJa": "会社は従業員のストレス軽減を助けるため、健康増進プログラムを開始しました。", "note": "類義: well-being, health。wellness program / wellness center のコロケーションで社内連絡文に頻出します。"},
     {"en": "nutrition", "pos": "名", "ja": "栄養、栄養摂取", "ex": "The seminar on nutrition will be led by a registered dietitian.", "exJa": "栄養に関するセミナーは、登録栄養士が担当します。", "note": "形容詞は nutritious（栄養価の高い）で、意味が異なる点に注意します。nutritional information（栄養成分表示）は広告文で頻出。"},
     {"en": "dental", "pos": "形", "ja": "歯科の、歯の", "ex": "Our new insurance plan now covers dental treatment for family members.", "exJa": "新しい保険プランでは、家族の歯科治療も対象になりました。", "note": "名詞は dentist / dentistry。dental care, dental checkup, dental coverage のコロケーションで出ます。medical と並列で使われることが多い語です。"},
-    {"en": "recover", "pos": "動", "trans": "vt/vi", "ja": "（自）回復する　（他）取り戻す", "ex": "Staff members who are still recovering from an illness may join the session online.", "exJa": "病気から回復中の職員は、オンラインで参加してもかまいません。", "note": "自動詞では recover from A（～から回復する）と前置詞を伴い、受動態にできません。他動詞では recover lost data のように「取り戻す」。名詞は recovery。類義: get better, regain。"},
+    {"en": "recover", "pos": "動", "trans": "vt/vi", "ja": "(他)取り戻す ／ (自)回復する", "ex": "Staff members who are still recovering from an illness may join the session online.", "exJa": "病気から回復中の職員は、オンラインで参加してもかまいません。", "note": "自動詞では recover from A（～から回復する）と前置詞を伴い、受動態にできません。他動詞では recover lost data のように「取り戻す」。名詞は recovery。類義: get better, regain。"},
     {"en": "treatment", "pos": "名", "ja": "治療、処置、扱い", "ex": "If further treatment is required, the doctor will recommend a specialist.", "exJa": "さらに治療が必要な場合、医師は専門医を勧めます。", "note": "動詞 treat から。「（人への）扱い」の意味もあり、preferential treatment（優遇措置）のように使われます。類義: therapy, care。"},
-    {"en": "consult", "pos": "動", "trans": "vt/vi", "ja": "（他）相談する、参照する　（自）協議する", "ex": "Please consult your supervisor before requesting a different examination date.", "exJa": "別の検査日を希望する前に、上司に相談してください。", "note": "他動詞では consult A（Aに相談する／Aを参照する）で前置詞は不要です。自動詞では consult with A（Aと協議する）。名詞は consultation、人は consultant。類義: refer to A。"},
+    {"en": "consult", "pos": "動", "trans": "vt/vi", "ja": "(他)相談する、参照する ／ (自)協議する", "ex": "Please consult your supervisor before requesting a different examination date.", "exJa": "別の検査日を希望する前に、上司に相談してください。", "note": "他動詞では consult A（Aに相談する／Aを参照する）で前置詞は不要です。自動詞では consult with A（Aと協議する）。名詞は consultation、人は consultant。類義: refer to A。"},
     {"en": "reschedule", "pos": "動", "trans": "vt", "ja": "予定を変更する、日程を組み直す", "ex": "Employees who cannot attend may reschedule their visit once at no charge.", "exJa": "出席できない従業員は、一度に限り無料で訪問日を変更できます。", "note": "re- + schedule。類義: postpone（延期する）は「後ろにずらす」だけで、reschedule は前倒しも含みます。be rescheduled for Friday のように受動態でよく使われます。"},
     {"en": "referral", "pos": "名", "ja": "紹介、紹介状", "ex": "You will receive a referral to a specialist if the results show a problem.", "exJa": "結果に問題が見られた場合、専門医への紹介状が渡されます。", "note": "動詞は refer（refer A to B でAをBに紹介する）。ビジネスでは referral program（顧客紹介制度）としても出ます。類義: recommendation, introduction。"}
   ],
@@ -707,7 +707,7 @@ window.__addVocab({
     {"en": "sender", "pos": "名", "ja": "差出人", "ex": "If the address is incorrect, the parcel will be returned to the sender.", "exJa": "住所が誤っている場合、小包は差出人に返送されます。", "note": "対義語はrecipient(受取人)。句表現'return A to sender'とセットで覚える。"},
     {"en": "deliver", "pos": "動", "trans": "vt", "ja": "配達する", "ex": "The company promises to deliver all orders within three business days.", "exJa": "その会社はすべての注文を営業日3日以内に配達すると約束しています。", "note": "他動詞なので目的語を直接とる(deliver a package)。受動態'be delivered'もPart5で頻出。名詞形はdelivery。"},
     {"en": "forward", "pos": "動", "trans": "vt", "ja": "転送する", "ex": "Please forward this letter to our new office address.", "exJa": "この手紙を弊社の新しいオフィスの住所に転送してください。", "note": "他動詞。'forward A to B'の語順に注意。形容詞'forward'(前方の)と混同しないこと。"},
-    {"en": "weigh", "pos": "動", "trans": "vt/vi", "ja": "(他)重さを量る／(自)重さが~である", "ex": "The clerk weighed the package before calculating the postage.", "exJa": "係員は郵便料金を計算する前に荷物の重さを量りました。", "note": "他動詞(weigh A=Aの重さを量る)と自動詞(This package weighs 3 kilograms.=このパッケージは3キロの重さがある)の両方がある。自動詞用法は受動態にできない点がPart5で狙われる。"},
+    {"en": "weigh", "pos": "動", "trans": "vt/vi", "ja": "(他)重さを量る ／ (自)重さが～である", "ex": "The clerk weighed the package before calculating the postage.", "exJa": "係員は郵便料金を計算する前に荷物の重さを量りました。", "note": "他動詞(weigh A=Aの重さを量る)と自動詞(This package weighs 3 kilograms.=このパッケージは3キロの重さがある)の両方がある。自動詞用法は受動態にできない点がPart5で狙われる。"},
     {"en": "notify", "pos": "動", "trans": "vt", "ja": "知らせる", "ex": "Customers will be notified by e-mail once their order has been shipped.", "exJa": "注文が発送されると、顧客はメールで知らされます。", "note": "他動詞。'notify A of B'(AにBを知らせる)の語順で頻出。同義語はinform。受動態'be notified of'もPart5で狙われる。"},
     {"en": "undeliverable", "pos": "形", "ja": "配達不能の", "ex": "The letter was marked undeliverable and sent back to the sender.", "exJa": "その手紙は配達不能と印がつけられ、差出人に送り返されました。", "note": "'un-'+'deliverable'の派生語。'be marked as undeliverable'の形で使われることが多い。"},
     {"en": "fragile", "pos": "形", "ja": "壊れやすい", "ex": "Boxes labeled fragile should be handled with extra care during transport.", "exJa": "「壊れやすい」と表示された箱は、輸送中は特に注意して扱われるべきです。", "note": "同義語: breakable。'handle with care'という定型表現とセットで覚える。"}
@@ -715,7 +715,7 @@ window.__addVocab({
   "phrases": [
     {"en": "in transit", "pos": "副詞句", "ja": "輸送中で", "ex": "Your order is currently in transit and should arrive within two days.", "exJa": "ご注文の品はただいま輸送中で、2日以内に到着する予定です。", "note": "前置詞は'in'を使う('on transit'は誤り)。'while in transit'の形でも使われる。類義: en route。"},
     {"en": "be addressed to A", "pos": "形容詞句", "ja": "A宛てになっている", "ex": "The package was addressed to the wrong department and had to be redirected.", "exJa": "その荷物は誤った部署宛てになっていたため、転送しなければなりませんでした。", "note": "受動態の形で使うのが基本。前置詞は'to'を使う('addressed for'は誤り)。動詞addressの過去分詞用法。"},
-    {"en": "sign for A", "pos": "動詞句", "ja": "A(の受け取り)にサインする", "ex": "Someone must be available to sign for the delivery when the courier arrives.", "exJa": "配送業者が到着したとき、荷物の受け取りにサインできる人がいる必要があります。", "note": "前置詞'for'を落とさないこと。'sign A'(契約書などにAへ署名する)とは意味が異なる点がPart5で狙われる。"},
+    {"en": "sign for A", "pos": "動詞句", "ja": "A（の受け取り）にサインする", "ex": "Someone must be available to sign for the delivery when the courier arrives.", "exJa": "配送業者が到着したとき、荷物の受け取りにサインできる人がいる必要があります。", "note": "前置詞'for'を落とさないこと。'sign A'(契約書などにAへ署名する)とは意味が異なる点がPart5で狙われる。"},
     {"en": "return A to sender", "pos": "動詞句", "ja": "Aを差出人に返送する", "ex": "Undeliverable mail is automatically returned to sender after two weeks.", "exJa": "配達不能の郵便物は2週間後に自動的に差出人へ返送されます。", "note": "受動態'be returned to sender'の形でも頻出。'sender'は本日の単語の一つ。類義表現: send back。"},
     {"en": "notify A of B", "pos": "動詞句", "ja": "AにBを知らせる", "ex": "The shipping company will notify customers of any delay in advance.", "exJa": "配送会社は遅延がある場合、事前に顧客に知らせます。", "note": "前置詞は'of'を使う('notify A about B'も可だが'of'がより頻出)。本日の単語'notify'の代表的な語法。受動態'be notified of'もPart5で狙われる。"}
   ]
@@ -726,18 +726,18 @@ window.__addVocab({
   "theme": "小売店運営",
   "words": [
     {"en": "cashier", "pos": "名", "ja": "レジ係、会計係", "ex": "The cashier scanned each item quickly and handed the customer a receipt.", "exJa": "レジ係は各商品を手早くスキャンし、客に領収書を渡した。", "note": "類義語 clerk。Part 7 の言い換えでは 'store employee' と表現されることもある。"},
-    {"en": "checkout", "pos": "名", "ja": "レジ、精算(所)", "ex": "There was a long line at the checkout during the lunch hour.", "exJa": "昼休みの時間帯、レジには長い列ができていた。", "note": "'self-checkout'(セルフレジ)の形でもよく出題される。動詞句 check out(退室する/精算する)と混同しないこと。"},
+    {"en": "checkout", "pos": "名", "ja": "レジ、精算（所）", "ex": "There was a long line at the checkout during the lunch hour.", "exJa": "昼休みの時間帯、レジには長い列ができていた。", "note": "'self-checkout'(セルフレジ)の形でもよく出題される。動詞句 check out(退室する/精算する)と混同しないこと。"},
     {"en": "clearance", "pos": "名", "ja": "在庫一掃、クリアランス", "ex": "The store is having a clearance sale to make room for new merchandise.", "exJa": "その店は新商品のスペースを確保するため、在庫一掃セールを行っている。", "note": "'clearance sale' の形が定番。類義語 sale, markdown。"},
     {"en": "markdown", "pos": "名", "ja": "値下げ", "ex": "Seasonal items received a markdown of nearly 40 percent.", "exJa": "季節商品はほぼ40パーセントの値下げが行われた。", "note": "反意語は markup(値上げ)。類義語 discount, reduction。"},
-    {"en": "aisle", "pos": "名", "ja": "(店内・座席の)通路", "ex": "You can find cleaning supplies in the third aisle.", "exJa": "掃除用品は3番通路にあります。", "note": "類義語 passage。'aisle seat'(通路側の席)は旅行系の長文でも頻出。"},
+    {"en": "aisle", "pos": "名", "ja": "（店内・座席の）通路", "ex": "You can find cleaning supplies in the third aisle.", "exJa": "掃除用品は3番通路にあります。", "note": "類義語 passage。'aisle seat'(通路側の席)は旅行系の長文でも頻出。"},
     {"en": "shelf", "pos": "名", "ja": "棚", "ex": "Staff members restocked the shelf with new arrivals every morning.", "exJa": "スタッフは毎朝、新着商品で棚を補充した。", "note": "複数形は shelves(不規則変化)。類義語 rack。"},
     {"en": "browse", "pos": "動", "trans": "vt/vi", "ja": "見て回る、閲覧する", "ex": "Customers are welcome to browse the store without any obligation to buy.", "exJa": "客は購入の義務なく自由に店内を見て回ってよい。", "note": "目的語を直接とる場合(browse the store)は他動詞、'browse through A' のように前置詞を伴う場合は自動詞。両方の形を覚えること。"},
     {"en": "storefront", "pos": "名", "ja": "店構え、店頭", "ex": "The company renovated its storefront to attract more walk-in customers.", "exJa": "その会社はより多くの飛び込み客を呼び込むため、店構えを改装した。", "note": "類義語 store frontage。広告・不動産系の長文で頻出。"},
     {"en": "showroom", "pos": "名", "ja": "ショールーム、展示室", "ex": "The new models are on view in the showroom near the entrance.", "exJa": "新モデルは入口近くのショールームで展示されている。", "note": "類義語 display room。家具・自動車業界の広告文でよく登場する。"},
-    {"en": "display", "pos": "名/動", "trans": "vt", "ja": "陳列(する)、展示(する)", "ex": "The store will display the best deals near the main entrance.", "exJa": "その店は入口付近に一番の目玉商品を陳列する予定だ。", "note": "他動詞のため受動態 'be displayed' の形も頻出。名詞としては 'on display'(展示されて)という句でよく使われる。"},
+    {"en": "display", "pos": "名/動", "trans": "vt", "ja": "(名)陳列、展示 ／ (動)陳列する、展示する", "ex": "The store will display the best deals near the main entrance.", "exJa": "その店は入口付近に一番の目玉商品を陳列する予定だ。", "note": "他動詞のため受動態 'be displayed' の形も頻出。名詞としては 'on display'(展示されて)という句でよく使われる。"},
     {"en": "barcode", "pos": "名", "ja": "バーコード", "ex": "Each product carries a barcode that records its price and stock level.", "exJa": "各商品には価格と在庫数を記録するバーコードが付いている。", "note": "動詞 scan とセットで使われることが多い。"},
     {"en": "scan", "pos": "動", "trans": "vt", "ja": "スキャンする、読み取る", "ex": "Cashiers scan the barcode before printing a receipt.", "exJa": "レジ係は領収書を印刷する前にバーコードをスキャンする。", "note": "他動詞のため目的語が必要(scan it)。受動態 'be scanned' も可。"},
-    {"en": "purchase", "pos": "名/動", "trans": "vt", "ja": "購入(する)", "ex": "Customers who purchase two items receive a discount on the third.", "exJa": "2点購入した客は3点目が割引になる。", "note": "buy の同義語として Part 7 の言い換え問題で頻出。名詞としては 'make a purchase'(購入する)の形が定番。"},
+    {"en": "purchase", "pos": "名/動", "trans": "vt", "ja": "(名)購入 ／ (動)購入する", "ex": "Customers who purchase two items receive a discount on the third.", "exJa": "2点購入した客は3点目が割引になる。", "note": "buy の同義語として Part 7 の言い換え問題で頻出。名詞としては 'make a purchase'(購入する)の形が定番。"},
     {"en": "shoplifting", "pos": "名", "ja": "万引き", "ex": "Security cameras were installed to prevent shoplifting near the clearance racks.", "exJa": "クリアランスラックの近くでの万引きを防ぐため、防犯カメラが設置された。", "note": "類義語 theft, stealing。動詞形は 'shoplift'。"},
     {"en": "restock", "pos": "動", "trans": "vt/vi", "ja": "補充する", "ex": "Staff must restock the shelves before the store opens.", "exJa": "スタッフは開店前に棚を補充しなければならない。", "note": "類義語 replenish。受動態 'be restocked' も可能。'restock on A' の形で自動詞的にも使われる。"}
   ],

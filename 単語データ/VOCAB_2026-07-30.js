@@ -4,7 +4,7 @@ window.__addVocab({
  "theme": "環境・サステナビリティ",
  "words": [
   {"en": "recycle", "pos": "動", "trans": "vt", "ja": "リサイクルする、再利用する", "ex": "All employees are asked to recycle paper and plastic in the bins on each floor.", "exJa": "全従業員は各階のごみ箱で紙とプラスチックをリサイクルするよう求められています。", "note": "名詞形は recycling。類義: reuse(再利用する)。掲示や社内連絡では recycling program(リサイクル制度)の形で頻出します。"},
-  {"en": "conserve", "pos": "動", "trans": "vt", "ja": "(資源を)節約する、保護する", "ex": "The new sensors will help the company conserve electricity at night.", "exJa": "新しいセンサーは会社が夜間に電力を節約する助けになります。", "note": "言い換えは save。conserve energy / water / resources がコロケーション。converse(会話する)との混同に注意します。"},
+  {"en": "conserve", "pos": "動", "trans": "vt", "ja": "（資源を）節約する、保護する", "ex": "The new sensors will help the company conserve electricity at night.", "exJa": "新しいセンサーは会社が夜間に電力を節約する助けになります。", "note": "言い換えは save。conserve energy / water / resources がコロケーション。converse(会話する)との混同に注意します。"},
   {"en": "sustainable", "pos": "形", "ja": "持続可能な、環境に配慮した", "ex": "The firm was praised for its sustainable packaging design.", "exJa": "その会社は持続可能な包装設計で称賛されました。", "note": "名詞形は sustainability。動詞 sustain(維持する)から。類義: environmentally friendly, eco-friendly。"},
   {"en": "initiative", "pos": "名", "ja": "新たな取り組み、主導権", "ex": "The recycling initiative will begin at the headquarters in September.", "exJa": "そのリサイクルの取り組みは9月に本社で始まります。", "note": "Part 7では program / effort / campaign への言い換えが狙われます。take the initiative(率先して行う)も重要です。"},
   {"en": "dispose", "pos": "動", "trans": "vi", "ja": "処分する、捨てる", "ex": "Old computers must be disposed of at the recycling center.", "exJa": "古いコンピューターはリサイクルセンターで処分しなければなりません。", "note": "自動詞なので必ず of を伴い dispose of A の形にします。受動態でも of が残り be disposed of。名詞形は disposal。類義: discard, get rid of。"},

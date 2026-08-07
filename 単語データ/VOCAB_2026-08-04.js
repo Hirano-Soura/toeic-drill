@@ -10,13 +10,13 @@ window.__addVocab({
     {"en": "courtesy", "pos": "名", "ja": "礼儀、丁寧さ、親切", "ex": "Your courtesy during the meeting was much appreciated.", "exJa": "会議での丁寧な対応は大変感謝されました。", "note": "形容詞形 courteous。"},
     {"en": "reassure", "pos": "動", "trans": "vt", "ja": "安心させる、再確認させる", "ex": "The agent reassured the customer that a refund would be processed.", "exJa": "担当者は返金が処理されることを伝え、顧客を安心させました。", "note": "reassure A that ~ の形が定番。名詞は reassurance。"},
     {"en": "goodwill", "pos": "名", "ja": "信頼、好意、のれん", "ex": "Offering a small discount helps maintain goodwill with regular clients.", "exJa": "小さな割引を提供することは常連客との信頼関係の維持に役立ちます。", "note": "不可算名詞。会計用語では「のれん代」の意味もある多義語。"},
-    {"en": "concern", "pos": "名/動", "trans": "vt", "ja": "懸念、関心事項 / 関係する、関わる", "ex": "Your concern about shipping costs is valid.", "exJa": "送料に関する懸念は妥当です。", "note": "名詞がメイン。動詞は他動詞で「〜に関係する」の意。be concerned about は TOEIC 頻出。"},
+    {"en": "concern", "pos": "名/動", "trans": "vt", "ja": "(名)懸念、関心事項 ／ (動)関係する、関わる", "ex": "Your concern about shipping costs is valid.", "exJa": "送料に関する懸念は妥当です。", "note": "名詞がメイン。動詞は他動詞で「〜に関係する」の意。be concerned about は TOEIC 頻出。"},
     {"en": "address", "pos": "動", "trans": "vt", "ja": "対処する、扱う、演説する、宛てる", "ex": "We will address your feedback in our next update.", "exJa": "次の更新でフィードバックに対処します。", "note": "「住所」は名詞。「対処する」は他動詞で to の後は不要。"},
     {"en": "compensate", "pos": "動", "trans": "vt", "ja": "補償する、埋め合わせする", "ex": "The company will compensate affected customers immediately.", "exJa": "会社は影響を受けた顧客に直ちに補償します。", "note": "for を伴う場合 compensate for A。"},
     {"en": "rapport", "pos": "名", "ja": "友好的な関係、一致", "ex": "Building strong rapport with clients ensures repeat business.", "exJa": "クライアントとの強い信頼関係を築くことで、リピートビジネスが確保される。", "note": "フランス語由来。build ~ establish ~ develop rapport はセット表現。"},
     {"en": "helpline", "pos": "名", "ja": "相談窓口、電話相談サービス", "ex": "Call our helpline if you have any questions about your order.", "exJa": "ご注文について質問がある場合は相談窓口までお電話ください。", "note": "hotline とほぼ同義。customer helpline のコロケーションで頻出。"},
     {"en": "disruptive", "pos": "形", "ja": "混乱を引き起こす、中断させる", "ex": "Technical issues have a disruptive effect on service quality.", "exJa": "技術上の問題はサービス品質に混乱をもたらします。", "note": "disrupt (動) の形容詞形。"},
-    {"en": "hassle", "pos": "名/動", "trans": "vt", "ja": "面倒、手数 / ～を悩ませる", "ex": "We aim to remedy issues without any hassle to the customer.", "exJa": "顧客に面倒をかけずに問題を是正することを目指しています。", "note": "名詞と動詞で意味ほぼ同じ。動詞は他動詞。be a hassle / cause a hassle が日常的。"},
+    {"en": "hassle", "pos": "名/動", "trans": "vt", "ja": "(名)面倒、手数 ／ (動)～を悩ませる", "ex": "We aim to remedy issues without any hassle to the customer.", "exJa": "顧客に面倒をかけずに問題を是正することを目指しています。", "note": "名詞と動詞で意味ほぼ同じ。動詞は他動詞。be a hassle / cause a hassle が日常的。"},
     {"en": "mitigate", "pos": "動", "trans": "vt", "ja": "緩和する、軽減する", "ex": "Additional discounts help mitigate customer dissatisfaction.", "exJa": "追加割引は顧客不満の軽減に役立ちます。", "note": "法律・リスク管理での頻出語。「悪影響を減らす」。"}
   ],
   "phrases": [
