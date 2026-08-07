@@ -398,3 +398,23 @@ fragile | 2026-08-07
 [句] sign for A | 2026-08-07
 [句] return A to sender | 2026-08-07
 [句] notify A of B | 2026-08-07
+cashier | 2026-08-08
+checkout | 2026-08-08
+clearance | 2026-08-08
+markdown | 2026-08-08
+aisle | 2026-08-08
+shelf | 2026-08-08
+browse | 2026-08-08
+storefront | 2026-08-08
+showroom | 2026-08-08
+display | 2026-08-08
+barcode | 2026-08-08
+scan | 2026-08-08
+purchase | 2026-08-08
+shoplifting | 2026-08-08
+restock | 2026-08-08
+[句] out of stock | 2026-08-08
+[句] browse through A | 2026-08-08
+[句] on display | 2026-08-08
+[句] at a discount | 2026-08-08
+[句] run out of A | 2026-08-08
