@@ -47,6 +47,22 @@
   .choice.self.no{background:#fef2f2;border-color:#fca5a5;color:#b91c1c}
   .choice.none{background:#f8fafc;color:var(--sub);border-style:dashed}
   .stagenote{font-size:12px;color:var(--sub);margin:10px 0 0;line-height:1.6}
+  /* 【項目23・30】記録タブ */
+  .sumgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:8px;margin:10px 0 14px}
+  .sumbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+  .sumbox b{display:block;font-size:19px;line-height:1.35}
+  .sumbox span{font-size:11.5px;color:var(--sub)}
+  .sumbox.warn b{color:var(--ng)}
+  .hist{white-space:nowrap;font-size:13px;letter-spacing:1px}
+  .hist i{font-style:normal}
+  .hist .o{color:var(--ok)}
+  .hist .x{color:var(--ng)}
+  .hist .u{opacity:.45}
+  .mb{color:var(--ng);font-weight:600}
+  .toolrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+  .toolrow button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:6px 13px;cursor:pointer;font-size:13px;font-family:inherit}
+  .toolrow button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .devnote{font-size:12px;color:var(--warn,#b45309);background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:7px 11px;margin:0 0 12px;line-height:1.6}
   .stagebanner{font-size:12.5px;background:#fffbeb;border:1px solid #fcd34d;color:#b45309;border-radius:8px;padding:7px 11px;margin:0 0 10px;line-height:1.6}
   .fb{margin-top:10px;font-size:14px;display:none}
   .meta{color:var(--sub);font-size:13px}
@@ -99,6 +115,7 @@
     <button id="m_card" onclick="setMode('card')">カード</button>
     <button id="m_quiz" onclick="setMode('quiz')">クイズ</button>
     <button id="m_passage" onclick="setMode('passage')">長文</button>
+    <button id="m_stats" onclick="setMode('stats')">記録</button>
     <select id="daySel" onchange="onRangeChange()"></select>
     <select id="typeSel" onchange="onRangeChange()">
       <option value="all">単語＋句表現</option>
@@ -377,7 +394,7 @@ function shuffleArr(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.fl
 
 function setMode(m){
   mode=m;
-  ['list','card','quiz','passage'].forEach(function(x){document.getElementById('m_'+x).classList.toggle('active',x===m);});
+  ['list','card','quiz','passage','stats'].forEach(function(x){document.getElementById('m_'+x).classList.toggle('active',x===m);});
   cardIdx=0;cardBack=false;
   if(m==='quiz')buildQuiz();
   render();
@@ -433,6 +450,7 @@ function pool(){
 function render(){
   var c=document.getElementById('content');
   if(mode==='passage'){ renderPassage(); return; }
+  if(mode==='stats'){ renderStats(); return; }
   if(!daysData.length){c.innerHTML='<p class="empty">まだ単語データがありません。</p>';return;}
   var ws=pool();
   if(mode==='list'){
@@ -623,6 +641,172 @@ function quizOptions(w){
   opts.sort(function(){return Math.random()-0.5;});
   quizOpts=opts; quizOptsIdx=quizIdx;
   return opts;
+}
+
+/* ============================================================
+   【項目23・30】記録タブ: 正誤の履歴を見る／CSV に出す
+   ============================================================ */
+
+/** 【項目23】正誤と自己申告を1回ずつ対にする。
+
+    SELF（自己申告）は項目15で導入したので、**それ以前の回答には対応する自己申告が無い**。
+    HIST の方が長くなるため、**末尾から**揃える。先頭から揃えると、古い正誤に
+    新しい自己申告が結び付いて「思い違い」の数が狂う。 */
+function answerPairs(key){
+  var h=HIST[key]||[], sf=SELF[key]||[], off=h.length-sf.length, out=[];
+  for(var i=0;i<h.length;i++){
+    var j=i-off;
+    out.push({ok:h[i]===1, self:(j>=0&&j<sf.length)?(sf[j]===1):null});
+  }
+  return out;
+}
+
+/** 語ごとの集計。
+    思い違い = 「わかる」と申告して外した回数。missOften だけでは拾えない
+    「覚えたつもり」の語を見つけるための指標（項目15の副産物）。 */
+function statOf(w){
+  var key=keyOf(w), ps=answerPairs(key);
+  var correct=0, wrong=0, mis=0, said=0, unknown=0;
+  ps.forEach(function(p){
+    if(p.ok)correct++; else wrong++;
+    if(p.self===true){ said++; if(!p.ok)mis++; }
+    else if(p.self===false){ unknown++; }
+  });
+  return {w:w, key:key, pairs:ps, n:ps.length, correct:correct, wrong:wrong,
+          mis:mis, said:said, unknown:unknown,
+          acc:ps.length?correct/ps.length:null,
+          misRate:said?mis/said:null,
+          weak:!!WEAK[key], often:missOften(key)};
+}
+function allStats(){
+  var seen={}, out=[];
+  allItemsRaw().forEach(function(w){ var k=keyOf(w); if(!seen[k]){seen[k]=1;out.push(statOf(w));} });
+  return out;
+}
+/** その語が最初に出た日。CSV と並び替えに使う。 */
+var _firstDate={};
+function firstDateOf(key){
+  if(!Object.keys(_firstDate).length){
+    daysData.forEach(function(d){ (d.items||[]).forEach(function(w){
+      var k=keyOf(w); if(!_firstDate[k])_firstDate[k]=d.date; }); });
+  }
+  return _firstDate[key]||'';
+}
+
+var statSort='mis', statOnlyAnswered=true;
+var STAT_SORT={mis:'思い違いが多い順', wrong:'誤答が多い順', few:'回答が少ない順', date:'出題日の新しい順'};
+function setStatSort(k){ statSort=k; render(); }
+function toggleStatScope(){ statOnlyAnswered=!statOnlyAnswered; render(); }
+
+function pct(x){ return x==null?'—':(Math.round(x*1000)/10)+'%'; }
+
+function renderStats(){
+  var c=document.getElementById('content');
+  var st=allStats();
+  var answered=st.filter(function(x){return x.n>0;});
+
+  // ---- 全体のサマリ ----
+  var tot=0,cor=0,mis=0,said=0,unk=0;
+  answered.forEach(function(x){ tot+=x.n; cor+=x.correct; mis+=x.mis; said+=x.said; unk+=x.unknown; });
+  var h='<p class="devnote">この記録は<b>この端末のもの</b>です。'
+    +'正誤の履歴はブラウザの中に保存されるため、スマホで解いた分とPCで解いた分は別々になります。'
+    +'CSV も同じく、この端末で解いた分だけが出ます。</p>';
+  h+='<div class="sumgrid">'
+    +'<div class="sumbox"><b>'+answered.length+' / '+st.length+'</b><span>記録のある語 / 全語</span></div>'
+    +'<div class="sumbox"><b>'+tot+'</b><span>のべ回答数</span></div>'
+    +'<div class="sumbox"><b>'+pct(tot?cor/tot:null)+'</b><span>正答率</span></div>'
+    +'<div class="sumbox'+(said&&mis/said>=0.3?' warn':'')+'"><b>'+pct(said?mis/said:null)+'</b><span>思い違い率</span></div>'
+    +'<div class="sumbox"><b>'+pct(tot?unk/tot:null)+'</b><span>「わからない」の割合</span></div>'
+    +'</div>';
+  h+='<p class="meta">思い違い＝「わかる」と答えて外した回数。'
+    +'素直に「わからない」と答えた分とは分けて数えています（項目15）。'
+    +'<b>思い違い率が高い語ほど、覚えたつもりになっています。</b></p>';
+
+  // ---- 操作 ----
+  h+='<div class="toolrow">';
+  for(var k in STAT_SORT){
+    h+='<button class="'+(statSort===k?'on':'')+'" onclick="setStatSort(\''+k+'\')">'+STAT_SORT[k]+'</button>';
+  }
+  h+='<button class="'+(statOnlyAnswered?'on':'')+'" onclick="toggleStatScope()">'
+    +(statOnlyAnswered?'記録のある語のみ':'全語を表示')+'</button>';
+  h+='<button onclick="downloadStatsCsv()">CSVを保存</button>';
+  h+='</div>';
+
+  // ---- 並び替え ----
+  var rows=(statOnlyAnswered?answered:st).slice();
+  rows.sort(function(a,b){
+    if(statSort==='mis'){
+      var am=a.misRate==null?-1:a.misRate, bm=b.misRate==null?-1:b.misRate;
+      if(bm!==am)return bm-am;
+      return b.mis-a.mis;
+    }
+    if(statSort==='wrong'){ if(b.wrong!==a.wrong)return b.wrong-a.wrong; return (b.acc==null?0:1-b.acc)-(a.acc==null?0:1-a.acc); }
+    if(statSort==='few'){ return a.n-b.n; }
+    var ad=firstDateOf(a.key), bd=firstDateOf(b.key);
+    return ad<bd?1:(ad>bd?-1:0);
+  });
+
+  if(!rows.length){
+    c.innerHTML=h+'<p class="empty">まだ記録がありません。クイズを解くとここに溜まります。</p>';
+    return;
+  }
+
+  // ---- 表 ----
+  h+='<table><tr><th></th><th>見出し</th><th>品詞</th><th>意味</th>'
+    +'<th>回答</th><th>正答率</th><th>思い違い</th><th>履歴（古い→新しい）</th></tr>';
+  rows.forEach(function(x){
+    var w=x.w, ph=(w.kind==='phrase');
+    var hist=x.pairs.map(function(p){
+      // 〇✕に加えて、自己申告が「わからない」だった回は薄く出す。
+      // 同じ✕でも「思い違い」と「未知」は意味が違うため。
+      var cls=p.ok?'o':'x';
+      if(p.self===false)cls+=' u';
+      return '<i class="'+cls+'" title="'+(p.self===true?'わかると申告':(p.self===false?'わからないと申告':'申告の記録なし'))+'">'
+        +(p.ok?'○':'✕')+'</i>';
+    }).join('');
+    h+='<tr><td><span class="star'+(x.weak?' on':'')+'" onclick="toggleWeak(\''+esc(x.key).replace(/'/g,"\\'")+'\',this)">★</span></td>'
+      +'<td class="en'+(ph?' ph':'')+'">'+esc(w.en)+homoBadge(w)+'</td>'
+      +'<td>'+posText(w)+'</td><td>'+jaHtml(w.ja)+'</td>'
+      +'<td>'+x.n+'</td><td>'+pct(x.acc)+(x.often?' <span class="meta">苦手</span>':'')+'</td>'
+      +'<td'+(x.mis?' class="mb"':'')+'>'+(x.said?(x.mis+' / '+x.said):'—')+'</td>'
+      +'<td class="hist">'+(hist||'—')+'</td></tr>';
+  });
+  c.innerHTML=h+'</table>';
+}
+
+/* ---- 【項目30】CSV 出力 ---- */
+
+/** CSV の1セル。区切り・引用符・改行を含むなら引用符で囲む。 */
+function csvCell(v){
+  var s=String(v==null?'':v);
+  return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s;
+}
+function statsCsv(){
+  var cols=['en','pos','trans','ja','kind','key','firstDate',
+            'answers','correct','wrong','accuracy','misbelief','saidKnown','misbeliefRate','unknown',
+            'history','self','starred','oftenWrong'];
+  var lines=[cols.join(',')];
+  allStats().forEach(function(x){
+    var w=x.w;
+    lines.push([
+      w.en, w.pos||'', w.trans||'', w.ja||'', w.kind||'', x.key, firstDateOf(x.key),
+      x.n, x.correct, x.wrong, x.acc==null?'':Math.round(x.acc*1000)/1000,
+      x.mis, x.said, x.misRate==null?'':Math.round(x.misRate*1000)/1000, x.unknown,
+      x.pairs.map(function(p){return p.ok?1:0;}).join(' '),
+      x.pairs.map(function(p){return p.self==null?'-':(p.self?1:0);}).join(' '),
+      x.weak?1:0, x.often?1:0
+    ].map(csvCell).join(','));
+  });
+  return lines.join('\r\n');
+}
+function downloadStatsCsv(){
+  // BOM を付ける。付けないと Excel が UTF-8 と判断せず日本語が化ける。
+  var blob=new Blob(['\ufeff'+statsCsv()], {type:'text/csv;charset=utf-8'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='toeic_vocab_records_'+todayDateStr()+'.csv';
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 0);
 }
 
 // ---- 長文タブ ----
