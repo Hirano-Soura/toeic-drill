@@ -228,6 +228,37 @@ function posText(w){ return esc(w.pos||'')+transBadge(w); }
 function normPos(w){ return String(w.pos||'').replace(/[（(][^）)]*[）)]/g,'').trim(); }
 function keyOf(w){ return w.en+'|'+normPos(w); }
 
+/** 【項目32】訳語を「語義の集合」に分解する。
+    英→日クイズは、訳が同じ2語を選択肢に並べると**正解が一意に決まらない**。
+    たとえば deal with A「～に対処する」と handle A「～を処理する」を並べると、
+    日本語だけを見て英語を復元することはできない。
+    そこで誤答候補を選ぶ前に、語義が重なる語を外す。
+
+    比較のために落とすも:
+      括弧の補足 … 「（利息などが）発生する」→「発生する」
+      〜 / A / B … 目的語のプレースホルダ
+      助詞       … 「を対処する」と「に対処する」を同じ語義とみなすため
+    助詞まで落とすのは、意図的に**過剰に**寄せている。誤答候補は余っているので、
+    取りこぼす（紛らわしい語を出してしまう）方が害が大きい。 */
+var _senseCache={};
+function jaSenses(ja){
+  ja=String(ja||'');
+  if(_senseCache[ja])return _senseCache[ja];
+  var body=ja.replace(/[（(][^）)]*[）)]/g,'');
+  var out={};
+  body.split(/[、;；,，／]|\s\/\s/).forEach(function(p){
+    var t=p.replace(/[〜～]/g,'').replace(/\bA\b|\bB\b/g,'')
+           .replace(/[をにがはへとのも\s]/g,'').trim();
+    if(t)out[t]=1;
+  });
+  return _senseCache[ja]=out;
+}
+function sensesOverlap(jaA,jaB){
+  var a=jaSenses(jaA), b=jaSenses(jaB);
+  for(var k in a){ if(b[k])return true; }
+  return false;
+}
+
 /** 読み込み済みデータ中で綴りが重複している見出しの集合（表示の注意喚起用） */
 var HOMO={};
 function buildHomo(){
@@ -567,7 +598,11 @@ function renderStage2(c,w,head,stem,posline){
 /** 第2段階の選択肢。設問ごとに1度だけ作って使い回す（再描画で並びが変わらないように）。 */
 function quizOptions(w){
   if(quizOptsIdx===quizIdx&&quizOpts)return quizOpts;
-  var base=allItemsRaw().filter(function(x){return x.en!==w.en&&x.ja!==w.ja;});
+  var all=allItemsRaw().filter(function(x){return x.en!==w.en&&x.ja!==w.ja;});
+  // 【項目32】語義が重なる語は誤答に使わない。正解が一意に決まらなくなるため。
+  var base=all.filter(function(x){return !sensesOverlap(x.ja,w.ja);});
+  // 候補が枯れたら緩める。「紛らわしい選択肢が出る」より「出題できない」方が困る。
+  if(base.length<3)base=all;
   var same=base.filter(function(x){return x.kind===w.kind;});   // 誤答は同じ種別から作る（単語の意味に句表現が混ざらないように）
   var others=(same.length>=3?same:base).slice();
   others.sort(function(){return Math.random()-0.5;});
