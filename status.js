@@ -24,7 +24,7 @@ window.__portalStatus({
   },
   "2026-08-09": {
    "headline": "単語15語＋句表現5 つ（建設・工事）",
-   "sub": "長文「Notice to Building Occupants: Renovation Work Ahead」",
+   "sub": "長文「Notice to Building Occupants: Renovation Work Ahead」 ／ 本編: 設問と本文の言い換え対応",
    "items": [
     {
      "label": "単語",
@@ -38,8 +38,8 @@ window.__portalStatus({
     },
     {
      "label": "本編",
-     "state": "stale",
-     "detail": "未生成"
+     "state": "ready",
+     "detail": "L 設問と本文の言い換え対応"
     }
    ]
   },
