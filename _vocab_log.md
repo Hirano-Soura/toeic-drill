@@ -418,3 +418,23 @@ restock | 2026-08-08
 [句] on display | 2026-08-08
 [句] at a discount | 2026-08-08
 [句] run out of A | 2026-08-08
+contractor | 2026-08-09
+construction | 2026-08-09
+blueprint | 2026-08-09
+permit | 2026-08-09
+scaffolding | 2026-08-09
+demolish | 2026-08-09
+excavate | 2026-08-09
+foreman | 2026-08-09
+insulation | 2026-08-09
+plumbing | 2026-08-09
+wiring | 2026-08-09
+zoning | 2026-08-09
+site | 2026-08-09
+hazard | 2026-08-09
+obstruct | 2026-08-09
+[句] be under construction | 2026-08-09
+[句] close off A | 2026-08-09
+[句] in the vicinity of A | 2026-08-09
+[句] at A's own risk | 2026-08-09
+[句] be advised to do | 2026-08-09
